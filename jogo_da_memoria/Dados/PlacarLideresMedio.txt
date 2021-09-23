@@ -1,0 +1,3 @@
+- Placar de Lideres Medio:
+*,JogadorMediano,7000,8,medio,
+*,JogadoraMediana,9000,5,medio,

@@ -5,6 +5,7 @@
  */
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.Jogador;
 import java.awt.Color;
 
 /**
@@ -60,7 +61,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         barra_inferior.setLayout(barra_inferiorLayout);
         barra_inferiorLayout.setHorizontalGroup(
             barra_inferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         barra_inferiorLayout.setVerticalGroup(
             barra_inferiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,6 +93,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         botao_jogar.setBackground(new java.awt.Color(255, 255, 255));
         botao_jogar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         botao_jogar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botao_jogarMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botao_jogarMouseEntered(evt);
             }
@@ -125,6 +129,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         botao_placar_lideres.setBackground(new java.awt.Color(255, 255, 255));
         botao_placar_lideres.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         botao_placar_lideres.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botao_placar_lideresMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botao_placar_lideresMouseEntered(evt);
             }
@@ -213,7 +220,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_opcoes.setIcon(new javax.swing.ImageIcon("D:\\Projetos\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
+        icone_botao_opcoes.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
 
         javax.swing.GroupLayout botao_opcoesLayout = new javax.swing.GroupLayout(botao_opcoes);
         botao_opcoes.setLayout(botao_opcoesLayout);
@@ -237,9 +244,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         painel_MenuPrincipalLayout.setHorizontalGroup(
             painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
-                .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(barra_superior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(barra_superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(barra_inferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -333,6 +340,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void botao_opcoesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseExited
         botao_opcoes.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_opcoesMouseExited
+
+    private void botao_placar_lideresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_placar_lideresMouseClicked
+        new PlacarLideres().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botao_placar_lideresMouseClicked
+
+    private void botao_jogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_jogarMouseClicked
+        new DefinirDificuldade().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botao_jogarMouseClicked
 
     /**
      * @param args the command line arguments

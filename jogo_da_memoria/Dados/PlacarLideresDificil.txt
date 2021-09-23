@@ -1,0 +1,3 @@
+- Placar de Lideres Dificil:
+*,GrandeJogador,4000,6,dificil,
+*,MaiorJogador,7000,1,dificil,

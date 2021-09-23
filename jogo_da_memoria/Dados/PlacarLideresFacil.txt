@@ -1,0 +1,4 @@
+- Placar de Lideres Facil:
+*,Testando,3000,6,facil,
+*,SuperJogador,8000,10,facil,
+*,MegaJogador,9000,13,facil,
