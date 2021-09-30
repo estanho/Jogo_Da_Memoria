@@ -89,9 +89,6 @@ public class MenuOpcoes extends javax.swing.JFrame {
         botao_voltar.setBackground(new java.awt.Color(255, 255, 255));
         botao_voltar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         botao_voltar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botao_voltarMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botao_voltarMouseEntered(evt);
             }
@@ -243,11 +240,6 @@ public class MenuOpcoes extends javax.swing.JFrame {
     private void botao_voltarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseExited
         botao_voltar.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_voltarMouseExited
-
-    private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
-        new MenuPrincipal().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_botao_voltarMouseClicked
 
     /**
      * @param args the command line arguments

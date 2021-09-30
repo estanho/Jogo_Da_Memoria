@@ -157,6 +157,8 @@ public class LayoutMedio extends javax.swing.JFrame {
             }
         });
 
+        icone_botao_pause.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
+
         javax.swing.GroupLayout botao_pauseLayout = new javax.swing.GroupLayout(botao_pause);
         botao_pause.setLayout(botao_pauseLayout);
         botao_pauseLayout.setHorizontalGroup(

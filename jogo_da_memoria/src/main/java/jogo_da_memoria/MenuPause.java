@@ -38,19 +38,13 @@ public class MenuPause extends javax.swing.JFrame {
         botao_sair = new javax.swing.JPanel();
         texto_botao_sair = new javax.swing.JLabel();
         titulo_pause1 = new javax.swing.JLabel();
+        titulo_pause2 = new javax.swing.JLabel();
         botao_opcoes = new javax.swing.JPanel();
         icone_botao_opcoes = new javax.swing.JLabel();
-        botao_voltar_jogo = new javax.swing.JPanel();
-        texto_voltar_jogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jogo da Memória com elementos químicos");
         setResizable(false);
-        addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                formKeyPressed(evt);
-            }
-        });
 
         painel_MenuPause.setBackground(new java.awt.Color(255, 255, 255));
         painel_MenuPause.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -142,9 +136,9 @@ public class MenuPause extends javax.swing.JFrame {
         });
 
         texto_botao_sair.setBackground(new java.awt.Color(0, 0, 0));
-        texto_botao_sair.setFont(new java.awt.Font("Comic Sans MS", 0, 21)); // NOI18N
+        texto_botao_sair.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         texto_botao_sair.setForeground(new java.awt.Color(0, 0, 0));
-        texto_botao_sair.setText("Desktop");
+        texto_botao_sair.setText("Sair");
 
         javax.swing.GroupLayout botao_sairLayout = new javax.swing.GroupLayout(botao_sair);
         botao_sair.setLayout(botao_sairLayout);
@@ -152,8 +146,8 @@ public class MenuPause extends javax.swing.JFrame {
             botao_sairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botao_sairLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(texto_botao_sair, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
+                .addComponent(texto_botao_sair)
+                .addGap(79, 79, 79))
         );
         botao_sairLayout.setVerticalGroup(
             botao_sairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,6 +160,10 @@ public class MenuPause extends javax.swing.JFrame {
         titulo_pause1.setFont(new java.awt.Font("Comic Sans MS", 3, 48)); // NOI18N
         titulo_pause1.setForeground(new java.awt.Color(0, 0, 0));
         titulo_pause1.setText("Jogo pausado");
+
+        titulo_pause2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        titulo_pause2.setForeground(new java.awt.Color(0, 0, 0));
+        titulo_pause2.setText("Pressione ESC para retornar ao jogo");
 
         botao_opcoes.setBackground(new java.awt.Color(255, 255, 255));
         botao_opcoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -181,8 +179,11 @@ public class MenuPause extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_opcoes.setIcon(new javax.swing.ImageIcon("D:\\Projetos\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
+<<<<<<< Updated upstream
+=======
+        icone_botao_opcoes.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
 
+>>>>>>> Stashed changes
         javax.swing.GroupLayout botao_opcoesLayout = new javax.swing.GroupLayout(botao_opcoes);
         botao_opcoes.setLayout(botao_opcoesLayout);
         botao_opcoesLayout.setHorizontalGroup(
@@ -200,42 +201,6 @@ public class MenuPause extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        botao_voltar_jogo.setBackground(new java.awt.Color(255, 255, 255));
-        botao_voltar_jogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        botao_voltar_jogo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botao_voltar_jogoMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botao_voltar_jogoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botao_voltar_jogoMouseExited(evt);
-            }
-        });
-
-        texto_voltar_jogo.setBackground(new java.awt.Color(0, 0, 0));
-        texto_voltar_jogo.setFont(new java.awt.Font("Comic Sans MS", 0, 21)); // NOI18N
-        texto_voltar_jogo.setForeground(new java.awt.Color(0, 0, 0));
-        texto_voltar_jogo.setText("Voltar ao jogo");
-
-        javax.swing.GroupLayout botao_voltar_jogoLayout = new javax.swing.GroupLayout(botao_voltar_jogo);
-        botao_voltar_jogo.setLayout(botao_voltar_jogoLayout);
-        botao_voltar_jogoLayout.setHorizontalGroup(
-            botao_voltar_jogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botao_voltar_jogoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(texto_voltar_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-        );
-        botao_voltar_jogoLayout.setVerticalGroup(
-            botao_voltar_jogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(botao_voltar_jogoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(texto_voltar_jogo, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
         javax.swing.GroupLayout painel_MenuPauseLayout = new javax.swing.GroupLayout(painel_MenuPause);
         painel_MenuPause.setLayout(painel_MenuPauseLayout);
         painel_MenuPauseLayout.setHorizontalGroup(
@@ -249,17 +214,19 @@ public class MenuPause extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painel_MenuPauseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPauseLayout.createSequentialGroup()
+                        .addGroup(painel_MenuPauseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(botao_sair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(botao_voltar_menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(195, 195, 195))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPauseLayout.createSequentialGroup()
                         .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPauseLayout.createSequentialGroup()
                         .addComponent(titulo_pause1)
                         .addGap(144, 144, 144))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPauseLayout.createSequentialGroup()
-                        .addGroup(painel_MenuPauseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(botao_sair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botao_voltar_menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botao_voltar_jogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(197, 197, 197))))
+                        .addComponent(titulo_pause2)
+                        .addGap(86, 86, 86))))
         );
         painel_MenuPauseLayout.setVerticalGroup(
             painel_MenuPauseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,13 +234,13 @@ public class MenuPause extends javax.swing.JFrame {
                 .addComponent(barra_superior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68)
                 .addComponent(titulo_pause1)
-                .addGap(45, 45, 45)
-                .addComponent(botao_voltar_jogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(titulo_pause2)
+                .addGap(39, 39, 39)
                 .addComponent(botao_voltar_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(botao_sair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -314,8 +281,7 @@ public class MenuPause extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_sairMouseExited
 
     private void botao_opcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseClicked
-        new MenuOpcoes().setVisible(true);
-        this.dispose();
+        // TODO add your handling code here:
     }//GEN-LAST:event_botao_opcoesMouseClicked
 
     private void botao_opcoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseEntered
@@ -327,16 +293,17 @@ public class MenuPause extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_opcoesMouseExited
 
     private void botao_voltar_menuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_menuMouseClicked
-        new MenuPrincipal().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_botao_voltar_menuMouseClicked
 
+<<<<<<< Updated upstream
+=======
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_formKeyPressed
 
     private void botao_voltar_jogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_jogoMouseClicked
-        setVisible(false);
+        this.setVisible(false);
     }//GEN-LAST:event_botao_voltar_jogoMouseClicked
 
     private void botao_voltar_jogoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_jogoMouseEntered
@@ -347,6 +314,7 @@ public class MenuPause extends javax.swing.JFrame {
         botao_voltar_jogo.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_voltar_jogoMouseExited
 
+>>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
@@ -387,14 +355,13 @@ public class MenuPause extends javax.swing.JFrame {
     private javax.swing.JPanel barra_superior;
     private javax.swing.JPanel botao_opcoes;
     private javax.swing.JPanel botao_sair;
-    private javax.swing.JPanel botao_voltar_jogo;
     private javax.swing.JPanel botao_voltar_menu;
     private javax.swing.JLabel icone_botao_opcoes;
     private javax.swing.JPanel painel_MenuPause;
     private javax.swing.JLabel texto_barra_superior;
     private javax.swing.JLabel texto_botao_jogar;
     private javax.swing.JLabel texto_botao_sair;
-    private javax.swing.JLabel texto_voltar_jogo;
     private javax.swing.JLabel titulo_pause1;
+    private javax.swing.JLabel titulo_pause2;
     // End of variables declaration//GEN-END:variables
 }

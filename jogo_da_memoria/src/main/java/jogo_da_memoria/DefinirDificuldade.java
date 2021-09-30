@@ -5,11 +5,7 @@
  */
 package jogo_da_memoria;
 
-import codigo_jogo_da_memoria.Jogador;
 import java.awt.Color;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
-import javax.swing.ImageIcon;
 
 /**
  *
@@ -46,6 +42,8 @@ public class DefinirDificuldade extends javax.swing.JFrame {
         texto_botao_medio = new javax.swing.JLabel();
         botao_dificil = new javax.swing.JPanel();
         texto_botao_dificil = new javax.swing.JLabel();
+        botao_opcoes = new javax.swing.JPanel();
+        icone_botao_opcoes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jogo da Memória com elementos químicos");
@@ -110,7 +108,7 @@ public class DefinirDificuldade extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_voltar.setIcon(new javax.swing.ImageIcon("D:\\Projetos\\jogo_da_memoria\\icones\\voltar.png")); // NOI18N
+        icone_botao_voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\voltar.png")); // NOI18N
 
         javax.swing.GroupLayout botao_voltarLayout = new javax.swing.GroupLayout(botao_voltar);
         botao_voltar.setLayout(botao_voltarLayout);
@@ -132,9 +130,6 @@ public class DefinirDificuldade extends javax.swing.JFrame {
         botao_facil.setBackground(new java.awt.Color(255, 255, 255));
         botao_facil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         botao_facil.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botao_facilMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 botao_facilMouseEntered(evt);
             }
@@ -237,6 +232,39 @@ public class DefinirDificuldade extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        botao_opcoes.setBackground(new java.awt.Color(255, 255, 255));
+        botao_opcoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        botao_opcoes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botao_opcoesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botao_opcoesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botao_opcoesMouseExited(evt);
+            }
+        });
+
+        icone_botao_opcoes.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
+
+        javax.swing.GroupLayout botao_opcoesLayout = new javax.swing.GroupLayout(botao_opcoes);
+        botao_opcoes.setLayout(botao_opcoesLayout);
+        botao_opcoesLayout.setHorizontalGroup(
+            botao_opcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botao_opcoesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(icone_botao_opcoes)
+                .addContainerGap())
+        );
+        botao_opcoesLayout.setVerticalGroup(
+            botao_opcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botao_opcoesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(icone_botao_opcoes)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout painel_MenuPrincipalLayout = new javax.swing.GroupLayout(painel_MenuPrincipal);
         painel_MenuPrincipal.setLayout(painel_MenuPrincipalLayout);
         painel_MenuPrincipalLayout.setHorizontalGroup(
@@ -258,7 +286,9 @@ public class DefinirDificuldade extends javax.swing.JFrame {
                         .addComponent(titulo_dificuldade)
                         .addGap(173, 173, 173))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPrincipalLayout.createSequentialGroup()
-                        .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
         painel_MenuPrincipalLayout.setVerticalGroup(
@@ -275,7 +305,9 @@ public class DefinirDificuldade extends javax.swing.JFrame {
                 .addComponent(botao_medio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botao_dificil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -318,52 +350,71 @@ public class DefinirDificuldade extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_medioMouseExited
 
     private void botao_dificilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_dificilMouseClicked
+<<<<<<< Updated upstream
+
+=======
         new LayoutDificil().setVisible(true);
         
         int[] array_cartas = {20,20,6,6,17,17,16,16,50,50,26,26,15,15,31,31,2,2,1,1,3,3,12,12,79,79,8,8,19,19,14,14,11,11,30,30};
         shuffleArray(array_cartas);
                 
-        LayoutDificil.label_carta_1.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[0]+".png"));
-        LayoutDificil.label_carta_2.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[1]+".png"));
-        LayoutDificil.label_carta_3.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[2]+".png"));
-        LayoutDificil.label_carta_4.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[3]+".png"));
-        LayoutDificil.label_carta_5.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[4]+".png"));
-        LayoutDificil.label_carta_6.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[5]+".png"));
-        LayoutDificil.label_carta_7.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[6]+".png"));
-        LayoutDificil.label_carta_8.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[7]+".png"));
-        LayoutDificil.label_carta_9.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[8]+".png"));
-        LayoutDificil.label_carta_10.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[9]+".png"));
-        LayoutDificil.label_carta_11.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[10]+".png"));
-        LayoutDificil.label_carta_12.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[11]+".png"));
-        LayoutDificil.label_carta_13.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[12]+".png"));
-        LayoutDificil.label_carta_14.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[13]+".png"));
-        LayoutDificil.label_carta_15.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[14]+".png"));
-        LayoutDificil.label_carta_16.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[15]+".png"));
-        LayoutDificil.label_carta_17.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[16]+".png"));
-        LayoutDificil.label_carta_18.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[17]+".png"));
-        LayoutDificil.label_carta_19.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[18]+".png"));
-        LayoutDificil.label_carta_20.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[19]+".png"));
-        LayoutDificil.label_carta_21.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[20]+".png"));
-        LayoutDificil.label_carta_22.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[21]+".png"));
-        LayoutDificil.label_carta_23.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[22]+".png"));
-        LayoutDificil.label_carta_24.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[23]+".png"));
-        LayoutDificil.label_carta_25.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[24]+".png"));
-        LayoutDificil.label_carta_26.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[25]+".png"));
-        LayoutDificil.label_carta_27.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[26]+".png"));
-        LayoutDificil.label_carta_28.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[27]+".png"));
-        LayoutDificil.label_carta_29.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[28]+".png"));
-        LayoutDificil.label_carta_30.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[29]+".png"));
-        LayoutDificil.label_carta_31.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[30]+".png"));
-        LayoutDificil.label_carta_32.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[31]+".png"));
-        LayoutDificil.label_carta_33.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[32]+".png"));
-        LayoutDificil.label_carta_34.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[33]+".png"));
-        LayoutDificil.label_carta_35.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[34]+".png"));
-        LayoutDificil.label_carta_36.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[35]+".png"));
+        LayoutDificil.label_carta_1.setIcon(new ImageIcon("icones/"+array_cartas[0]+".png"));
+        LayoutDificil.label_carta_2.setIcon(new ImageIcon("icones/"+array_cartas[1]+".png"));
+        LayoutDificil.label_carta_3.setIcon(new ImageIcon("icones/"+array_cartas[2]+".png"));
+        LayoutDificil.label_carta_4.setIcon(new ImageIcon("icones/"+array_cartas[3]+".png"));
+        LayoutDificil.label_carta_5.setIcon(new ImageIcon("icones/"+array_cartas[4]+".png"));
+        LayoutDificil.label_carta_6.setIcon(new ImageIcon("icones/"+array_cartas[5]+".png"));
+        LayoutDificil.label_carta_7.setIcon(new ImageIcon("icones/"+array_cartas[6]+".png"));
+        LayoutDificil.label_carta_8.setIcon(new ImageIcon("icones/"+array_cartas[7]+".png"));
+        LayoutDificil.label_carta_9.setIcon(new ImageIcon("icones/"+array_cartas[8]+".png"));
+        LayoutDificil.label_carta_10.setIcon(new ImageIcon("icones/"+array_cartas[9]+".png"));
+        LayoutDificil.label_carta_11.setIcon(new ImageIcon("icones/"+array_cartas[10]+".png"));
+        LayoutDificil.label_carta_12.setIcon(new ImageIcon("icones/"+array_cartas[11]+".png"));
+        LayoutDificil.label_carta_13.setIcon(new ImageIcon("icones/"+array_cartas[12]+".png"));
+        LayoutDificil.label_carta_14.setIcon(new ImageIcon("icones/"+array_cartas[13]+".png"));
+        LayoutDificil.label_carta_15.setIcon(new ImageIcon("icones/"+array_cartas[14]+".png"));
+        LayoutDificil.label_carta_16.setIcon(new ImageIcon("icones/"+array_cartas[15]+".png"));
+        LayoutDificil.label_carta_17.setIcon(new ImageIcon("icones/"+array_cartas[16]+".png"));
+        LayoutDificil.label_carta_18.setIcon(new ImageIcon("icones/"+array_cartas[17]+".png"));
+        LayoutDificil.label_carta_19.setIcon(new ImageIcon("icones/"+array_cartas[18]+".png"));
+        LayoutDificil.label_carta_20.setIcon(new ImageIcon("icones/"+array_cartas[19]+".png"));
+        LayoutDificil.label_carta_21.setIcon(new ImageIcon("icones/"+array_cartas[20]+".png"));
+        LayoutDificil.label_carta_22.setIcon(new ImageIcon("icones/"+array_cartas[21]+".png"));
+        LayoutDificil.label_carta_23.setIcon(new ImageIcon("icones/"+array_cartas[22]+".png"));
+        LayoutDificil.label_carta_24.setIcon(new ImageIcon("icones/"+array_cartas[23]+".png"));
+        LayoutDificil.label_carta_25.setIcon(new ImageIcon("icones/"+array_cartas[24]+".png"));
+        LayoutDificil.label_carta_26.setIcon(new ImageIcon("icones/"+array_cartas[25]+".png"));
+        LayoutDificil.label_carta_27.setIcon(new ImageIcon("icones/"+array_cartas[26]+".png"));
+        LayoutDificil.label_carta_28.setIcon(new ImageIcon("icones/"+array_cartas[27]+".png"));
+        LayoutDificil.label_carta_29.setIcon(new ImageIcon("icones/"+array_cartas[28]+".png"));
+        LayoutDificil.label_carta_30.setIcon(new ImageIcon("icones/"+array_cartas[29]+".png"));
+        LayoutDificil.label_carta_31.setIcon(new ImageIcon("icones/"+array_cartas[30]+".png"));
+        LayoutDificil.label_carta_32.setIcon(new ImageIcon("icones/"+array_cartas[31]+".png"));
+        LayoutDificil.label_carta_33.setIcon(new ImageIcon("icones/"+array_cartas[32]+".png"));
+        LayoutDificil.label_carta_34.setIcon(new ImageIcon("icones/"+array_cartas[33]+".png"));
+        LayoutDificil.label_carta_35.setIcon(new ImageIcon("icones/"+array_cartas[34]+".png"));
+        LayoutDificil.label_carta_36.setIcon(new ImageIcon("icones/"+array_cartas[35]+".png"));
         
         this.dispose();
+>>>>>>> Stashed changes
     }//GEN-LAST:event_botao_dificilMouseClicked
 
+    private void botao_opcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botao_opcoesMouseClicked
+
+    private void botao_opcoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseEntered
+        botao_opcoes.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_botao_opcoesMouseEntered
+
+    private void botao_opcoesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseExited
+        botao_opcoes.setBackground(Color.WHITE);
+    }//GEN-LAST:event_botao_opcoesMouseExited
+
     private void botao_medioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_medioMouseClicked
+<<<<<<< Updated upstream
+
+=======
         new LayoutMedio().setVisible(true);
         
         int[] array_cartas = {20,20,6,6,17,17,16,16,50,50,26,26,15,15,31,31,2,2,1,1,3,3,12,12,79,79,8,8,19,19,14,14,11,11,30,30};
@@ -410,24 +461,25 @@ public class DefinirDificuldade extends javax.swing.JFrame {
      
         shuffleArray(array_medio);
                 
-        LayoutMedio.label_carta_1.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[0]+".png"));
-        LayoutMedio.label_carta_2.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[1]+".png"));
-        LayoutMedio.label_carta_3.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[2]+".png"));
-        LayoutMedio.label_carta_4.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[3]+".png"));
-        LayoutMedio.label_carta_5.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[4]+".png"));
-        LayoutMedio.label_carta_6.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[5]+".png"));
-        LayoutMedio.label_carta_7.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[6]+".png"));
-        LayoutMedio.label_carta_8.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[7]+".png"));
-        LayoutMedio.label_carta_9.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[8]+".png"));
-        LayoutMedio.label_carta_10.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[9]+".png"));
-        LayoutMedio.label_carta_11.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[10]+".png"));
-        LayoutMedio.label_carta_12.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[11]+".png"));
-        LayoutMedio.label_carta_13.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[12]+".png"));
-        LayoutMedio.label_carta_14.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[13]+".png"));
-        LayoutMedio.label_carta_15.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[14]+".png"));
-        LayoutMedio.label_carta_16.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[15]+".png"));
+        LayoutMedio.label_carta_1.setIcon(new ImageIcon("icones/"+array_medio[0]+".png"));
+        LayoutMedio.label_carta_2.setIcon(new ImageIcon("icones/"+array_medio[1]+".png"));
+        LayoutMedio.label_carta_3.setIcon(new ImageIcon("icones/"+array_medio[2]+".png"));
+        LayoutMedio.label_carta_4.setIcon(new ImageIcon("icones/"+array_medio[3]+".png"));
+        LayoutMedio.label_carta_5.setIcon(new ImageIcon("icones/"+array_medio[4]+".png"));
+        LayoutMedio.label_carta_6.setIcon(new ImageIcon("icones/"+array_medio[5]+".png"));
+        LayoutMedio.label_carta_7.setIcon(new ImageIcon("icones/"+array_medio[6]+".png"));
+        LayoutMedio.label_carta_8.setIcon(new ImageIcon("icones/"+array_medio[7]+".png"));
+        LayoutMedio.label_carta_9.setIcon(new ImageIcon("icones/"+array_medio[8]+".png"));
+        LayoutMedio.label_carta_10.setIcon(new ImageIcon("icones/"+array_medio[9]+".png"));
+        LayoutMedio.label_carta_11.setIcon(new ImageIcon("icones/"+array_medio[10]+".png"));
+        LayoutMedio.label_carta_12.setIcon(new ImageIcon("icones/"+array_medio[11]+".png"));
+        LayoutMedio.label_carta_13.setIcon(new ImageIcon("icones/"+array_medio[12]+".png"));
+        LayoutMedio.label_carta_14.setIcon(new ImageIcon("icones/"+array_medio[13]+".png"));
+        LayoutMedio.label_carta_15.setIcon(new ImageIcon("icones/"+array_medio[14]+".png"));
+        LayoutMedio.label_carta_16.setIcon(new ImageIcon("icones/"+array_medio[15]+".png"));
         
         this.dispose();
+>>>>>>> Stashed changes
     }//GEN-LAST:event_botao_medioMouseClicked
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
@@ -443,6 +495,8 @@ public class DefinirDificuldade extends javax.swing.JFrame {
         botao_voltar.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_voltarMouseExited
 
+<<<<<<< Updated upstream
+=======
     private void botao_facilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_facilMouseClicked
         new LayoutFacil().setVisible(true);
         
@@ -466,14 +520,15 @@ public class DefinirDificuldade extends javax.swing.JFrame {
      
         shuffleArray(array_facil);
                 
-        LayoutFacil.label_carta_1.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_facil[0]+".png"));
-        LayoutFacil.label_carta_2.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_facil[1]+".png"));
-        LayoutFacil.label_carta_3.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_facil[2]+".png"));
-        LayoutFacil.label_carta_4.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_facil[3]+".png"));
+        LayoutFacil.label_carta_1.setIcon(new ImageIcon("icones/"+array_facil[0]+".png"));
+        LayoutFacil.label_carta_2.setIcon(new ImageIcon("icones/"+array_facil[1]+".png"));
+        LayoutFacil.label_carta_3.setIcon(new ImageIcon("icones/"+array_facil[2]+".png"));
+        LayoutFacil.label_carta_4.setIcon(new ImageIcon("icones/"+array_facil[3]+".png"));
         
         this.dispose();
     }//GEN-LAST:event_botao_facilMouseClicked
 
+>>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
@@ -516,7 +571,9 @@ public class DefinirDificuldade extends javax.swing.JFrame {
     private javax.swing.JPanel botao_dificil;
     private javax.swing.JPanel botao_facil;
     private javax.swing.JPanel botao_medio;
+    private javax.swing.JPanel botao_opcoes;
     private javax.swing.JPanel botao_voltar;
+    private javax.swing.JLabel icone_botao_opcoes;
     private javax.swing.JLabel icone_botao_voltar;
     private javax.swing.JPanel painel_MenuPrincipal;
     private javax.swing.JLabel texto_barra_superior;
@@ -525,17 +582,4 @@ public class DefinirDificuldade extends javax.swing.JFrame {
     private javax.swing.JLabel texto_botao_medio;
     private javax.swing.JLabel titulo_dificuldade;
     // End of variables declaration//GEN-END:variables
-
-        static void shuffleArray(int[] ar)
-      {
-        Random rnd = ThreadLocalRandom.current();
-        for (int i = ar.length - 1; i > 0; i--)
-        {
-          int index = rnd.nextInt(i + 1);
-          // Simple swap
-          int a = ar[index];
-          ar[index] = ar[i];
-          ar[i] = a;
-        }
-      }
 }

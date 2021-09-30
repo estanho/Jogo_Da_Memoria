@@ -80,6 +80,8 @@ public class PlacarLideres extends javax.swing.JFrame {
         texto_medio = new javax.swing.JLabel();
         botao_dificil = new javax.swing.JPanel();
         texto_dificil = new javax.swing.JLabel();
+        botao_opcoes = new javax.swing.JPanel();
+        icone_botao_opcoes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jogo da Memória com elementos químicos");
@@ -142,7 +144,7 @@ public class PlacarLideres extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_voltar.setIcon(new javax.swing.ImageIcon("D:\\Projetos\\jogo_da_memoria\\icones\\voltar.png")); // NOI18N
+        icone_botao_voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\voltar.png")); // NOI18N
 
         javax.swing.GroupLayout botao_voltarLayout = new javax.swing.GroupLayout(botao_voltar);
         botao_voltar.setLayout(botao_voltarLayout);
@@ -309,6 +311,39 @@ public class PlacarLideres extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        botao_opcoes.setBackground(new java.awt.Color(255, 255, 255));
+        botao_opcoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        botao_opcoes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botao_opcoesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botao_opcoesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botao_opcoesMouseExited(evt);
+            }
+        });
+
+        icone_botao_opcoes.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
+
+        javax.swing.GroupLayout botao_opcoesLayout = new javax.swing.GroupLayout(botao_opcoes);
+        botao_opcoes.setLayout(botao_opcoesLayout);
+        botao_opcoesLayout.setHorizontalGroup(
+            botao_opcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botao_opcoesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(icone_botao_opcoes)
+                .addContainerGap())
+        );
+        botao_opcoesLayout.setVerticalGroup(
+            botao_opcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botao_opcoesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(icone_botao_opcoes)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout painel_PlacarLideresLayout = new javax.swing.GroupLayout(painel_PlacarLideres);
         painel_PlacarLideres.setLayout(painel_PlacarLideresLayout);
         painel_PlacarLideresLayout.setHorizontalGroup(
@@ -331,8 +366,9 @@ public class PlacarLideres extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(botao_medio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(botao_dificil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(45, 45, 45)))
+                                .addComponent(botao_dificil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(12, 12, 12))
         );
         painel_PlacarLideresLayout.setVerticalGroup(
@@ -352,7 +388,8 @@ public class PlacarLideres extends javax.swing.JFrame {
                 .addGroup(painel_PlacarLideresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botao_medio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botao_facil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botao_dificil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botao_dificil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botao_opcoes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -458,6 +495,18 @@ public class PlacarLideres extends javax.swing.JFrame {
             botao_dificil.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_dificilMouseExited
 
+    private void botao_opcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botao_opcoesMouseClicked
+
+    private void botao_opcoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseEntered
+        botao_opcoes.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_botao_opcoesMouseEntered
+
+    private void botao_opcoesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseExited
+        botao_opcoes.setBackground(Color.WHITE);
+    }//GEN-LAST:event_botao_opcoesMouseExited
+
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
         new MenuPrincipal().setVisible(true);
         this.dispose();
@@ -474,7 +523,7 @@ public class PlacarLideres extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public void main(String args[]) {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -513,7 +562,9 @@ public class PlacarLideres extends javax.swing.JFrame {
     private javax.swing.JPanel botao_dificil;
     private javax.swing.JPanel botao_facil;
     private javax.swing.JPanel botao_medio;
+    private javax.swing.JPanel botao_opcoes;
     private javax.swing.JPanel botao_voltar;
+    private javax.swing.JLabel icone_botao_opcoes;
     private javax.swing.JLabel icone_botao_voltar;
     private javax.swing.JPanel painel_PlacarLideres;
     private javax.swing.JScrollPane painel_tabela;
