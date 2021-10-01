@@ -264,11 +264,6 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="icone_botao_pause">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\T-Gamer\Documents\NetBeansProjects\Jogo_Da_Memoria\jogo_da_memoria\icones\opcoes.png"/>
-                </Property>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>

@@ -101,20 +101,7 @@ public class ManipularArquivos implements Runnable {
         
     }
     
-    public void salvarNovaCuriosidades(Integer id, String nome, String curiosidade) throws IOException{       
-        
-        String curiosidadesTxt = "Dados/Curiosidades.txt";
-                
-            
-        FileWriter fw = new FileWriter(curiosidadesTxt,true);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write("*;"+id+";"+nome+";"+curiosidade+";");
-        bw.newLine();
-        bw.close();
-        fw.close();
-        
-    }
-    
+   
     public void preencherPlacarLideres(ArrayList <Jogador> jogadoresFacil,
             ArrayList <Jogador> jogadoresMedio,
             ArrayList <Jogador> jogadoresDificil) throws FileNotFoundException, IOException{
@@ -164,25 +151,6 @@ public class ManipularArquivos implements Runnable {
             }
         }
         frD.close(); brD.close();
-    }
-    
-        public void preencherCuriosidades(ArrayList <Curiosidade> curiosidades) throws FileNotFoundException, IOException{
-        
-        String curiosidadesTxt = "Dados/Curiosidades.txt";
-        
-        FileReader fr = new FileReader(curiosidadesTxt);
-        BufferedReader br = new BufferedReader( fr );
-                                      
-        while(br.ready()){
-            String linha = br.readLine();
-            if(linha.startsWith("*")){
-                String[] dados = linha.split((";"));
-                Curiosidade curiosidade = new Curiosidade (Integer.parseInt(dados[1]),dados[2],dados[3]);
-                curiosidades.add(curiosidade);
-            }
-        }
-        fr.close(); br.close();
-
     }
     
     
