@@ -323,42 +323,42 @@ public class DefinirDificuldade extends javax.swing.JFrame {
         int[] array_cartas = {20,20,6,6,17,17,16,16,50,50,26,26,15,15,31,31,2,2,1,1,3,3,12,12,79,79,8,8,19,19,14,14,11,11,30,30};
         shuffleArray(array_cartas);
                 
-        LayoutDificil.label_carta_1.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[0]+".png"));
-        LayoutDificil.label_carta_2.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[1]+".png"));
-        LayoutDificil.label_carta_3.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[2]+".png"));
-        LayoutDificil.label_carta_4.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[3]+".png"));
-        LayoutDificil.label_carta_5.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[4]+".png"));
-        LayoutDificil.label_carta_6.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[5]+".png"));
-        LayoutDificil.label_carta_7.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[6]+".png"));
-        LayoutDificil.label_carta_8.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[7]+".png"));
-        LayoutDificil.label_carta_9.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[8]+".png"));
-        LayoutDificil.label_carta_10.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[9]+".png"));
-        LayoutDificil.label_carta_11.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[10]+".png"));
-        LayoutDificil.label_carta_12.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[11]+".png"));
-        LayoutDificil.label_carta_13.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[12]+".png"));
-        LayoutDificil.label_carta_14.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[13]+".png"));
-        LayoutDificil.label_carta_15.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[14]+".png"));
-        LayoutDificil.label_carta_16.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[15]+".png"));
-        LayoutDificil.label_carta_17.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[16]+".png"));
-        LayoutDificil.label_carta_18.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[17]+".png"));
-        LayoutDificil.label_carta_19.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[18]+".png"));
-        LayoutDificil.label_carta_20.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[19]+".png"));
-        LayoutDificil.label_carta_21.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[20]+".png"));
-        LayoutDificil.label_carta_22.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[21]+".png"));
-        LayoutDificil.label_carta_23.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[22]+".png"));
-        LayoutDificil.label_carta_24.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[23]+".png"));
-        LayoutDificil.label_carta_25.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[24]+".png"));
-        LayoutDificil.label_carta_26.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[25]+".png"));
-        LayoutDificil.label_carta_27.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[26]+".png"));
-        LayoutDificil.label_carta_28.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[27]+".png"));
-        LayoutDificil.label_carta_29.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[28]+".png"));
-        LayoutDificil.label_carta_30.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[29]+".png"));
-        LayoutDificil.label_carta_31.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[30]+".png"));
-        LayoutDificil.label_carta_32.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[31]+".png"));
-        LayoutDificil.label_carta_33.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[32]+".png"));
-        LayoutDificil.label_carta_34.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[33]+".png"));
-        LayoutDificil.label_carta_35.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[34]+".png"));
-        LayoutDificil.label_carta_36.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_cartas[35]+".png"));
+        LayoutDificil.label_carta_1.setIcon(new ImageIcon("icones/"+array_cartas[0]+".png"));
+        LayoutDificil.label_carta_2.setIcon(new ImageIcon("icones/"+array_cartas[1]+".png"));
+        LayoutDificil.label_carta_3.setIcon(new ImageIcon("icones/"+array_cartas[2]+".png"));
+        LayoutDificil.label_carta_4.setIcon(new ImageIcon("icones/"+array_cartas[3]+".png"));
+        LayoutDificil.label_carta_5.setIcon(new ImageIcon("icones/"+array_cartas[4]+".png"));
+        LayoutDificil.label_carta_6.setIcon(new ImageIcon("icones/"+array_cartas[5]+".png"));
+        LayoutDificil.label_carta_7.setIcon(new ImageIcon("icones/"+array_cartas[6]+".png"));
+        LayoutDificil.label_carta_8.setIcon(new ImageIcon("icones/"+array_cartas[7]+".png"));
+        LayoutDificil.label_carta_9.setIcon(new ImageIcon("icones/"+array_cartas[8]+".png"));
+        LayoutDificil.label_carta_10.setIcon(new ImageIcon("icones/"+array_cartas[9]+".png"));
+        LayoutDificil.label_carta_11.setIcon(new ImageIcon("icones/"+array_cartas[10]+".png"));
+        LayoutDificil.label_carta_12.setIcon(new ImageIcon("icones/"+array_cartas[11]+".png"));
+        LayoutDificil.label_carta_13.setIcon(new ImageIcon("icones/"+array_cartas[12]+".png"));
+        LayoutDificil.label_carta_14.setIcon(new ImageIcon("icones/"+array_cartas[13]+".png"));
+        LayoutDificil.label_carta_15.setIcon(new ImageIcon("icones/"+array_cartas[14]+".png"));
+        LayoutDificil.label_carta_16.setIcon(new ImageIcon("icones/"+array_cartas[15]+".png"));
+        LayoutDificil.label_carta_17.setIcon(new ImageIcon("icones/"+array_cartas[16]+".png"));
+        LayoutDificil.label_carta_18.setIcon(new ImageIcon("icones/"+array_cartas[17]+".png"));
+        LayoutDificil.label_carta_19.setIcon(new ImageIcon("icones/"+array_cartas[18]+".png"));
+        LayoutDificil.label_carta_20.setIcon(new ImageIcon("icones/"+array_cartas[19]+".png"));
+        LayoutDificil.label_carta_21.setIcon(new ImageIcon("icones/"+array_cartas[20]+".png"));
+        LayoutDificil.label_carta_22.setIcon(new ImageIcon("icones/"+array_cartas[21]+".png"));
+        LayoutDificil.label_carta_23.setIcon(new ImageIcon("icones/"+array_cartas[22]+".png"));
+        LayoutDificil.label_carta_24.setIcon(new ImageIcon("icones/"+array_cartas[23]+".png"));
+        LayoutDificil.label_carta_25.setIcon(new ImageIcon("icones/"+array_cartas[24]+".png"));
+        LayoutDificil.label_carta_26.setIcon(new ImageIcon("icones/"+array_cartas[25]+".png"));
+        LayoutDificil.label_carta_27.setIcon(new ImageIcon("icones/"+array_cartas[26]+".png"));
+        LayoutDificil.label_carta_28.setIcon(new ImageIcon("icones/"+array_cartas[27]+".png"));
+        LayoutDificil.label_carta_29.setIcon(new ImageIcon("icones/"+array_cartas[28]+".png"));
+        LayoutDificil.label_carta_30.setIcon(new ImageIcon("icones/"+array_cartas[29]+".png"));
+        LayoutDificil.label_carta_31.setIcon(new ImageIcon("icones/"+array_cartas[30]+".png"));
+        LayoutDificil.label_carta_32.setIcon(new ImageIcon("icones/"+array_cartas[31]+".png"));
+        LayoutDificil.label_carta_33.setIcon(new ImageIcon("icones/"+array_cartas[32]+".png"));
+        LayoutDificil.label_carta_34.setIcon(new ImageIcon("icones/"+array_cartas[33]+".png"));
+        LayoutDificil.label_carta_35.setIcon(new ImageIcon("icones/"+array_cartas[34]+".png"));
+        LayoutDificil.label_carta_36.setIcon(new ImageIcon("icones/"+array_cartas[35]+".png"));
         
         this.dispose();
     }//GEN-LAST:event_botao_dificilMouseClicked
@@ -410,22 +410,22 @@ public class DefinirDificuldade extends javax.swing.JFrame {
      
         shuffleArray(array_medio);
                 
-        LayoutMedio.label_carta_1.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[0]+".png"));
-        LayoutMedio.label_carta_2.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[1]+".png"));
-        LayoutMedio.label_carta_3.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[2]+".png"));
-        LayoutMedio.label_carta_4.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[3]+".png"));
-        LayoutMedio.label_carta_5.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[4]+".png"));
-        LayoutMedio.label_carta_6.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[5]+".png"));
-        LayoutMedio.label_carta_7.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[6]+".png"));
-        LayoutMedio.label_carta_8.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[7]+".png"));
-        LayoutMedio.label_carta_9.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[8]+".png"));
-        LayoutMedio.label_carta_10.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[9]+".png"));
-        LayoutMedio.label_carta_11.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[10]+".png"));
-        LayoutMedio.label_carta_12.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[11]+".png"));
-        LayoutMedio.label_carta_13.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[12]+".png"));
-        LayoutMedio.label_carta_14.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[13]+".png"));
-        LayoutMedio.label_carta_15.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[14]+".png"));
-        LayoutMedio.label_carta_16.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_medio[15]+".png"));
+        LayoutMedio.label_carta_1.setIcon(new ImageIcon("icones/"+array_medio[0]+".png"));
+        LayoutMedio.label_carta_2.setIcon(new ImageIcon("icones/"+array_medio[1]+".png"));
+        LayoutMedio.label_carta_3.setIcon(new ImageIcon("icones/"+array_medio[2]+".png"));
+        LayoutMedio.label_carta_4.setIcon(new ImageIcon("icones/"+array_medio[3]+".png"));
+        LayoutMedio.label_carta_5.setIcon(new ImageIcon("icones/"+array_medio[4]+".png"));
+        LayoutMedio.label_carta_6.setIcon(new ImageIcon("icones/"+array_medio[5]+".png"));
+        LayoutMedio.label_carta_7.setIcon(new ImageIcon("icones/"+array_medio[6]+".png"));
+        LayoutMedio.label_carta_8.setIcon(new ImageIcon("icones/"+array_medio[7]+".png"));
+        LayoutMedio.label_carta_9.setIcon(new ImageIcon("icones/"+array_medio[8]+".png"));
+        LayoutMedio.label_carta_10.setIcon(new ImageIcon("icones/"+array_medio[9]+".png"));
+        LayoutMedio.label_carta_11.setIcon(new ImageIcon("icones/"+array_medio[10]+".png"));
+        LayoutMedio.label_carta_12.setIcon(new ImageIcon("icones/"+array_medio[11]+".png"));
+        LayoutMedio.label_carta_13.setIcon(new ImageIcon("icones/"+array_medio[12]+".png"));
+        LayoutMedio.label_carta_14.setIcon(new ImageIcon("icones/"+array_medio[13]+".png"));
+        LayoutMedio.label_carta_15.setIcon(new ImageIcon("icones/"+array_medio[14]+".png"));
+        LayoutMedio.label_carta_16.setIcon(new ImageIcon("icones/"+array_medio[15]+".png"));
         
         this.dispose();
     }//GEN-LAST:event_botao_medioMouseClicked
@@ -466,10 +466,10 @@ public class DefinirDificuldade extends javax.swing.JFrame {
      
         shuffleArray(array_facil);
                 
-        LayoutFacil.label_carta_1.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_facil[0]+".png"));
-        LayoutFacil.label_carta_2.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_facil[1]+".png"));
-        LayoutFacil.label_carta_3.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_facil[2]+".png"));
-        LayoutFacil.label_carta_4.setIcon(new ImageIcon("D:\\Projetos\\jogo_da_memoria\\jogo_da_memoria\\icones\\"+array_facil[3]+".png"));
+        LayoutFacil.label_carta_1.setIcon(new ImageIcon("icones/"+array_facil[0]+".png"));
+        LayoutFacil.label_carta_2.setIcon(new ImageIcon("icones/"+array_facil[1]+".png"));
+        LayoutFacil.label_carta_3.setIcon(new ImageIcon("icones/"+array_facil[2]+".png"));
+        LayoutFacil.label_carta_4.setIcon(new ImageIcon("icones/"+array_facil[3]+".png"));
         
         this.dispose();
     }//GEN-LAST:event_botao_facilMouseClicked
