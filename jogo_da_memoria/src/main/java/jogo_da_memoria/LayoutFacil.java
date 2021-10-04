@@ -6,13 +6,29 @@
 package jogo_da_memoria;
 
 import java.awt.Color;
+import static java.lang.Integer.parseInt;
+import static java.lang.String.valueOf;
+import java.nio.file.Path;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
  * @author joaov
  */
 public class LayoutFacil extends javax.swing.JFrame {
-
+    public static int CartasSelecionadas = 0;
+    public static String Path = "";
+    public static String C1Icon = "";
+    public static String C2Icon = "";
+    public static String SegundaSelecionada = "";
+    public static String PrimeiraSelecionada = "";
+    public static JPanel SegundaSelecionadaObj;
+    public static JPanel PrimeiraSelecionadaObj;
+    public static int Pontos = 0;
+    
+   
     /**
      * Creates new form LayoutFacil
      */
@@ -70,7 +86,7 @@ public class LayoutFacil extends javax.swing.JFrame {
 
         contador_pontos.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         contador_pontos.setForeground(new java.awt.Color(0, 0, 0));
-        contador_pontos.setText("150");
+        contador_pontos.setText("0");
 
         javax.swing.GroupLayout barra_inferiorLayout = new javax.swing.GroupLayout(barra_inferior);
         barra_inferior.setLayout(barra_inferiorLayout);
@@ -81,7 +97,7 @@ public class LayoutFacil extends javax.swing.JFrame {
                 .addComponent(texto_pontos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contador_pontos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
                 .addComponent(texto_tempo_restante)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(contador_tempo)
@@ -318,51 +334,55 @@ public class LayoutFacil extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_pauseMouseExited
 
     private void carta_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_1MouseClicked
-        // TODO add your handling code here:
+        carta_1.setName("carta_1");
+        SelecionarCarta(carta_1,label_carta_1);
     }//GEN-LAST:event_carta_1MouseClicked
 
     private void carta_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_1MouseEntered
-        carta_1.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_1MouseEntered
 
     private void carta_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_1MouseExited
-        carta_1.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_1MouseExited
 
     private void carta_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_2MouseClicked
-        // TODO add your handling code here:
+        carta_2.setName("carta_2");
+        SelecionarCarta(carta_2,label_carta_2);
     }//GEN-LAST:event_carta_2MouseClicked
 
     private void carta_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_2MouseEntered
-        carta_2.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_2MouseEntered
 
     private void carta_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_2MouseExited
-        carta_2.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_2MouseExited
 
     private void carta_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_3MouseClicked
-        // TODO add your handling code here:
+        carta_3.setName("carta_3");
+        SelecionarCarta(carta_3,label_carta_3);
     }//GEN-LAST:event_carta_3MouseClicked
 
     private void carta_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_3MouseEntered
-        carta_3.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_3MouseEntered
 
     private void carta_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_3MouseExited
-        carta_3.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_3MouseExited
 
     private void carta_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_4MouseClicked
-        // TODO add your handling code here:
+        carta_4.setName("carta_4");
+        SelecionarCarta(carta_4,label_carta_4);
     }//GEN-LAST:event_carta_4MouseClicked
 
     private void carta_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_4MouseEntered
-        carta_4.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_4MouseEntered
 
     private void carta_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_4MouseExited
-        carta_4.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_4MouseExited
 
     /**
@@ -404,11 +424,11 @@ public class LayoutFacil extends javax.swing.JFrame {
     private javax.swing.JPanel barra_inferior;
     private javax.swing.JPanel barra_superior;
     private javax.swing.JPanel botao_pause;
-    private javax.swing.JPanel carta_1;
-    private javax.swing.JPanel carta_2;
-    private javax.swing.JPanel carta_3;
-    private javax.swing.JPanel carta_4;
-    private javax.swing.JLabel contador_pontos;
+    public static javax.swing.JPanel carta_1;
+    public static javax.swing.JPanel carta_2;
+    public static javax.swing.JPanel carta_3;
+    public static javax.swing.JPanel carta_4;
+    public static javax.swing.JLabel contador_pontos;
     private javax.swing.JLabel contador_tempo;
     private javax.swing.JLabel icone_botao_pause;
     public static javax.swing.JLabel label_carta_1;
@@ -420,4 +440,54 @@ public class LayoutFacil extends javax.swing.JFrame {
     private javax.swing.JLabel texto_pontos;
     private javax.swing.JLabel texto_tempo_restante;
     // End of variables declaration//GEN-END:variables
+    static void SelecionarCarta(JPanel carta,JLabel label){
+        String cor_carta = carta.getBackground().toString();
+        if(CartasSelecionadas == 0 && cor_carta.equals("java.awt.Color[r=255,g=255,b=255]")){
+            
+            Path = label.getIcon().toString();
+            C1Icon = Path.substring(Path.lastIndexOf("/"  ) + 1);
+            
+            System.out.println("Carta 1 Selecionada!");
+            carta.setBackground(Color.YELLOW);
+            CartasSelecionadas ++;
+            PrimeiraSelecionada = carta.getName();
+            PrimeiraSelecionadaObj = carta;
+            
+        }else if(CartasSelecionadas == 1 && cor_carta.equals("java.awt.Color[r=255,g=255,b=255]")){
+            
+            SegundaSelecionada = carta.getName();
+            SegundaSelecionadaObj = carta;
+            
+            if(!SegundaSelecionada.equals(PrimeiraSelecionada)){
+                
+                Path = label.getIcon().toString();
+                C2Icon = Path.substring(Path.lastIndexOf("/"  ) + 1);
+
+                System.out.println("Carta 2 Selecionada!");
+                carta.setBackground(Color.YELLOW);
+                CartasSelecionadas = 0;
+                CompararCartas(C1Icon, C2Icon, PrimeiraSelecionada, SegundaSelecionada, PrimeiraSelecionadaObj, SegundaSelecionadaObj);
+            }else{
+                System.out.println("Não é possível selecionar a mesma carta!");
+            }
+                        
+        }else{
+            System.out.println("Você não pode selecionar esta carta!");
+        }
+    }
+    
+    static void CompararCartas(String C1Icon, String C2Icon, String PrimeiraSelecionada, String SegundaSelecionada, JPanel PrimeiraCarta, JPanel SegundaCarta){       
+        if(C1Icon.equals(C2Icon)){
+            System.out.println("Parabéns, você encontrou o par correto! + 10 Pontos");
+            Pontos += 10;
+            contador_pontos.setText(valueOf(Pontos));
+            PrimeiraCarta.setBackground(Color.GREEN);
+            SegundaCarta.setBackground(Color.GREEN);
+        }else{
+            System.out.println("Beeeeeh! Par incorreto, tente novamente!");
+            PrimeiraCarta.setBackground(Color.WHITE);
+            SegundaCarta.setBackground(Color.WHITE);
+        }
+    }
+
 }

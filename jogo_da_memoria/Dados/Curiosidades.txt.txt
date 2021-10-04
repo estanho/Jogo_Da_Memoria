@@ -1,0 +1,57 @@
+- Curiosidades:
+*;1;Hidrogenio;O Hidrogênio é o elemento químico de menor massa atômica e menor número atômico!;
+*;1;Hidrogenio;O hidrogênio molecular é mais leve que o ar e foi utilizado em dirigíveis rígidos pelo conde alemão Ferdinand von Zeppelin, daí o nome dos dirigíveis.;
+
+*;2;Helio;O Hélio é até sete vezes mais leve que o oxigênio que respiramos!;
+*;2;Helio;Você sabe de onde veio o nome hélio? Curiosamente, vem de "Hélios", o deus grego do Sol.;
+
+*;3;Litio;O lítio é um metal alcalino . É branco prateado na forma pura e é tão macio que pode ser cortado com uma faca de manteiga.;
+*;3;Litio;O nome do lítio vem do grego Lithos, que significa pedra.;
+
+*;6;Carbono;Cerca de 20% do peso dos organismos vivos é referente ao carbono.;
+*;6;Carbono;O carbono é o 4° elemento mais abundante no Universo.;
+
+*;8;Oxigenio;Mesmo sendo fundamental para nossa existência, muito oxigênio pode ser um veneno!;
+*;8;Oxigenio;Os átomos de oxigênio (juntamente com outros elementos) excitados pelas radiações solares também são responsáveis pela geração das cores vistas nas auroras que acontecem nos polos.;
+
+*;11;Sodio;O sódio é um metal branco prateado pertencente ao Grupo 1 da Tabela Periódica, que é o grupo dos metais alcalinos.;
+*;11;Sodio;O sódio é um elemento abundante. É encontrado no sol e em muitas outras estrelas.;
+
+*;12;Magnesio;Magnésio é o metal mais leve da tabela periódica.;
+*;12;Magnesio;O nome é originário de Magnésia, que em grego designava uma região da Tessália na Grécia.;
+
+*;14;Silicio;O silício é o segundo elemento mais abundante na crosta terrestre (27,7%), ficando atrás somente do oxigênio.;
+*;14;Silicio;O silício está presente em praticamente toda areia, rocha, barro e solo.;
+
+*;15;Fosforo;Alguns textos referem-se ao fósforo como o "Elemento do Diabo" por causa de seu brilho assustador, tendência a explodir em chamas e por ser o 13º elemento conhecido.;
+*;15;Fosforo;De acordo com um estudo publicado no Proceedings of the National Academies of Sciences, o fósforo pode ter sido trazido à Terra por meteoritos.;
+
+*;16;Enxofre;O enxofre é um elemento essencial para a vida. É encontrado em aminoácidos e proteínas.;
+*;16;Enxofre;O enxofre é criado como parte do processo alfa em estrelas massivas.;
+
+*;17;Cloro;Se o Cloro fosse liberado do oceano, ele pesaria 5 vezes mais do que nossa atmosfera atual.;
+*;17;Cloro;O Cloro foi usado pelos alemães na Primeira Guerra Mundial em 1915 como arma química.;
+
+*;19;Potassio;Os compostos de potássio emitem uma cor de chama lilás ou violeta quando queimados.;
+*;19;Potassio;Um uso menos conhecido de potássio é como uma fonte de oxigênio portátil.O superóxido de potássio é um sólido laranja usado para liberar oxigênio e absorver o dióxido de carbono no sistema de respiração de submarinos, espaçonaves e minas.;
+
+*;20;Calcio;O cálcio é o quinto elemento mais abundante na crosta terrestre (3,6% em massa) e na crosta da Lua se faz presente na porcentagem de 8%.;
+*;20;Calcio;O cálcio é componente de várias ligas de alumínio, cobre e chumbo, e é usado como agente redutor na preparação de metais como o tório, o urânio e o zircônio.;
+
+*;26;Ferro;O ferro é um elemento conhecido em sua forma pura há pelo menos 5.000 anos.;
+*;26;Ferro;Do ferro se faz o aço, a liga metálica mais utilizada no planeta. Sendo a principal substância metálica produzida no Brasil, tendo uma participação superior a 70% no valor total de produção de metais.;
+
+*;30;Zinco;O zinco forma várias ligas importantes . O primeiro deles é o latão , uma liga de cobre e zinco.;
+*;30;Zinco;Quase todo o zinco extraído (95%) vem do minério de sulfeto de zinco. O zinco é facilmente reciclado e cerca de 30% do zinco produzido anualmente é metal reciclado.;
+
+*;31;Galio;O gálio (Ga) é o elemento químico de número atômico 31, possui um baixo ponto de fusão (29,76ºC) entre os metais, derretendo nas mãos, além de ser muito usado em semicondutores.;
+*;31;Galio;O elemento químico gálio é usado na fabricação de espelhos.;
+
+*;50;Estanho;O estanho é 15 vezes mais caro que o bronze, e ao misturá-lo com certas substâncias essa mistura pode gerar o cobre.;
+*;50;Estanho;Sozinho, o estanho é um metal extremamente macio, por isso que sempre misturam metais com ele.;
+
+*;79;Ouro;O ouro é tão difícil de ser encontrado que os especialistas calculam que existam apenas cinco quilos do metal para cada 1 milhão de toneladas de terra.;
+*;79;Ouro;O ouro é o único metal que não oxida.;
+
+
+

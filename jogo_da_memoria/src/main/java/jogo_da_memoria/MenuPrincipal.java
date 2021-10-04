@@ -220,7 +220,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_opcoes.setIcon(new javax.swing.ImageIcon("D:\\Projetos\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
+        icone_botao_opcoes.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
 
         javax.swing.GroupLayout botao_opcoesLayout = new javax.swing.GroupLayout(botao_opcoes);
         botao_opcoes.setLayout(botao_opcoesLayout);

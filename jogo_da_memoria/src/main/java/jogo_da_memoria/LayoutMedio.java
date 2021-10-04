@@ -6,12 +6,33 @@
 package jogo_da_memoria;
 
 import java.awt.Color;
+import static java.lang.String.valueOf;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import static jogo_da_memoria.LayoutFacil.CartasSelecionadas;
+import static jogo_da_memoria.LayoutFacil.Path;
+import static jogo_da_memoria.LayoutFacil.Pontos;
+import static jogo_da_memoria.LayoutFacil.PrimeiraSelecionadaObj;
+import static jogo_da_memoria.LayoutFacil.SegundaSelecionadaObj;
+import static jogo_da_memoria.LayoutFacil.SelecionarCarta;
+import static jogo_da_memoria.LayoutFacil.carta_1;
+import static jogo_da_memoria.LayoutFacil.contador_pontos;
+import static jogo_da_memoria.LayoutFacil.label_carta_1;
 
 /**
  *
  * @author joaov
  */
 public class LayoutMedio extends javax.swing.JFrame {
+    public static int CartasSelecionadas = 0;
+    public static String Path = "";
+    public static String C1Icon = "";
+    public static String C2Icon = "";
+    public static String SegundaSelecionada = "";
+    public static String PrimeiraSelecionada = "";
+    public static JPanel SegundaSelecionadaObj;
+    public static JPanel PrimeiraSelecionadaObj;
+    public static int Pontos = 0;
 
     /**
      * Creates new form LayoutMedio
@@ -95,7 +116,7 @@ public class LayoutMedio extends javax.swing.JFrame {
 
         contador_pontos.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         contador_pontos.setForeground(new java.awt.Color(0, 0, 0));
-        contador_pontos.setText("150");
+        contador_pontos.setText("0");
 
         javax.swing.GroupLayout barra_inferiorLayout = new javax.swing.GroupLayout(barra_inferior);
         barra_inferior.setLayout(barra_inferiorLayout);
@@ -684,195 +705,211 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_pauseMouseExited
 
     private void carta_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_1MouseClicked
-        // TODO add your handling code here:
+        carta_1.setName("carta_1");
+        SelecionarCarta(carta_1,label_carta_1);
     }//GEN-LAST:event_carta_1MouseClicked
 
     private void carta_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_1MouseEntered
-        carta_1.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_1MouseEntered
 
     private void carta_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_1MouseExited
-        carta_1.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_1MouseExited
 
     private void carta_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_2MouseClicked
-        // TODO add your handling code here:
+        carta_2.setName("carta_2");
+        SelecionarCarta(carta_2,label_carta_2);
     }//GEN-LAST:event_carta_2MouseClicked
 
     private void carta_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_2MouseEntered
-        carta_2.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_2MouseEntered
 
     private void carta_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_2MouseExited
-        carta_2.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_2MouseExited
 
     private void carta_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_3MouseClicked
-        // TODO add your handling code here:
+        carta_3.setName("carta_3");
+        SelecionarCarta(carta_3,label_carta_3);
     }//GEN-LAST:event_carta_3MouseClicked
 
     private void carta_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_3MouseEntered
-        carta_3.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_3MouseEntered
 
     private void carta_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_3MouseExited
-        carta_3.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_3MouseExited
 
     private void carta_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_4MouseClicked
-        // TODO add your handling code here:
+        carta_4.setName("carta_4");
+        SelecionarCarta(carta_4,label_carta_4);
     }//GEN-LAST:event_carta_4MouseClicked
 
     private void carta_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_4MouseEntered
-        carta_4.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_4MouseEntered
 
     private void carta_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_4MouseExited
-        carta_4.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_4MouseExited
 
     private void carta_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_5MouseClicked
-        // TODO add your handling code here:
+        carta_5.setName("carta_5");
+        SelecionarCarta(carta_5,label_carta_5);
     }//GEN-LAST:event_carta_5MouseClicked
 
     private void carta_5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_5MouseEntered
-        carta_5.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_5MouseEntered
 
     private void carta_5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_5MouseExited
-        carta_5.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_5MouseExited
 
     private void carta_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_6MouseClicked
-        // TODO add your handling code here:
+        carta_6.setName("carta_6");
+        SelecionarCarta(carta_6,label_carta_6);
     }//GEN-LAST:event_carta_6MouseClicked
 
     private void carta_6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_6MouseEntered
-        carta_6.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_6MouseEntered
 
     private void carta_6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_6MouseExited
-        carta_6.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_6MouseExited
 
     private void carta_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_7MouseClicked
-        // TODO add your handling code here:
+        carta_7.setName("carta_7");
+        SelecionarCarta(carta_7,label_carta_7);
     }//GEN-LAST:event_carta_7MouseClicked
 
     private void carta_7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_7MouseEntered
-        carta_7.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_7MouseEntered
 
     private void carta_7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_7MouseExited
-        carta_7.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_7MouseExited
 
     private void carta_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_8MouseClicked
-        // TODO add your handling code here:
+        carta_8.setName("carta_8");
+        SelecionarCarta(carta_8,label_carta_8);
     }//GEN-LAST:event_carta_8MouseClicked
 
     private void carta_8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_8MouseEntered
-        carta_8.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_8MouseEntered
 
     private void carta_8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_8MouseExited
-        carta_8.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_8MouseExited
 
     private void carta_9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_9MouseClicked
-        // TODO add your handling code here:
+        carta_9.setName("carta_9");
+        SelecionarCarta(carta_9,label_carta_9);
     }//GEN-LAST:event_carta_9MouseClicked
 
     private void carta_9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_9MouseEntered
-        carta_9.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_9MouseEntered
 
     private void carta_9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_9MouseExited
-        carta_9.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_9MouseExited
 
     private void carta_10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_10MouseClicked
-        // TODO add your handling code here:
+        carta_10.setName("carta_10");
+        SelecionarCarta(carta_10,label_carta_10);
     }//GEN-LAST:event_carta_10MouseClicked
 
     private void carta_10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_10MouseEntered
-        carta_10.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_10MouseEntered
 
     private void carta_10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_10MouseExited
-        carta_10.setBackground(Color.WHITE);
+   
     }//GEN-LAST:event_carta_10MouseExited
 
     private void carta_11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_11MouseClicked
-        // TODO add your handling code here:
+        carta_11.setName("carta_11");
+        SelecionarCarta(carta_11,label_carta_11);
     }//GEN-LAST:event_carta_11MouseClicked
 
     private void carta_11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_11MouseEntered
-        carta_11.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_11MouseEntered
 
     private void carta_11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_11MouseExited
-        carta_11.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_11MouseExited
 
     private void carta_12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_12MouseClicked
-        // TODO add your handling code here:
+        carta_12.setName("carta_12");
+        SelecionarCarta(carta_12,label_carta_12);
     }//GEN-LAST:event_carta_12MouseClicked
 
     private void carta_12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_12MouseEntered
-        carta_12.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_12MouseEntered
 
     private void carta_12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_12MouseExited
-        carta_12.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_carta_12MouseExited
 
     private void carta_13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_13MouseClicked
-        // TODO add your handling code here:
+        carta_13.setName("carta_13");
+        SelecionarCarta(carta_13,label_carta_13);
     }//GEN-LAST:event_carta_13MouseClicked
 
     private void carta_13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_13MouseEntered
-        carta_13.setBackground(Color.RED);
+
     }//GEN-LAST:event_carta_13MouseEntered
 
     private void carta_13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_13MouseExited
-        carta_13.setBackground(Color.WHITE);
+  
     }//GEN-LAST:event_carta_13MouseExited
 
     private void carta_14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_14MouseClicked
-        // TODO add your handling code here:
+        carta_14.setName("carta_14");
+        SelecionarCarta(carta_14,label_carta_14);
     }//GEN-LAST:event_carta_14MouseClicked
 
     private void carta_14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_14MouseEntered
-        carta_14.setBackground(Color.RED);
+ 
     }//GEN-LAST:event_carta_14MouseEntered
 
     private void carta_14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_14MouseExited
-        carta_14.setBackground(Color.WHITE);
+       
     }//GEN-LAST:event_carta_14MouseExited
 
     private void carta_15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_15MouseClicked
-        // TODO add your handling code here:
+        carta_15.setName("carta_15");
+        SelecionarCarta(carta_15,label_carta_15);
     }//GEN-LAST:event_carta_15MouseClicked
 
     private void carta_15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_15MouseEntered
-        carta_15.setBackground(Color.RED);
+ 
     }//GEN-LAST:event_carta_15MouseEntered
 
     private void carta_15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_15MouseExited
-        carta_15.setBackground(Color.WHITE);
+     
     }//GEN-LAST:event_carta_15MouseExited
 
     private void carta_16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_16MouseClicked
-        // TODO add your handling code here:
+        carta_16.setName("carta_16");
+        SelecionarCarta(carta_16,label_carta_16);
     }//GEN-LAST:event_carta_16MouseClicked
 
     private void carta_16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_16MouseEntered
-        carta_16.setBackground(Color.RED);
+     
     }//GEN-LAST:event_carta_16MouseEntered
 
     private void carta_16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_16MouseExited
-        carta_16.setBackground(Color.WHITE);
+       
     }//GEN-LAST:event_carta_16MouseExited
 
     /**
@@ -930,7 +967,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     private javax.swing.JPanel carta_7;
     private javax.swing.JPanel carta_8;
     private javax.swing.JPanel carta_9;
-    private javax.swing.JLabel contador_pontos;
+    public static javax.swing.JLabel contador_pontos;
     private javax.swing.JLabel contador_tempo;
     private javax.swing.JLabel icone_botao_pause;
     public static javax.swing.JLabel label_carta_1;
@@ -954,4 +991,53 @@ public class LayoutMedio extends javax.swing.JFrame {
     private javax.swing.JLabel texto_pontos;
     private javax.swing.JLabel texto_tempo_restante;
     // End of variables declaration//GEN-END:variables
+static void SelecionarCarta(JPanel carta,JLabel label){
+        String cor_carta = carta.getBackground().toString();
+        if(CartasSelecionadas == 0 && cor_carta.equals("java.awt.Color[r=255,g=255,b=255]")){
+            
+            Path = label.getIcon().toString();
+            C1Icon = Path.substring(Path.lastIndexOf("/"  ) + 1);
+            
+            System.out.println("Carta 1 Selecionada!");
+            carta.setBackground(Color.YELLOW);
+            CartasSelecionadas ++;
+            PrimeiraSelecionada = carta.getName();
+            PrimeiraSelecionadaObj = carta;
+            
+        }else if(CartasSelecionadas == 1 && cor_carta.equals("java.awt.Color[r=255,g=255,b=255]")){
+            
+            SegundaSelecionada = carta.getName();
+            SegundaSelecionadaObj = carta;
+            
+            if(!SegundaSelecionada.equals(PrimeiraSelecionada)){
+                
+                Path = label.getIcon().toString();
+                C2Icon = Path.substring(Path.lastIndexOf("/"  ) + 1);
+
+                System.out.println("Carta 2 Selecionada!");
+                carta.setBackground(Color.YELLOW);
+                CartasSelecionadas = 0;
+                CompararCartas(C1Icon, C2Icon, PrimeiraSelecionada, SegundaSelecionada, PrimeiraSelecionadaObj, SegundaSelecionadaObj);
+            }else{
+                System.out.println("Não é possível selecionar a mesma carta!");
+            }
+                        
+        }else{
+            System.out.println("Você não pode selecionar esta carta!");
+        }
+    }
+    
+    static void CompararCartas(String C1Icon, String C2Icon, String PrimeiraSelecionada, String SegundaSelecionada, JPanel PrimeiraCarta, JPanel SegundaCarta){       
+        if(C1Icon.equals(C2Icon)){
+            System.out.println("Parabéns, você encontrou o par correto! + 10 Pontos");
+            Pontos += 10;
+            contador_pontos.setText(valueOf(Pontos));
+            PrimeiraCarta.setBackground(Color.GREEN);
+            SegundaCarta.setBackground(Color.GREEN);
+        }else{
+            System.out.println("Beeeeeh! Par incorreto, tente novamente!");
+            PrimeiraCarta.setBackground(Color.WHITE);
+            SegundaCarta.setBackground(Color.WHITE);
+        }
+    }
 }
