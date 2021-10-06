@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -142,7 +143,7 @@ public class PlacarLideres extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_voltar.setIcon(new javax.swing.ImageIcon("D:\\Projetos\\jogo_da_memoria\\icones\\voltar.png")); // NOI18N
+        icone_botao_voltar.setIcon(new ImageIcon("icones/voltar.png"));
 
         javax.swing.GroupLayout botao_voltarLayout = new javax.swing.GroupLayout(botao_voltar);
         botao_voltar.setLayout(botao_voltarLayout);

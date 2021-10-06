@@ -5,8 +5,17 @@
  */
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.Curiosidade;
+import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -17,11 +26,34 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
     /**
      * Creates new form MenuOpcoes
      */
-        
+    ArrayList <Curiosidade> curiosidades = new ArrayList();
+    
+    ManipularArquivos arquivos = new ManipularArquivos();
+    
     DefaultTableModel modeloTabela;
     
     public AreaAdministrativaCriar() {
         initComponents();
+        
+        botao_criar.setBackground(Color.GRAY);
+        
+        try {
+            arquivos.preencherCuriosidades(curiosidades);
+
+            modeloTabela = (DefaultTableModel) tabela.getModel();
+            
+            tabela.setRowSorter(new TableRowSorter(modeloTabela));
+
+            for(int i=0;i<curiosidades.size();i++){
+                Object[] dados = {curiosidades.get(i).getNome(),curiosidades.get(i).getCuriosidade()};
+                modeloTabela.addRow(dados);
+            }
+            
+            botao_criar.setBackground(Color.GRAY);
+             
+        } catch (IOException ex) {
+            Logger.getLogger(PlacarLideres.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -33,7 +65,7 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        painel_cartas = new javax.swing.JPanel();
+        painel_curiosidades = new javax.swing.JPanel();
         barra_inferior = new javax.swing.JPanel();
         barra_superior = new javax.swing.JPanel();
         texto_barra_superior = new javax.swing.JLabel();
@@ -54,13 +86,14 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
         campo_curiosidade = new javax.swing.JTextPane();
         botao_salvar = new javax.swing.JPanel();
         texto_salvar = new javax.swing.JLabel();
+        campo_elemento = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jogo da Memória com elementos químicos");
         setResizable(false);
 
-        painel_cartas.setBackground(new java.awt.Color(255, 255, 255));
-        painel_cartas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        painel_curiosidades.setBackground(new java.awt.Color(255, 255, 255));
+        painel_curiosidades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         barra_inferior.setBackground(new java.awt.Color(255, 255, 255));
         barra_inferior.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -116,7 +149,7 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\voltar.png")); // NOI18N
+        icone_botao_voltar.setIcon(new ImageIcon("icones/voltar.png"));
 
         javax.swing.GroupLayout botao_voltarLayout = new javax.swing.GroupLayout(botao_voltar);
         botao_voltar.setLayout(botao_voltarLayout);
@@ -159,13 +192,12 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tabela.setFocusable(false);
         tabela.setGridColor(new java.awt.Color(102, 102, 102));
-        tabela.setOpaque(false);
-        tabela.setRequestFocusEnabled(false);
         tabela.setRowHeight(30);
-        tabela.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        tabela.setSelectionBackground(new java.awt.Color(204, 204, 204));
         tabela.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        tabela.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabela.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tabela.setShowGrid(true);
         tabela.getTableHeader().setReorderingAllowed(false);
         painel_tabela.setViewportView(tabela);
@@ -323,30 +355,45 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        campo_elemento.setBackground(new java.awt.Color(255, 255, 255));
+        campo_elemento.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        campo_elemento.setForeground(new java.awt.Color(0, 0, 0));
+        campo_elemento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hidrogenio", "Helio", "Litio", "Carbono", "Oxigenio", "Sodio", "Magnesio", "Silicio", "Fosforo", "Enxofre", "Cloro", "Potassio", "Calcio", "Ferro", "Zinco", "Galio", "Estanho", "Ouro" }));
+        campo_elemento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_elementoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PainelCriarCuriosidadeLayout = new javax.swing.GroupLayout(PainelCriarCuriosidade);
         PainelCriarCuriosidade.setLayout(PainelCriarCuriosidadeLayout);
         PainelCriarCuriosidadeLayout.setHorizontalGroup(
             PainelCriarCuriosidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PainelCriarCuriosidadeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(texto_criarCuriosidade)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelCriarCuriosidadeLayout.createSequentialGroup()
                 .addContainerGap(19, Short.MAX_VALUE)
-                .addGroup(PainelCriarCuriosidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botao_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PainelCriarCuriosidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PainelCriarCuriosidadeLayout.createSequentialGroup()
-                        .addComponent(texto_curiosidade)
-                        .addGap(18, 18, 18)
-                        .addComponent(campo_curiosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)))
-                .addGap(19, 19, 19))
+                        .addComponent(campo_elemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(88, 88, 88)
+                        .addComponent(texto_criarCuriosidade)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelCriarCuriosidadeLayout.createSequentialGroup()
+                        .addGroup(PainelCriarCuriosidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(botao_salvar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PainelCriarCuriosidadeLayout.createSequentialGroup()
+                                .addComponent(texto_curiosidade)
+                                .addGap(18, 18, 18)
+                                .addComponent(campo_curiosidade, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(2, 2, 2)))
+                        .addGap(19, 19, 19))))
         );
         PainelCriarCuriosidadeLayout.setVerticalGroup(
             PainelCriarCuriosidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelCriarCuriosidadeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(texto_criarCuriosidade)
+                .addGroup(PainelCriarCuriosidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(texto_criarCuriosidade)
+                    .addComponent(campo_elemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(PainelCriarCuriosidadeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PainelCriarCuriosidadeLayout.createSequentialGroup()
@@ -359,23 +406,23 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        javax.swing.GroupLayout painel_cartasLayout = new javax.swing.GroupLayout(painel_cartas);
-        painel_cartas.setLayout(painel_cartasLayout);
-        painel_cartasLayout.setHorizontalGroup(
-            painel_cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout painel_curiosidadesLayout = new javax.swing.GroupLayout(painel_curiosidades);
+        painel_curiosidades.setLayout(painel_curiosidadesLayout);
+        painel_curiosidadesLayout.setHorizontalGroup(
+            painel_curiosidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(barra_inferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(barra_superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_cartasLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_curiosidadesLayout.createSequentialGroup()
                 .addGap(167, 167, 167)
                 .addComponent(titulo_areaAdministrativa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_cartasLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_curiosidadesLayout.createSequentialGroup()
                 .addContainerGap(75, Short.MAX_VALUE)
-                .addGroup(painel_cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(painel_curiosidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(painel_tabela)
-                    .addGroup(painel_cartasLayout.createSequentialGroup()
+                    .addGroup(painel_curiosidadesLayout.createSequentialGroup()
                         .addComponent(botao_criar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botao_editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -384,23 +431,23 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
                     .addComponent(PainelCriarCuriosidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
-        painel_cartasLayout.setVerticalGroup(
-            painel_cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_cartasLayout.createSequentialGroup()
+        painel_curiosidadesLayout.setVerticalGroup(
+            painel_curiosidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_curiosidadesLayout.createSequentialGroup()
                 .addComponent(barra_superior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(painel_cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painel_cartasLayout.createSequentialGroup()
+                .addGroup(painel_curiosidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painel_curiosidadesLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(titulo_areaAdministrativa))
-                    .addGroup(painel_cartasLayout.createSequentialGroup()
+                    .addGroup(painel_curiosidadesLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
                 .addComponent(painel_tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(PainelCriarCuriosidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addGroup(painel_cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(painel_curiosidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botao_editar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botao_criar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botao_excluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -412,80 +459,52 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painel_cartas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(painel_curiosidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painel_cartas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painel_curiosidades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void botao_criarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_criarMouseExited
-        Color cor = botao_criar.getBackground();
-        if(cor != Color.GRAY)
-            botao_criar.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_botao_criarMouseExited
 
     private void botao_criarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_criarMouseEntered
-        Color cor = botao_criar.getBackground();
-        if(cor != Color.GRAY)
-            botao_criar.setBackground(Color.LIGHT_GRAY);
+
     }//GEN-LAST:event_botao_criarMouseEntered
 
     private void botao_editarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_editarMouseExited
-        Color cor = botao_editar.getBackground();
-        if(cor != Color.GRAY)
-            botao_editar.setBackground(Color.WHITE);
+        botao_editar.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_editarMouseExited
 
     private void botao_editarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_editarMouseEntered
-        Color cor = botao_editar.getBackground();
-        if(cor != Color.GRAY)
-            botao_editar.setBackground(Color.LIGHT_GRAY);
+        botao_editar.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_botao_editarMouseEntered
 
     private void botao_criarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_criarMouseClicked
-        if(botao_criar.getBackground()!=Color.GRAY) {
-            
-            if(botao_editar.getBackground() == Color.GRAY)   botao_editar.setBackground(Color.WHITE);
-            if(botao_excluir.getBackground() == Color.GRAY)   botao_excluir.setBackground(Color.WHITE);
-            
-            botao_criar.setBackground(Color.GRAY);
-        }
+        
     }//GEN-LAST:event_botao_criarMouseClicked
 
     private void botao_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_editarMouseClicked
-        if(botao_editar.getBackground()!=Color.GRAY) {
-            
-            if(botao_criar.getBackground() == Color.GRAY)   botao_criar.setBackground(Color.WHITE);
-            if(botao_excluir.getBackground() == Color.GRAY)   botao_excluir.setBackground(Color.WHITE);
-
-            botao_editar.setBackground(Color.GRAY);
-        }
+        new AreaAdministrativaEditar().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_botao_editarMouseClicked
 
     private void botao_excluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_excluirMouseClicked
-        if(botao_excluir.getBackground()!=Color.GRAY) {
-            
-            if(botao_criar.getBackground() == Color.GRAY)   botao_criar.setBackground(Color.WHITE);
-            if(botao_editar.getBackground() == Color.GRAY)   botao_editar.setBackground(Color.WHITE);
-            
-            botao_excluir.setBackground(Color.GRAY);
-        }
+        new AreaAdministrativaExcluir().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_botao_excluirMouseClicked
 
     private void botao_excluirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_excluirMouseEntered
-        Color cor = botao_excluir.getBackground();
-        if(cor != Color.GRAY)
-            botao_excluir.setBackground(Color.LIGHT_GRAY);
+        botao_excluir.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_botao_excluirMouseEntered
 
     private void botao_excluirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_excluirMouseExited
-        Color cor = botao_excluir.getBackground();
-        if(cor != Color.GRAY)
-            botao_excluir.setBackground(Color.WHITE);
+        botao_excluir.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_excluirMouseExited
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
@@ -502,16 +521,42 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_voltarMouseExited
 
     private void botao_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_salvarMouseClicked
-        // TODO add your handling code here:
+        ManipularArquivos arquivos = new ManipularArquivos();
+              
+        try {
+          
+            if ((campo_curiosidade.getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\\s!.,:@#$%&*\\(\\)?'[0-9]]+$")&&(!"".equals(campo_curiosidade.getText())))){
+                arquivos.salvarNovaCuriosidades(campo_elemento.getSelectedItem().toString(),campo_curiosidade.getText());
+                
+                Object[] dados = {campo_elemento.getSelectedItem().toString(),campo_curiosidade.getText()};
+                
+                modeloTabela.addRow(dados);
+                
+                campo_curiosidade.setText("");
+                
+                JOptionPane.showMessageDialog(null,""
+                            + "Curiosidade cadastrada com sucesso!\n","Cadastro", JOptionPane.WARNING_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(null,""
+                            + "Caracter Invalido!\n","Atencao", JOptionPane.WARNING_MESSAGE);
+            }
+            
+        } catch (IOException ex) {
+            Logger.getLogger(InserirNomePlacar.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_botao_salvarMouseClicked
 
     private void botao_salvarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_salvarMouseEntered
-        // TODO add your handling code here:
+        botao_salvar.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_botao_salvarMouseEntered
 
     private void botao_salvarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_salvarMouseExited
-        // TODO add your handling code here:
+        botao_salvar.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_salvarMouseExited
+
+    private void campo_elementoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_elementoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_elementoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -559,8 +604,9 @@ public class AreaAdministrativaCriar extends javax.swing.JFrame {
     private javax.swing.JPanel botao_salvar;
     private javax.swing.JPanel botao_voltar;
     private javax.swing.JTextPane campo_curiosidade;
+    private javax.swing.JComboBox<String> campo_elemento;
     private javax.swing.JLabel icone_botao_voltar;
-    private javax.swing.JPanel painel_cartas;
+    private javax.swing.JPanel painel_curiosidades;
     private javax.swing.JScrollPane painel_tabela;
     private javax.swing.JTable tabela;
     private javax.swing.JLabel texto_barra_superior;

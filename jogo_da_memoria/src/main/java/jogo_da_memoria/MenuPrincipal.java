@@ -5,8 +5,8 @@
  */
 package jogo_da_memoria;
 
-import codigo_jogo_da_memoria.Jogador;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -44,6 +44,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         titulo_jogo2 = new javax.swing.JLabel();
         botao_opcoes = new javax.swing.JPanel();
         icone_botao_opcoes = new javax.swing.JLabel();
+        botao_login = new javax.swing.JPanel();
+        icone_botao_login = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jogo da Memória com elementos químicos");
@@ -220,7 +222,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_opcoes.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
+        icone_botao_opcoes.setIcon(new ImageIcon("icones/opcoes.png"));
 
         javax.swing.GroupLayout botao_opcoesLayout = new javax.swing.GroupLayout(botao_opcoes);
         botao_opcoes.setLayout(botao_opcoesLayout);
@@ -239,17 +241,48 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        botao_login.setBackground(new java.awt.Color(255, 255, 255));
+        botao_login.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        botao_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botao_loginMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botao_loginMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botao_loginMouseExited(evt);
+            }
+        });
+
+        icone_botao_login.setIcon(new ImageIcon("icones/login.png"));
+
+        javax.swing.GroupLayout botao_loginLayout = new javax.swing.GroupLayout(botao_login);
+        botao_login.setLayout(botao_loginLayout);
+        botao_loginLayout.setHorizontalGroup(
+            botao_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botao_loginLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(icone_botao_login)
+                .addContainerGap())
+        );
+        botao_loginLayout.setVerticalGroup(
+            botao_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(botao_loginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(icone_botao_login)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout painel_MenuPrincipalLayout = new javax.swing.GroupLayout(painel_MenuPrincipal);
         painel_MenuPrincipal.setLayout(painel_MenuPrincipalLayout);
         painel_MenuPrincipalLayout.setHorizontalGroup(
             painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
-                .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(barra_superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(barra_inferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(barra_superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(barra_inferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(111, Short.MAX_VALUE)
                 .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPrincipalLayout.createSequentialGroup()
                         .addComponent(titulo_jogo1)
@@ -264,6 +297,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addComponent(botao_sair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(195, 195, 195))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPrincipalLayout.createSequentialGroup()
+                        .addComponent(botao_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -281,21 +316,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(botao_placar_lideres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botao_sair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
+                        .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(botao_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painel_MenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(painel_MenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painel_MenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(painel_MenuPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -330,8 +370,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_sairMouseClicked
 
     private void botao_opcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseClicked
-        new MenuOpcoes().setVisible(true);
-        this.dispose();
+        MenuOpcoes opcoes = new MenuOpcoes(new javax.swing.JFrame(),true);
+        opcoes.setVisible(true);
     }//GEN-LAST:event_botao_opcoesMouseClicked
 
     private void botao_opcoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseEntered
@@ -351,6 +391,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
         new DefinirDificuldade().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_jogarMouseClicked
+
+    private void botao_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_loginMouseClicked
+        LoginAdministrador login = new LoginAdministrador(new javax.swing.JFrame(),true, this);
+        login.setVisible(true);
+    }//GEN-LAST:event_botao_loginMouseClicked
+
+    private void botao_loginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_loginMouseEntered
+        botao_login.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_botao_loginMouseEntered
+
+    private void botao_loginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_loginMouseExited
+        botao_login.setBackground(Color.WHITE);
+    }//GEN-LAST:event_botao_loginMouseExited
 
     /**
      * @param args the command line arguments
@@ -391,9 +444,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel barra_inferior;
     private javax.swing.JPanel barra_superior;
     private javax.swing.JPanel botao_jogar;
+    private javax.swing.JPanel botao_login;
     private javax.swing.JPanel botao_opcoes;
     private javax.swing.JPanel botao_placar_lideres;
     private javax.swing.JPanel botao_sair;
+    private javax.swing.JLabel icone_botao_login;
     private javax.swing.JLabel icone_botao_opcoes;
     private javax.swing.JPanel painel_MenuPrincipal;
     private javax.swing.JLabel texto_barra_superior;

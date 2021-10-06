@@ -6,17 +6,19 @@
 package jogo_da_memoria;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 /**
  *
- * @author joaov
+ * @author Estanho
  */
-public class MenuOpcoes extends javax.swing.JFrame {
+public class MenuOpcoes extends javax.swing.JDialog {
 
     /**
-     * Creates new form MenuOpcoes
+     * Creates new form Teste
      */
-    public MenuOpcoes() {
+    public MenuOpcoes(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
@@ -43,9 +45,7 @@ public class MenuOpcoes extends javax.swing.JFrame {
         texto_musica = new javax.swing.JLabel();
         slider_musica = new javax.swing.JSlider();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Jogo da Memória com elementos químicos");
-        setResizable(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         painel_MenuOpcoes.setBackground(new java.awt.Color(255, 255, 255));
         painel_MenuOpcoes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -197,14 +197,14 @@ public class MenuOpcoes extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painel_MenuOpcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuOpcoesLayout.createSequentialGroup()
-                        .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(195, 195, 195))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuOpcoesLayout.createSequentialGroup()
                         .addGroup(painel_MenuOpcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(painel_sons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(titulo_opcoes)
                             .addComponent(painel_musica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(160, 160, 160))))
+                        .addGap(160, 160, 160))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuOpcoesLayout.createSequentialGroup()
+                        .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(188, 188, 188))))
         );
         painel_MenuOpcoesLayout.setVerticalGroup(
             painel_MenuOpcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,9 +216,9 @@ public class MenuOpcoes extends javax.swing.JFrame {
                 .addComponent(painel_sons, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(painel_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102)
+                .addGap(39, 39, 39)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -245,7 +245,6 @@ public class MenuOpcoes extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_voltarMouseExited
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
-        new MenuPrincipal().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_voltarMouseClicked
 
@@ -275,11 +274,19 @@ public class MenuOpcoes extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MenuOpcoes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuOpcoes().setVisible(true);
+                MenuOpcoes dialog = new MenuOpcoes(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }

@@ -5,8 +5,17 @@
  */
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.Curiosidade;
+import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -17,11 +26,32 @@ public class AreaAdministrativaEditar extends javax.swing.JFrame {
     /**
      * Creates new form MenuOpcoes
      */
-        
+    ArrayList <Curiosidade> curiosidades = new ArrayList();
+    
+    ManipularArquivos arquivos = new ManipularArquivos();
+    
     DefaultTableModel modeloTabela;
     
     public AreaAdministrativaEditar() {
         initComponents();
+        
+        botao_editar.setBackground(Color.GRAY);
+        
+        try {
+            arquivos.preencherCuriosidades(curiosidades);
+
+            modeloTabela = (DefaultTableModel) tabela.getModel();
+            
+            tabela.setRowSorter(new TableRowSorter(modeloTabela));
+
+            for(int i=0;i<curiosidades.size();i++){
+                Object[] dados = {curiosidades.get(i).getNome(),curiosidades.get(i).getCuriosidade()};
+                modeloTabela.addRow(dados);
+            }
+                      
+        } catch (IOException ex) {
+            Logger.getLogger(PlacarLideres.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -40,7 +70,7 @@ public class AreaAdministrativaEditar extends javax.swing.JFrame {
         titulo_areaAdministrativa = new javax.swing.JLabel();
         botao_voltar = new javax.swing.JPanel();
         icone_botao_voltar = new javax.swing.JLabel();
-        painel_tabela = new javax.swing.JScrollPane();
+        painel_tabela1 = new javax.swing.JScrollPane();
         tabela = new javax.swing.JTable();
         botao_criar = new javax.swing.JPanel();
         texto_criar = new javax.swing.JLabel();
@@ -116,7 +146,7 @@ public class AreaAdministrativaEditar extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_voltar.setIcon(new javax.swing.ImageIcon("C:\\Users\\T-Gamer\\Documents\\NetBeansProjects\\Jogo_Da_Memoria\\jogo_da_memoria\\icones\\voltar.png")); // NOI18N
+        icone_botao_voltar.setIcon(new ImageIcon("icones/voltar.png"));
 
         javax.swing.GroupLayout botao_voltarLayout = new javax.swing.GroupLayout(botao_voltar);
         botao_voltar.setLayout(botao_voltarLayout);
@@ -135,11 +165,11 @@ public class AreaAdministrativaEditar extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        painel_tabela.setBackground(new java.awt.Color(255, 255, 255));
-        painel_tabela.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        painel_tabela.setFocusable(false);
-        painel_tabela.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        painel_tabela.setWheelScrollingEnabled(false);
+        painel_tabela1.setBackground(new java.awt.Color(255, 255, 255));
+        painel_tabela1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        painel_tabela1.setFocusable(false);
+        painel_tabela1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        painel_tabela1.setWheelScrollingEnabled(false);
 
         tabela.setBackground(new java.awt.Color(255, 255, 255));
         tabela.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -159,20 +189,20 @@ public class AreaAdministrativaEditar extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tabela.setFocusable(false);
         tabela.setGridColor(new java.awt.Color(102, 102, 102));
-        tabela.setOpaque(false);
-        tabela.setRequestFocusEnabled(false);
         tabela.setRowHeight(30);
-        tabela.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        tabela.setSelectionBackground(new java.awt.Color(204, 204, 204));
         tabela.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        tabela.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tabela.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tabela.setShowGrid(true);
         tabela.getTableHeader().setReorderingAllowed(false);
-        painel_tabela.setViewportView(tabela);
-        if (tabela.getColumnModel().getColumnCount() > 0) {
-            tabela.getColumnModel().getColumn(0).setResizable(false);
-            tabela.getColumnModel().getColumn(1).setResizable(false);
-        }
+        tabela.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaMouseClicked(evt);
+            }
+        });
+        painel_tabela1.setViewportView(tabela);
 
         botao_criar.setBackground(new java.awt.Color(255, 255, 255));
         botao_criar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -375,14 +405,14 @@ public class AreaAdministrativaEditar extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_cartasLayout.createSequentialGroup()
                 .addContainerGap(75, Short.MAX_VALUE)
                 .addGroup(painel_cartasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(painel_tabela)
                     .addGroup(painel_cartasLayout.createSequentialGroup()
                         .addComponent(botao_criar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botao_editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botao_excluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(PainelEditarCuriosidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PainelEditarCuriosidade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(painel_tabela1))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         painel_cartasLayout.setVerticalGroup(
@@ -397,7 +427,7 @@ public class AreaAdministrativaEditar extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
-                .addComponent(painel_tabela, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(painel_tabela1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(PainelEditarCuriosidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
@@ -424,69 +454,41 @@ public class AreaAdministrativaEditar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botao_criarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_criarMouseExited
-        Color cor = botao_criar.getBackground();
-        if(cor != Color.GRAY)
-            botao_criar.setBackground(Color.WHITE);
+        botao_criar.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_criarMouseExited
 
     private void botao_criarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_criarMouseEntered
-        Color cor = botao_criar.getBackground();
-        if(cor != Color.GRAY)
-            botao_criar.setBackground(Color.LIGHT_GRAY);
+        botao_criar.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_botao_criarMouseEntered
 
     private void botao_editarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_editarMouseExited
-        Color cor = botao_editar.getBackground();
-        if(cor != Color.GRAY)
-            botao_editar.setBackground(Color.WHITE);
+
     }//GEN-LAST:event_botao_editarMouseExited
 
     private void botao_editarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_editarMouseEntered
-        Color cor = botao_editar.getBackground();
-        if(cor != Color.GRAY)
-            botao_editar.setBackground(Color.LIGHT_GRAY);
+
     }//GEN-LAST:event_botao_editarMouseEntered
 
     private void botao_criarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_criarMouseClicked
-        if(botao_criar.getBackground()!=Color.GRAY) {
-            
-            if(botao_editar.getBackground() == Color.GRAY)   botao_editar.setBackground(Color.WHITE);
-            if(botao_excluir.getBackground() == Color.GRAY)   botao_excluir.setBackground(Color.WHITE);
-            
-            botao_criar.setBackground(Color.GRAY);
-        }
+        new AreaAdministrativaCriar().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_botao_criarMouseClicked
 
     private void botao_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_editarMouseClicked
-        if(botao_editar.getBackground()!=Color.GRAY) {
-            
-            if(botao_criar.getBackground() == Color.GRAY)   botao_criar.setBackground(Color.WHITE);
-            if(botao_excluir.getBackground() == Color.GRAY)   botao_excluir.setBackground(Color.WHITE);
 
-            botao_editar.setBackground(Color.GRAY);
-        }
     }//GEN-LAST:event_botao_editarMouseClicked
 
     private void botao_excluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_excluirMouseClicked
-        if(botao_excluir.getBackground()!=Color.GRAY) {
-            
-            if(botao_criar.getBackground() == Color.GRAY)   botao_criar.setBackground(Color.WHITE);
-            if(botao_editar.getBackground() == Color.GRAY)   botao_editar.setBackground(Color.WHITE);
-            
-            botao_excluir.setBackground(Color.GRAY);
-        }
+        new AreaAdministrativaExcluir().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_botao_excluirMouseClicked
 
     private void botao_excluirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_excluirMouseEntered
-        Color cor = botao_excluir.getBackground();
-        if(cor != Color.GRAY)
-            botao_excluir.setBackground(Color.LIGHT_GRAY);
+        botao_excluir.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_botao_excluirMouseEntered
 
     private void botao_excluirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_excluirMouseExited
-        Color cor = botao_excluir.getBackground();
-        if(cor != Color.GRAY)
-            botao_excluir.setBackground(Color.WHITE);
+        botao_excluir.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_excluirMouseExited
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
@@ -503,16 +505,47 @@ public class AreaAdministrativaEditar extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_voltarMouseExited
 
     private void botao_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_salvarMouseClicked
-        // TODO add your handling code here:
+        
+        if ((campo_curiosidade.getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\\s!.,:@#$%&*\\(\\)?'[0-9]]+$")&&(!"".equals(campo_curiosidade.getText())))){
+        
+            int curiosidadeLinha = tabela.getSelectedRow();
+
+            Curiosidade curiosidadeEditada = new Curiosidade(tabela.getValueAt(curiosidadeLinha,0).toString(),campo_curiosidade.getText());
+
+            curiosidades.set(tabela.getSelectedRow(), curiosidadeEditada);
+
+            try {
+                arquivos.editarCuriosidade(curiosidades);
+            } catch (IOException ex) {
+                Logger.getLogger(AreaAdministrativaExcluir.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            if(tabela.getSelectedRow() != -1){
+                modeloTabela.removeRow(tabela.getSelectedRow());
+            }else{
+                JOptionPane.showMessageDialog(null,"Selecione uma curiosidade para Editar!");
+            }
+
+            new AreaAdministrativaEditar().setVisible(true);
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null,""
+                        + "Caracter Invalido!\n","Atencao", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_botao_salvarMouseClicked
 
     private void botao_salvarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_salvarMouseEntered
-        // TODO add your handling code here:
+        botao_voltar.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_botao_salvarMouseEntered
 
     private void botao_salvarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_salvarMouseExited
-        // TODO add your handling code here:
+        botao_voltar.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_salvarMouseExited
+
+    private void tabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaMouseClicked
+        int curiosidadeLinha = tabela.getSelectedRow();
+        campo_curiosidade.setText(modeloTabela.getValueAt(curiosidadeLinha,1).toString());
+    }//GEN-LAST:event_tabelaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -562,7 +595,7 @@ public class AreaAdministrativaEditar extends javax.swing.JFrame {
     private javax.swing.JTextPane campo_curiosidade;
     private javax.swing.JLabel icone_botao_voltar;
     private javax.swing.JPanel painel_cartas;
-    private javax.swing.JScrollPane painel_tabela;
+    private javax.swing.JScrollPane painel_tabela1;
     private javax.swing.JTable tabela;
     private javax.swing.JLabel texto_barra_superior;
     private javax.swing.JLabel texto_criar;

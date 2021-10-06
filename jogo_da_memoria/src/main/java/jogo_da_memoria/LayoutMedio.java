@@ -7,6 +7,7 @@ package jogo_da_memoria;
 
 import java.awt.Color;
 import static java.lang.String.valueOf;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import static jogo_da_memoria.LayoutFacil.CartasSelecionadas;
@@ -177,6 +178,8 @@ public class LayoutMedio extends javax.swing.JFrame {
                 botao_pauseMouseExited(evt);
             }
         });
+
+        icone_botao_pause.setIcon(new ImageIcon("icones/opcoes.png"));
 
         javax.swing.GroupLayout botao_pauseLayout = new javax.swing.GroupLayout(botao_pause);
         botao_pause.setLayout(botao_pauseLayout);
@@ -692,8 +695,8 @@ public class LayoutMedio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botao_pauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_pauseMouseClicked
-        new MenuPause().setVisible(true);
-        this.dispose();
+        MenuPause pause = new MenuPause(new javax.swing.JFrame(),true, null, this, null);
+        pause.setVisible(true);
     }//GEN-LAST:event_botao_pauseMouseClicked
 
     private void botao_pauseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_pauseMouseEntered

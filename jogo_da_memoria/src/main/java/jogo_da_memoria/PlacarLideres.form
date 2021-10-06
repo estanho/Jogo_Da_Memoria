@@ -227,8 +227,8 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="icone_botao_voltar">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Projetos\jogo_da_memoria\icones\voltar.png"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new ImageIcon(&quot;icones/voltar.png&quot;)" type="code"/>
                 </Property>
               </Properties>
             </Component>

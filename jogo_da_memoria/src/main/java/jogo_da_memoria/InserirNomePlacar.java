@@ -309,7 +309,7 @@ public class InserirNomePlacar extends javax.swing.JFrame {
             String[] dadosPontos = texto_pontos.getText().split((" "));
             String[] dadosRodada = texto_rodada.getText().split((" "));
             
-            if ((campo_nome.getText().matches("([a-zA-Z]|[0-9])*")&&(!"".equals(campo_nome.getText())))){
+            if ((campo_nome.getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\\s!.,:@#$%&*\\(\\)?'[0-9]]+$*")&&(!"".equals(campo_nome.getText())))){
                 arquivos.salvarNovoJogador(campo_nome.getText(), Integer.parseInt(dadosPontos[1]), Integer.parseInt(dadosRodada[1]),dificuldade);
                 JOptionPane.showMessageDialog(null,""
                             + "Jogador Cadastrado com sucesso!\n","Cadastro", JOptionPane.WARNING_MESSAGE);

@@ -148,6 +148,8 @@ public class LayoutFacil extends javax.swing.JFrame {
             }
         });
 
+        icone_botao_pause.setIcon(new ImageIcon("icones/opcoes.png"));
+
         javax.swing.GroupLayout botao_pauseLayout = new javax.swing.GroupLayout(botao_pause);
         botao_pause.setLayout(botao_pauseLayout);
         botao_pauseLayout.setHorizontalGroup(
@@ -321,8 +323,8 @@ public class LayoutFacil extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botao_pauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_pauseMouseClicked
-        new MenuPause().setVisible(true);
-        this.dispose();
+        MenuPause pause = new MenuPause(new javax.swing.JFrame(),true, this, null, null);
+        pause.setVisible(true);
     }//GEN-LAST:event_botao_pauseMouseClicked
 
     private void botao_pauseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_pauseMouseEntered

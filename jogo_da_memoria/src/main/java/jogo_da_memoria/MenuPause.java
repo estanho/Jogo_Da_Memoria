@@ -6,17 +6,33 @@
 package jogo_da_memoria;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
+import jogo_da_memoria.LayoutFacil;
 
 /**
  *
- * @author joaov
+ * @author Estanho
  */
-public class MenuPause extends javax.swing.JFrame {
+public class MenuPause extends javax.swing.JDialog {
 
     /**
-     * Creates new form MenuPause
+     * Creates new form Teste
      */
-    public MenuPause() {
+    LayoutFacil janelaPaiFacil;
+    LayoutMedio janelaPaiMedio;
+    LayoutDificil janelaPaiDificil;
+    
+    public MenuPause(java.awt.Frame parent, boolean modal, LayoutFacil janelaFacil,LayoutMedio janelaMedio,LayoutDificil janelaDificil) {
+        super(parent, modal);
+        
+        if(janelaFacil != null){
+            janelaPaiFacil = janelaFacil;
+        }else if(janelaMedio != null) {
+            janelaPaiMedio = janelaMedio;
+        }else if(janelaDificil != null) {
+            janelaPaiDificil = janelaDificil;
+        }
+        
         initComponents();
     }
 
@@ -43,14 +59,7 @@ public class MenuPause extends javax.swing.JFrame {
         botao_voltar_jogo = new javax.swing.JPanel();
         texto_voltar_jogo = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Jogo da Memória com elementos químicos");
-        setResizable(false);
-        addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                formKeyPressed(evt);
-            }
-        });
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         painel_MenuPause.setBackground(new java.awt.Color(255, 255, 255));
         painel_MenuPause.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -181,7 +190,7 @@ public class MenuPause extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_opcoes.setIcon(new javax.swing.ImageIcon("D:\\Projetos\\jogo_da_memoria\\icones\\opcoes.png")); // NOI18N
+        icone_botao_opcoes.setIcon(new ImageIcon("icones/opcoes.png"));
 
         javax.swing.GroupLayout botao_opcoesLayout = new javax.swing.GroupLayout(botao_opcoes);
         botao_opcoes.setLayout(botao_opcoesLayout);
@@ -273,7 +282,7 @@ public class MenuPause extends javax.swing.JFrame {
                 .addComponent(botao_voltar_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botao_sair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -292,6 +301,20 @@ public class MenuPause extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botao_voltar_menuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_menuMouseClicked
+        this.dispose();
+        
+        if(janelaPaiFacil != null){
+            janelaPaiFacil.dispose();
+        }else if(janelaPaiMedio != null) {
+            janelaPaiMedio.dispose();
+        }else if(janelaPaiDificil != null) {
+            janelaPaiDificil.dispose();
+        }
+        
+        new MenuPrincipal().setVisible(true);
+    }//GEN-LAST:event_botao_voltar_menuMouseClicked
 
     private void botao_voltar_menuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_menuMouseEntered
         botao_voltar_menu.setBackground(Color.LIGHT_GRAY);
@@ -314,8 +337,8 @@ public class MenuPause extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_sairMouseExited
 
     private void botao_opcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseClicked
-        new MenuOpcoes().setVisible(true);
-        this.dispose();
+        MenuOpcoes opcoes = new MenuOpcoes(new javax.swing.JFrame(),true);
+        opcoes.setVisible(true);
     }//GEN-LAST:event_botao_opcoesMouseClicked
 
     private void botao_opcoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseEntered
@@ -326,17 +349,8 @@ public class MenuPause extends javax.swing.JFrame {
         botao_opcoes.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_opcoesMouseExited
 
-    private void botao_voltar_menuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_menuMouseClicked
-        new MenuPrincipal().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_botao_voltar_menuMouseClicked
-
-    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formKeyPressed
-
     private void botao_voltar_jogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_jogoMouseClicked
-        setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_botao_voltar_jogoMouseClicked
 
     private void botao_voltar_jogoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_jogoMouseEntered
@@ -373,11 +387,20 @@ public class MenuPause extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MenuPause.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPause().setVisible(true);
+                MenuPause dialog = new MenuPause(new javax.swing.JFrame(), true,new LayoutFacil(),new LayoutMedio(),new LayoutDificil());
+                
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
