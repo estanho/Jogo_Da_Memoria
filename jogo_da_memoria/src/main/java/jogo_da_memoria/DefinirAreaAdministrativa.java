@@ -1,16 +1,31 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 
 public class DefinirAreaAdministrativa extends javax.swing.JFrame {
 
+    ManipularArquivos arquivo = new ManipularArquivos();
+    
     // Construtor
     
     public DefinirAreaAdministrativa() {
         initComponents();
+        
+        try {
+            if(arquivo.getConfigMostrarCartas()){
+                campo_ajuda.setSelected(true);
+                campo_ajuda.setText("Desligar");
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(DefinirAreaAdministrativa.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 
@@ -29,6 +44,8 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
         texto_botao_cartas = new javax.swing.JLabel();
         botao_curiosidades = new javax.swing.JPanel();
         texto_botao_curiosidades = new javax.swing.JLabel();
+        titulo_ajuda = new javax.swing.JLabel();
+        campo_ajuda = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jogo da Memória com elementos químicos");
@@ -184,14 +201,22 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        titulo_ajuda.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        titulo_ajuda.setForeground(new java.awt.Color(0, 0, 0));
+        titulo_ajuda.setText("Mostrar Cartas (Hard)");
+
+        campo_ajuda.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        campo_ajuda.setText("Ligar");
+        campo_ajuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_ajudaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painel_MenuPrincipalLayout = new javax.swing.GroupLayout(painel_MenuPrincipal);
         painel_MenuPrincipal.setLayout(painel_MenuPrincipalLayout);
         painel_MenuPrincipalLayout.setHorizontalGroup(
             painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
                 .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -199,14 +224,26 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
                         .addComponent(barra_inferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
                         .addGap(163, 163, 163)
-                        .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(botao_curiosidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botao_cartas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(botao_curiosidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(botao_cartas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(titulo_ajuda)
+                                .addGap(18, 18, 18)
+                                .addComponent(campo_ajuda)))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
-                .addGap(189, 189, 189)
-                .addComponent(titulo_areaAdministrativa)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPrincipalLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(titulo_areaAdministrativa)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         painel_MenuPrincipalLayout.setVerticalGroup(
             painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,7 +257,11 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
                 .addComponent(botao_cartas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botao_curiosidades, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addGap(48, 48, 48)
+                .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(titulo_ajuda)
+                    .addComponent(campo_ajuda))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -280,6 +321,25 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botao_cartasMouseClicked
 
+    private void campo_ajudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_ajudaActionPerformed
+             
+        if(campo_ajuda.isSelected()){
+            campo_ajuda.setText("Desligar");
+            try {
+                arquivo.setConfigMostrarCartas(true);
+            } catch (IOException ex) {
+                Logger.getLogger(DefinirAreaAdministrativa.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            campo_ajuda.setText("Ligar");
+            try {
+                arquivo.setConfigMostrarCartas(false);
+            } catch (IOException ex) {
+                Logger.getLogger(DefinirAreaAdministrativa.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_campo_ajudaActionPerformed
+
     // Main
     
     public static void main(String args[]) {      
@@ -296,11 +356,13 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
     private javax.swing.JPanel botao_cartas;
     private javax.swing.JPanel botao_curiosidades;
     private javax.swing.JPanel botao_voltar;
+    private javax.swing.JToggleButton campo_ajuda;
     private javax.swing.JLabel icone_botao_voltar;
     private javax.swing.JPanel painel_MenuPrincipal;
     private javax.swing.JLabel texto_barra_superior;
     private javax.swing.JLabel texto_botao_cartas;
     private javax.swing.JLabel texto_botao_curiosidades;
+    private javax.swing.JLabel titulo_ajuda;
     private javax.swing.JLabel titulo_areaAdministrativa;
     // End of variables declaration//GEN-END:variables
 

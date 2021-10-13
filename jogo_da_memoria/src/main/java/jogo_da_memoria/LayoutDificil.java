@@ -2,6 +2,7 @@
 package jogo_da_memoria;
 
 import codigo_jogo_da_memoria.Baralho;
+import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
 import java.io.IOException;
 import static java.lang.String.valueOf;
@@ -35,6 +36,8 @@ public class LayoutDificil extends javax.swing.JFrame {
     int controlePontosRodada = 40;
     int controlePares = 0;
     int rodada = 1;
+    
+    boolean controleConfig = false;
     
     Timer timer = new Timer();
     int tempo = 90;
@@ -1197,13 +1200,15 @@ public class LayoutDificil extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painel_MenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(painel_MenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(painel_MenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 111, Short.MAX_VALUE))
         );
 
         pack();
@@ -1564,7 +1569,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     void DefinirCartas(){
         
         Baralho baralho = new Baralho();
-        
+             
         carta_1.setBackground(Color.WHITE);
         carta_2.setBackground(Color.WHITE);
         carta_3.setBackground(Color.WHITE);
@@ -1603,52 +1608,21 @@ public class LayoutDificil extends javax.swing.JFrame {
         carta_36.setBackground(Color.WHITE);
                          
         array_dificil = baralho.GerarBaralhoDificil();
-                
-        this.label_carta_1.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_2.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_3.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_4.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_5.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_6.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_7.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_8.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_9.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_10.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_11.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_12.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_13.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_14.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_15.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_16.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_17.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_18.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_19.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_20.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_21.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_22.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_23.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_24.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_25.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_26.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_27.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_28.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_29.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_30.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_31.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_32.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_33.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_34.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_35.setIcon(new ImageIcon("icones/carta.png"));
-        this.label_carta_36.setIcon(new ImageIcon("icones/carta.png"));     
+        
+        espera();
     }
     
     public void tempo_jogo(){
         
         int delay = 1000;
-        int interval = 1000;  
+        int interval = 1000;
         
         timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
+                                
+                if(controleConfig == true && tempo == 90){
+                    cartasPadroes();
+                }
                 
                 if(controlePares == 18){
                     
@@ -1795,6 +1769,105 @@ public class LayoutDificil extends javax.swing.JFrame {
         {
             Thread.currentThread().interrupt();
         }
+    }
+    
+    void espera(){
+        ManipularArquivos arquivo = new ManipularArquivos();
+        
+        try {
+            if(arquivo.getConfigMostrarCartas()){
+                this.label_carta_1.setIcon(new ImageIcon("icones/"+array_dificil[0]+".png"));
+                this.label_carta_2.setIcon(new ImageIcon("icones/"+array_dificil[1]+".png"));
+                this.label_carta_3.setIcon(new ImageIcon("icones/"+array_dificil[2]+".png"));
+                this.label_carta_4.setIcon(new ImageIcon("icones/"+array_dificil[3]+".png"));
+                this.label_carta_5.setIcon(new ImageIcon("icones/"+array_dificil[4]+".png"));
+                this.label_carta_6.setIcon(new ImageIcon("icones/"+array_dificil[5]+".png"));
+                this.label_carta_7.setIcon(new ImageIcon("icones/"+array_dificil[6]+".png"));
+                this.label_carta_8.setIcon(new ImageIcon("icones/"+array_dificil[7]+".png"));
+                this.label_carta_9.setIcon(new ImageIcon("icones/"+array_dificil[8]+".png"));
+                this.label_carta_10.setIcon(new ImageIcon("icones/"+array_dificil[9]+".png"));
+                this.label_carta_11.setIcon(new ImageIcon("icones/"+array_dificil[10]+".png"));
+                this.label_carta_12.setIcon(new ImageIcon("icones/"+array_dificil[11]+".png"));
+                this.label_carta_13.setIcon(new ImageIcon("icones/"+array_dificil[12]+".png"));
+                this.label_carta_14.setIcon(new ImageIcon("icones/"+array_dificil[13]+".png"));
+                this.label_carta_15.setIcon(new ImageIcon("icones/"+array_dificil[14]+".png"));
+                this.label_carta_16.setIcon(new ImageIcon("icones/"+array_dificil[15]+".png"));
+                this.label_carta_17.setIcon(new ImageIcon("icones/"+array_dificil[16]+".png"));
+                this.label_carta_18.setIcon(new ImageIcon("icones/"+array_dificil[17]+".png"));
+                this.label_carta_19.setIcon(new ImageIcon("icones/"+array_dificil[18]+".png"));
+                this.label_carta_20.setIcon(new ImageIcon("icones/"+array_dificil[19]+".png"));
+                this.label_carta_21.setIcon(new ImageIcon("icones/"+array_dificil[20]+".png"));
+                this.label_carta_22.setIcon(new ImageIcon("icones/"+array_dificil[21]+".png"));
+                this.label_carta_23.setIcon(new ImageIcon("icones/"+array_dificil[22]+".png"));
+                this.label_carta_24.setIcon(new ImageIcon("icones/"+array_dificil[23]+".png"));
+                this.label_carta_25.setIcon(new ImageIcon("icones/"+array_dificil[24]+".png"));
+                this.label_carta_26.setIcon(new ImageIcon("icones/"+array_dificil[25]+".png"));
+                this.label_carta_27.setIcon(new ImageIcon("icones/"+array_dificil[26]+".png"));
+                this.label_carta_28.setIcon(new ImageIcon("icones/"+array_dificil[27]+".png"));
+                this.label_carta_29.setIcon(new ImageIcon("icones/"+array_dificil[28]+".png"));
+                this.label_carta_30.setIcon(new ImageIcon("icones/"+array_dificil[29]+".png"));
+                this.label_carta_31.setIcon(new ImageIcon("icones/"+array_dificil[30]+".png"));
+                this.label_carta_32.setIcon(new ImageIcon("icones/"+array_dificil[31]+".png"));
+                this.label_carta_33.setIcon(new ImageIcon("icones/"+array_dificil[32]+".png"));
+                this.label_carta_34.setIcon(new ImageIcon("icones/"+array_dificil[33]+".png"));
+                this.label_carta_35.setIcon(new ImageIcon("icones/"+array_dificil[34]+".png"));
+                this.label_carta_36.setIcon(new ImageIcon("icones/"+array_dificil[35]+".png"));
+                
+                this.setEnabled(false);
+                this.tempo = 97;
+                this.controleConfig = true;
+                
+            }else{
+                cartasPadroes();
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(LayoutDificil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    void cartasPadroes(){
+        
+        this.label_carta_1.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_2.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_3.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_4.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_5.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_6.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_7.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_8.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_9.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_10.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_11.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_12.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_13.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_14.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_15.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_16.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_17.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_18.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_19.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_20.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_21.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_22.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_23.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_24.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_25.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_26.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_27.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_28.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_29.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_30.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_31.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_32.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_33.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_34.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_35.setIcon(new ImageIcon("icones/carta.png"));
+        this.label_carta_36.setIcon(new ImageIcon("icones/carta.png"));
+
+        this.setEnabled(true);
+        this.tempo = 90;
+                
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -21,10 +21,29 @@ public class ManipularArquivos implements Runnable {
     // Funções
     
     public void criarArquivosIniciais() throws IOException{
+        
         //Diretorio Base.
         File pastaDados = new File("Dados");
         boolean existePastaDados = pastaDados.exists();
         if (existePastaDados == false){   pastaDados.mkdir();  }
+        
+        //Diretorio Config.
+        File pastaConfig = new File("Dados/Config");
+        boolean existePastaConfig = pastaConfig.exists();
+        if (existePastaConfig == false){   pastaConfig.mkdir();  }
+        
+        //txt config
+        File txtConfig = new File("Dados/Config/Config.txt");
+        boolean existeConfig = txtConfig.exists();
+
+        if (existeConfig == false){   
+            txtConfig.createNewFile();          
+            FileWriter fw = new FileWriter(txtConfig);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("false");
+            bw.close();
+            fw.close();
+        }
         
         //txt PlacarLideresFacil
         File txtPlacarLideresFacil = new File("Dados/PlacarLideresFacil.txt");
@@ -511,6 +530,43 @@ public class ManipularArquivos implements Runnable {
         bw.close();
         fw.close();
 
+    }
+    
+    
+    public boolean getConfigMostrarCartas() throws FileNotFoundException, IOException{
+        
+        String configTxt = "Dados/Config/Config.txt";
+        
+        FileReader fr = new FileReader(configTxt);
+        BufferedReader br = new BufferedReader( fr );
+                                      
+        String linha = br.readLine();
+        
+        fr.close(); br.close();
+        
+        System.out.println(linha);
+        
+        if(Boolean.valueOf(linha) == true){
+            return true;
+        }else{
+            return false;
+        }    
+    }
+    
+    
+    public void setConfigMostrarCartas(boolean config) throws FileNotFoundException, IOException{
+        
+        String configTxt = "Dados/Config/Config.txt";
+        
+        FileWriter fw = new FileWriter(configTxt,false);
+        BufferedWriter bw = new BufferedWriter(fw);
+        if(config == true){
+            bw.write("true");
+        }else{
+            bw.write("false");
+        }
+        bw.close();
+        fw.close();
     }
     
         
