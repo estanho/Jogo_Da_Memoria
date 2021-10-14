@@ -12,6 +12,13 @@ public class DefinirDificuldade extends javax.swing.JFrame {
     
     public DefinirDificuldade() {
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(640, 598);
+        setLocationRelativeTo(null); 
     }
 
     @SuppressWarnings("unchecked")
@@ -311,6 +318,8 @@ public class DefinirDificuldade extends javax.swing.JFrame {
 
     private void botao_medioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_medioMouseClicked
         LayoutMedio janelaMedio = new LayoutMedio();
+        janelaMedio.setSize(700,670);
+        janelaMedio.setLocationRelativeTo(null);
         janelaMedio.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_medioMouseClicked

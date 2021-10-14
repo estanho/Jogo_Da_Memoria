@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class InserirNomePlacar extends javax.swing.JFrame {
@@ -18,6 +19,13 @@ public class InserirNomePlacar extends javax.swing.JFrame {
     
     public InserirNomePlacar(int pontosJogador, int rodadasJogador, String dificuldadeJogador) {
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(640, 640);
+        setLocationRelativeTo(null); 
         
         this.pontos = pontosJogador;
         this.rodada = rodadasJogador;

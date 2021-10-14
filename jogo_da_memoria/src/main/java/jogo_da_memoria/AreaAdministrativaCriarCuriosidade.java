@@ -29,6 +29,13 @@ public class AreaAdministrativaCriarCuriosidade extends javax.swing.JFrame {
     public AreaAdministrativaCriarCuriosidade() {
         initComponents();
         
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(680, 698);
+        setLocationRelativeTo(null); 
+        
         botao_criar.setBackground(Color.GRAY);
         
         try {

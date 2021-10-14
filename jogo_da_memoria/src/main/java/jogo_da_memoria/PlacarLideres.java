@@ -26,6 +26,13 @@ public class PlacarLideres extends javax.swing.JFrame {
     
     public PlacarLideres() {
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(610, 670);
+        setLocationRelativeTo(null); 
 
         try {
             arquivos.preencherPlacarLideres(jogadoresFacil,jogadoresMedio,jogadoresDificil);

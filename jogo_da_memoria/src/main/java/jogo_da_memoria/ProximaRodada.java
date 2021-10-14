@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 public class ProximaRodada extends javax.swing.JDialog {
 
@@ -30,6 +31,12 @@ public class ProximaRodada extends javax.swing.JDialog {
         }
         
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setLocationRelativeTo(null); 
         
         this.pontos = pontosJogador;
         this.rodada = rodadasJogador;

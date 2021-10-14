@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class LoginAdministrador extends javax.swing.JDialog {
@@ -19,6 +20,13 @@ public class LoginAdministrador extends javax.swing.JDialog {
         janelaPaiMenu = janelaMenu;
         
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(548, 358);
+        setLocationRelativeTo(null); 
     }
 
     @SuppressWarnings("unchecked")

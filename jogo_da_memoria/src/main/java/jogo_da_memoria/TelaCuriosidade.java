@@ -10,6 +10,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 public class TelaCuriosidade extends javax.swing.JDialog {
 
@@ -28,6 +29,12 @@ public class TelaCuriosidade extends javax.swing.JDialog {
         
         super(parent, modal);
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setLocationRelativeTo(null); 
         
         arquivos.preencherCuriosidades(curiosidades);
         

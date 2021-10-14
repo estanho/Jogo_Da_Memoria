@@ -11,8 +11,10 @@ public class Aplicacao {
         
         Thread criarArquivos = new Thread(arquivos);
         criarArquivos.start();
-                  
+                        
         new MenuPrincipal().setVisible(true);
-    }
+        
+        
+    }    
 }
 

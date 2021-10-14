@@ -6,3 +6,4 @@
 *,Facil,20,2,facil,
 *,luiz,20,2,facil,
 *,Testando Facil,20,2,facil,
+*,zezinhodaborracharia,20,2,facil,

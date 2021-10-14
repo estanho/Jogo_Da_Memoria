@@ -18,6 +18,13 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
     public DefinirAreaAdministrativa() {
         initComponents();
         
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(640, 570);
+        setLocationRelativeTo(null); 
+        
         try {
             if(arquivo.getConfigMostrarCartas()){
                 campo_ajuda.setSelected(true);

@@ -43,6 +43,14 @@ public class LayoutFacil extends javax.swing.JFrame {
     
     public LayoutFacil() throws InterruptedException {
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(640, 565);
+        setLocationRelativeTo(null); 
+        
         this.DefinirCartas();
         this.tempo_jogo();
     }

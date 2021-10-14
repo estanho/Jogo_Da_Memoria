@@ -43,6 +43,11 @@ public class LayoutMedio extends javax.swing.JFrame {
     
     public LayoutMedio() {
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
         this.DefinirCartas();
         this.tempo_jogo();
     }

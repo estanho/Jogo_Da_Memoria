@@ -26,6 +26,13 @@ public class AreaAdministrativaEditarCuriosidade extends javax.swing.JFrame {
     public AreaAdministrativaEditarCuriosidade() {
         initComponents();
         
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(680, 698);
+        setLocationRelativeTo(null); 
+        
         botao_editar.setBackground(Color.GRAY);
         
         try {

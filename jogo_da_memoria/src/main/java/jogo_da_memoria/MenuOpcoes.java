@@ -2,6 +2,7 @@
 package jogo_da_memoria;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class MenuOpcoes extends javax.swing.JDialog {
 
@@ -10,6 +11,13 @@ public class MenuOpcoes extends javax.swing.JDialog {
     public MenuOpcoes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(640, 640);
+        setLocationRelativeTo(null); 
     }
 
     

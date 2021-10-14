@@ -46,6 +46,14 @@ public class LayoutDificil extends javax.swing.JFrame {
     
     public LayoutDificil() {
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(718, 795);
+        setLocationRelativeTo(null); 
+        
         this.DefinirCartas();
         this.tempo_jogo();
     }

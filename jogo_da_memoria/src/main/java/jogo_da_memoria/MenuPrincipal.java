@@ -12,6 +12,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     
     public MenuPrincipal() {
         initComponents();
+        
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        setSize(640, 640);
+        setLocationRelativeTo(null); 
+        
         botao_login.setVisible(false);
     }
 

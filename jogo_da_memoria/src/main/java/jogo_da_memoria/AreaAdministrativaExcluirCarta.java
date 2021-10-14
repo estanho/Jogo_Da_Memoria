@@ -26,6 +26,13 @@ public class AreaAdministrativaExcluirCarta extends javax.swing.JFrame {
     public AreaAdministrativaExcluirCarta() {
         initComponents();
         
+        ImageIcon img = new ImageIcon("icones/icone_janela.png");
+        
+        setIconImage(img.getImage());
+        
+        setSize(680, 698);
+        setLocationRelativeTo(null); 
+        
         botao_excluir.setBackground(Color.GRAY);
         
         try {
