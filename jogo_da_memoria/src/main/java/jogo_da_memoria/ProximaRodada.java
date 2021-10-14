@@ -12,9 +12,13 @@ public class ProximaRodada extends javax.swing.JDialog {
     LayoutMedio janelaPaiMedio;
     LayoutDificil janelaPaiDificil;
     
+    String dificuldade;
+    int pontos;
+    int rodada;
+    
     // Construtor
     
-    public ProximaRodada(java.awt.Frame parent, boolean modal, LayoutFacil janelaFacil, LayoutMedio janelaMedio, LayoutDificil janelaDificil) {
+    public ProximaRodada(java.awt.Frame parent, boolean modal, LayoutFacil janelaFacil, LayoutMedio janelaMedio, LayoutDificil janelaDificil,int pontosJogador, int rodadasJogador) {
         super(parent, modal);
         
         if(janelaFacil != null){
@@ -26,6 +30,12 @@ public class ProximaRodada extends javax.swing.JDialog {
         }
         
         initComponents();
+        
+        this.pontos = pontosJogador;
+        this.rodada = rodadasJogador;
+        
+        texto_pontos.setText("Pontos: "+pontos);
+        texto_rodada.setText("Rodada: "+rodada);
     }
 
 
@@ -39,7 +49,11 @@ public class ProximaRodada extends javax.swing.JDialog {
         texto_barra_superior = new javax.swing.JLabel();
         botao_continuar = new javax.swing.JPanel();
         texto_botao_continuar = new javax.swing.JLabel();
+        botao_finalizar = new javax.swing.JPanel();
+        texto_botao_finalizar = new javax.swing.JLabel();
         titulo_rodada = new javax.swing.JLabel();
+        texto_pontos = new javax.swing.JLabel();
+        texto_rodada = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -106,18 +120,59 @@ public class ProximaRodada extends javax.swing.JDialog {
         botao_continuarLayout.setHorizontalGroup(
             botao_continuarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botao_continuarLayout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addComponent(texto_botao_continuar)
-                .addGap(48, 48, 48))
+                .addGap(57, 57, 57))
         );
         botao_continuarLayout.setVerticalGroup(
             botao_continuarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(texto_botao_continuar, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+            .addComponent(texto_botao_continuar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        botao_finalizar.setBackground(new java.awt.Color(255, 255, 255));
+        botao_finalizar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        botao_finalizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botao_finalizarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botao_finalizarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botao_finalizarMouseExited(evt);
+            }
+        });
+
+        texto_botao_finalizar.setBackground(new java.awt.Color(0, 0, 0));
+        texto_botao_finalizar.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        texto_botao_finalizar.setForeground(new java.awt.Color(0, 0, 0));
+        texto_botao_finalizar.setText("Finalizar");
+
+        javax.swing.GroupLayout botao_finalizarLayout = new javax.swing.GroupLayout(botao_finalizar);
+        botao_finalizar.setLayout(botao_finalizarLayout);
+        botao_finalizarLayout.setHorizontalGroup(
+            botao_finalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botao_finalizarLayout.createSequentialGroup()
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(texto_botao_finalizar)
+                .addGap(48, 48, 48))
+        );
+        botao_finalizarLayout.setVerticalGroup(
+            botao_finalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(texto_botao_finalizar, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
         );
 
         titulo_rodada.setFont(new java.awt.Font("Comic Sans MS", 3, 48)); // NOI18N
         titulo_rodada.setForeground(new java.awt.Color(0, 0, 0));
         titulo_rodada.setText("Próxima Rodada");
+
+        texto_pontos.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        texto_pontos.setForeground(new java.awt.Color(0, 0, 0));
+        texto_pontos.setText("Pontos:");
+
+        texto_rodada.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
+        texto_rodada.setForeground(new java.awt.Color(0, 0, 0));
+        texto_rodada.setText("Rodada:");
 
         javax.swing.GroupLayout painel_ProximaRodadaLayout = new javax.swing.GroupLayout(painel_ProximaRodada);
         painel_ProximaRodada.setLayout(painel_ProximaRodadaLayout);
@@ -128,25 +183,37 @@ public class ProximaRodada extends javax.swing.JDialog {
                     .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(barra_superior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_ProximaRodadaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(painel_ProximaRodadaLayout.createSequentialGroup()
                 .addGroup(painel_ProximaRodadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_ProximaRodadaLayout.createSequentialGroup()
-                        .addComponent(botao_continuar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(195, 195, 195))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_ProximaRodadaLayout.createSequentialGroup()
-                        .addComponent(titulo_rodada)
-                        .addGap(114, 114, 114))))
+                    .addGroup(painel_ProximaRodadaLayout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(titulo_rodada))
+                    .addGroup(painel_ProximaRodadaLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(painel_ProximaRodadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(texto_pontos, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botao_finalizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(78, 78, 78)
+                        .addGroup(painel_ProximaRodadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(texto_rodada, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botao_continuar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         painel_ProximaRodadaLayout.setVerticalGroup(
             painel_ProximaRodadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_ProximaRodadaLayout.createSequentialGroup()
                 .addComponent(barra_superior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(115, 115, 115)
+                .addGap(49, 49, 49)
                 .addComponent(titulo_rodada)
-                .addGap(32, 32, 32)
-                .addComponent(botao_continuar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addGap(58, 58, 58)
+                .addGroup(painel_ProximaRodadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(texto_pontos)
+                    .addComponent(texto_rodada))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGroup(painel_ProximaRodadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botao_finalizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botao_continuar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -192,6 +259,33 @@ public class ProximaRodada extends javax.swing.JDialog {
         botao_continuar.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_continuarMouseExited
 
+    private void botao_finalizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_finalizarMouseClicked
+        
+        this.dispose();
+        
+        if(janelaPaiFacil != null){
+            janelaPaiFacil.dispose();
+            InserirNomePlacar placar = new InserirNomePlacar(pontos,rodada,"facil");
+            placar.setVisible(true);
+        }else if(janelaPaiMedio != null) {
+            janelaPaiMedio.dispose();
+            InserirNomePlacar placar = new InserirNomePlacar(pontos,rodada,"medio");
+            placar.setVisible(true);
+        }else if(janelaPaiDificil != null) {
+            janelaPaiDificil.dispose();
+            InserirNomePlacar placar = new InserirNomePlacar(pontos,rodada,"dificil");
+            placar.setVisible(true);
+        }
+    }//GEN-LAST:event_botao_finalizarMouseClicked
+
+    private void botao_finalizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_finalizarMouseEntered
+        botao_finalizar.setBackground(Color.LIGHT_GRAY);
+    }//GEN-LAST:event_botao_finalizarMouseEntered
+
+    private void botao_finalizarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_finalizarMouseExited
+        botao_finalizar.setBackground(Color.WHITE);
+    }//GEN-LAST:event_botao_finalizarMouseExited
+
     // Main
     
     public static void main(String args[]) {
@@ -199,7 +293,7 @@ public class ProximaRodada extends javax.swing.JDialog {
             public void run() {
                 ProximaRodada dialog = null;
                 try {
-                    dialog = new ProximaRodada(new javax.swing.JFrame(), true, new LayoutFacil(),new LayoutMedio(),new LayoutDificil());
+                    dialog = new ProximaRodada(new javax.swing.JFrame(), true, new LayoutFacil(),new LayoutMedio(),new LayoutDificil(),0,0);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(ProximaRodada.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -218,9 +312,15 @@ public class ProximaRodada extends javax.swing.JDialog {
     private javax.swing.JPanel barra_inferior;
     private javax.swing.JPanel barra_superior;
     private javax.swing.JPanel botao_continuar;
+    private javax.swing.JPanel botao_continuar1;
+    private javax.swing.JPanel botao_finalizar;
     private javax.swing.JPanel painel_ProximaRodada;
     private javax.swing.JLabel texto_barra_superior;
     private javax.swing.JLabel texto_botao_continuar;
+    private javax.swing.JLabel texto_botao_continuar1;
+    private javax.swing.JLabel texto_botao_finalizar;
+    private javax.swing.JLabel texto_pontos;
+    private javax.swing.JLabel texto_rodada;
     private javax.swing.JLabel titulo_rodada;
     // End of variables declaration//GEN-END:variables
 }

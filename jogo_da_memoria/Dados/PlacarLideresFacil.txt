@@ -4,3 +4,5 @@
 *,MegaJogador,9000,13,facil,
 *,teste,80,5,facil,
 *,Facil,20,2,facil,
+*,luiz,20,2,facil,
+*,Testando Facil,20,2,facil,

@@ -1664,7 +1664,7 @@ public class LayoutDificil extends javax.swing.JFrame {
         contador_pontos.setText(valueOf(pontosTotal));
         contador_pares.setText(valueOf(controlePares));
         
-        ProximaRodada proxima = new ProximaRodada(new javax.swing.JFrame(), true, null, null, this);
+        ProximaRodada proxima = new ProximaRodada(new javax.swing.JFrame(), true, null, null, this, pontosTotal, rodada);
         proxima.setVisible(true);        
     }
     

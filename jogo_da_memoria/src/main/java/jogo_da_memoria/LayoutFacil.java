@@ -467,7 +467,7 @@ public class LayoutFacil extends javax.swing.JFrame {
         contador_pontos.setText(valueOf(pontosTotal));
         contador_pares.setText(valueOf(controlePares));
         
-        ProximaRodada proxima = new ProximaRodada(new javax.swing.JFrame(), true, this, null, null);
+        ProximaRodada proxima = new ProximaRodada(new javax.swing.JFrame(), true, this, null, null,pontosTotal,rodada);
         proxima.setVisible(true);        
     }
     

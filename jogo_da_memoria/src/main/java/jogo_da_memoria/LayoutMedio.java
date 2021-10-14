@@ -924,7 +924,7 @@ public class LayoutMedio extends javax.swing.JFrame {
         contador_pontos.setText(valueOf(pontosTotal));
         contador_pares.setText(valueOf(controlePares));
         
-        ProximaRodada proxima = new ProximaRodada(new javax.swing.JFrame(), true, null, this, null);
+        ProximaRodada proxima = new ProximaRodada(new javax.swing.JFrame(), true, null, this, null,pontosTotal,rodada);
         proxima.setVisible(true);        
     }
     
