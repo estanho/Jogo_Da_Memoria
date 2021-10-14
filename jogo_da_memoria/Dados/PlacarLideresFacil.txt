@@ -7,3 +7,4 @@
 *,luiz,20,2,facil,
 *,Testando Facil,20,2,facil,
 *,zezinhodaborracharia,20,2,facil,
+*,Leonardo,40,3,facil,

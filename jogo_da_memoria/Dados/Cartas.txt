@@ -16,3 +16,4 @@
 *;31;Galio;
 *;50;Estanho;
 *;79;Ouro;
+*;5;Boro;

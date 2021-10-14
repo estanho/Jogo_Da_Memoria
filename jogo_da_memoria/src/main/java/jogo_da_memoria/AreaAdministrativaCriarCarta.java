@@ -475,8 +475,12 @@ public class AreaAdministrativaCriarCarta extends javax.swing.JFrame {
                 Object[] dados = {dados_elemento[0],dados_elemento[1],campo_curiosidade.getText()};
                 
                 modeloTabela.addRow(dados);
-                
+
                 campo_curiosidade.setText("");
+                
+                new AreaAdministrativaCriarCarta().setVisible(true);
+            
+                this.dispose();
                 
                 ControleSons.playSound(clip,0.5);
                 JOptionPane.showMessageDialog(null,""
