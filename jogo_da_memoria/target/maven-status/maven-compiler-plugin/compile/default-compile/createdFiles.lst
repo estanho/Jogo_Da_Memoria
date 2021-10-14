@@ -35,6 +35,7 @@ jogo_da_memoria\LayoutMedio$18.class
 jogo_da_memoria\LayoutDificil$36.class
 jogo_da_memoria\LayoutDificil$33.class
 jogo_da_memoria\MenuPause.class
+codigo_jogo_da_memoria\AudioClip.class
 jogo_da_memoria\LayoutFacil$3.class
 jogo_da_memoria\LayoutDificil$1.class
 jogo_da_memoria\MenuPrincipal$1.class
@@ -46,6 +47,7 @@ jogo_da_memoria\LayoutMedio$15.class
 jogo_da_memoria\LayoutDificil$8.class
 jogo_da_memoria\AreaAdministrativaCriarCarta$5.class
 jogo_da_memoria\AreaAdministrativaEditarCuriosidade$4.class
+jogo_da_memoria\ProximaRodada$3$1.class
 jogo_da_memoria\LayoutFacil.class
 jogo_da_memoria\MenuPause$2.class
 jogo_da_memoria\LayoutMedio$3.class
@@ -128,6 +130,7 @@ jogo_da_memoria\LayoutDificil$29.class
 codigo_jogo_da_memoria\Aplicacao.class
 jogo_da_memoria\AreaAdministrativaExcluirCuriosidade$4.class
 jogo_da_memoria\LayoutFacil$5.class
+jogo_da_memoria\ProximaRodada$3.class
 jogo_da_memoria\TelaCuriosidade$1.class
 jogo_da_memoria\MenuPrincipal.class
 jogo_da_memoria\LayoutDificil$12.class
@@ -152,10 +155,12 @@ jogo_da_memoria\LayoutMedio$19.class
 jogo_da_memoria\InserirNomePlacar$3.class
 jogo_da_memoria\LoginAdministrador$3.class
 jogo_da_memoria\PlacarLideres$1.class
+codigo_jogo_da_memoria\ControleSons.class
 jogo_da_memoria\LoginAdministrador$3$1.class
 jogo_da_memoria\LayoutDificil$11.class
 jogo_da_memoria\LayoutDificil$18.class
 jogo_da_memoria\AreaAdministrativaExcluirCuriosidade$5.class
+codigo_jogo_da_memoria\ControleSons$1.class
 jogo_da_memoria\LayoutDificil$23.class
 jogo_da_memoria\LayoutMedio$13.class
 jogo_da_memoria\ProximaRodada.class
