@@ -1,7 +1,9 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
 import codigo_jogo_da_memoria.Baralho;
+import codigo_jogo_da_memoria.ControleSons;
 import java.awt.Color;
 import java.io.IOException;
 import static java.lang.String.valueOf;
@@ -39,6 +41,12 @@ public class LayoutMedio extends javax.swing.JFrame {
     Timer timer = new Timer();
     int tempo = 45;
     
+    AudioClip clip;
+    AudioClip clipClick;
+    AudioClip clipAcertou;
+    AudioClip clipNovaRodada;
+    AudioClip clipFim;
+       
     // Construtor
     
     public LayoutMedio() {
@@ -50,6 +58,12 @@ public class LayoutMedio extends javax.swing.JFrame {
         
         this.DefinirCartas();
         this.tempo_jogo();
+        
+        clip = new AudioClip("sfx/click.wav");
+        clipClick = new AudioClip("sfx/button_hover.wav");
+        clipAcertou = new AudioClip("sfx/acertou.wav");
+        clipNovaRodada = new AudioClip("sfx/rodadaconcluida.wav");
+        clipFim = new AudioClip("sfx/gameover.wav");
     }
 
 
@@ -669,6 +683,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
    
     private void botao_pauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_pauseMouseClicked
+        ControleSons.playSound(clip,0.5);
         
         timer.cancel();
         
@@ -685,6 +700,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_pauseMouseExited
 
     private void carta_1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_1MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_1.setName("carta_1");
         label_carta_1.setIcon(new ImageIcon("icones/"+array_medio[0]+".png"));
     }//GEN-LAST:event_carta_1MousePressed
@@ -694,6 +710,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_1MouseReleased
 
     private void carta_2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_2MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_2.setName("carta_2");
         label_carta_2.setIcon(new ImageIcon("icones/"+array_medio[1]+".png"));
     }//GEN-LAST:event_carta_2MousePressed
@@ -703,6 +720,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_2MouseReleased
 
     private void carta_3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_3MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_3.setName("carta_3");
         label_carta_3.setIcon(new ImageIcon("icones/"+array_medio[2]+".png"));
     }//GEN-LAST:event_carta_3MousePressed
@@ -712,6 +730,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_3MouseReleased
 
     private void carta_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_4MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_4.setName("carta_4");
         label_carta_4.setIcon(new ImageIcon("icones/"+array_medio[3]+".png"));
     }//GEN-LAST:event_carta_4MousePressed
@@ -721,6 +740,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_4MouseReleased
 
     private void carta_5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_5MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_5.setName("carta_5");
         label_carta_5.setIcon(new ImageIcon("icones/"+array_medio[4]+".png"));
     }//GEN-LAST:event_carta_5MousePressed
@@ -730,6 +750,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_5MouseReleased
 
     private void carta_6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_6MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_6.setName("carta_6");
         label_carta_6.setIcon(new ImageIcon("icones/"+array_medio[5]+".png"));
     }//GEN-LAST:event_carta_6MousePressed
@@ -739,6 +760,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_6MouseReleased
 
     private void carta_7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_7MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_7.setName("carta_7");
         label_carta_7.setIcon(new ImageIcon("icones/"+array_medio[6]+".png"));
     }//GEN-LAST:event_carta_7MousePressed
@@ -748,6 +770,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_7MouseReleased
 
     private void carta_8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_8MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_8.setName("carta_8");
         label_carta_8.setIcon(new ImageIcon("icones/"+array_medio[7]+".png"));
     }//GEN-LAST:event_carta_8MousePressed
@@ -757,6 +780,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_8MouseReleased
 
     private void carta_9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_9MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_9.setName("carta_9");
         label_carta_9.setIcon(new ImageIcon("icones/"+array_medio[8]+".png"));
     }//GEN-LAST:event_carta_9MousePressed
@@ -766,6 +790,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_9MouseReleased
 
     private void carta_10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_10MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_10.setName("carta_10");
         label_carta_10.setIcon(new ImageIcon("icones/"+array_medio[9]+".png"));
     }//GEN-LAST:event_carta_10MousePressed
@@ -775,6 +800,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_10MouseReleased
 
     private void carta_11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_11MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_11.setName("carta_11");
         label_carta_11.setIcon(new ImageIcon("icones/"+array_medio[10]+".png"));
     }//GEN-LAST:event_carta_11MousePressed
@@ -784,6 +810,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_11MouseReleased
 
     private void carta_12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_12MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_12.setName("carta_12");
         label_carta_12.setIcon(new ImageIcon("icones/"+array_medio[11]+".png"));
     }//GEN-LAST:event_carta_12MousePressed
@@ -793,6 +820,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_12MouseReleased
 
     private void carta_13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_13MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_13.setName("carta_13");
         label_carta_13.setIcon(new ImageIcon("icones/"+array_medio[12]+".png"));
     }//GEN-LAST:event_carta_13MousePressed
@@ -802,6 +830,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_13MouseReleased
 
     private void carta_14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_14MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_14.setName("carta_14");
         label_carta_14.setIcon(new ImageIcon("icones/"+array_medio[13]+".png"));
     }//GEN-LAST:event_carta_14MousePressed
@@ -811,6 +840,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_14MouseReleased
 
     private void carta_15MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_15MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_15.setName("carta_15");
         label_carta_15.setIcon(new ImageIcon("icones/"+array_medio[14]+".png"));
     }//GEN-LAST:event_carta_15MousePressed
@@ -820,6 +850,7 @@ public class LayoutMedio extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_15MouseReleased
 
     private void carta_16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_16MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_16.setName("carta_16");
         label_carta_16.setIcon(new ImageIcon("icones/"+array_medio[15]+".png"));
     }//GEN-LAST:event_carta_16MousePressed
@@ -929,6 +960,8 @@ public class LayoutMedio extends javax.swing.JFrame {
         contador_pontos.setText(valueOf(pontosTotal));
         contador_pares.setText(valueOf(controlePares));
         
+        ControleSons.playSound(clipNovaRodada,0.5);
+        
         ProximaRodada proxima = new ProximaRodada(new javax.swing.JFrame(), true, null, this, null,pontosTotal,rodada);
         proxima.setVisible(true);        
     }
@@ -937,8 +970,10 @@ public class LayoutMedio extends javax.swing.JFrame {
         
         this.pontosTotal = pontosTotal + controlePares*10;
         
+        ControleSons.playSound(clipFim,0.8);
+        
         if(rodada>1){
-            InserirNomePlacar placar = new InserirNomePlacar(pontosTotal,rodada,"facil");
+            InserirNomePlacar placar = new InserirNomePlacar(pontosTotal,rodada,"medio");
             placar.setVisible(true);
         }else{
             new MenuPrincipal().setVisible(true);
@@ -1015,6 +1050,8 @@ public class LayoutMedio extends javax.swing.JFrame {
     public void exibirCuriosidade(){
         
         timer.cancel();
+        
+        ControleSons.playSound(clipAcertou,0.5);
         
         TelaCuriosidade telaCuriosidade = null;
         try {

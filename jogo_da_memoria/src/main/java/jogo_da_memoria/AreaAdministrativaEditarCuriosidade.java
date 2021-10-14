@@ -1,6 +1,8 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
 import codigo_jogo_da_memoria.Curiosidade;
 import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
@@ -20,6 +22,8 @@ public class AreaAdministrativaEditarCuriosidade extends javax.swing.JFrame {
     ManipularArquivos arquivos = new ManipularArquivos();
     
     DefaultTableModel modeloTabela;
+    
+    AudioClip clip;
     
     // Construtor
     
@@ -50,6 +54,8 @@ public class AreaAdministrativaEditarCuriosidade extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(PlacarLideres.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
     
@@ -445,11 +451,13 @@ public class AreaAdministrativaEditarCuriosidade extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_criarMouseEntered
 
     private void botao_criarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_criarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new AreaAdministrativaCriarCuriosidade().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_criarMouseClicked
 
     private void botao_excluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_excluirMouseClicked
+        ControleSons.playSound(clip,0.5);
         new AreaAdministrativaExcluirCuriosidade().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_excluirMouseClicked
@@ -463,6 +471,7 @@ public class AreaAdministrativaEditarCuriosidade extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_excluirMouseExited
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new DefinirAreaAdministrativa().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_voltarMouseClicked
@@ -476,6 +485,8 @@ public class AreaAdministrativaEditarCuriosidade extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_voltarMouseExited
 
     private void botao_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_salvarMouseClicked
+        
+        ControleSons.playSound(clip,0.5);
         
         if ((campo_curiosidade.getText().matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\\s!.,:@#$%&*\\(\\)?'[0-9]]+$")&&(!"".equals(campo_curiosidade.getText())))){
         
@@ -515,6 +526,7 @@ public class AreaAdministrativaEditarCuriosidade extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_salvarMouseExited
 
     private void tabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaMouseClicked
+        ControleSons.playSound(clip,0.5);
         int curiosidadeLinha = tabela.getSelectedRow();
         campo_curiosidade.setText(modeloTabela.getValueAt(curiosidadeLinha,2).toString());
     }//GEN-LAST:event_tabelaMouseClicked

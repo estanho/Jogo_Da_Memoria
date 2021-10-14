@@ -1,13 +1,17 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
 import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 public class DefinirDificuldade extends javax.swing.JFrame {
-
+    
+    AudioClip clip;
+    
     // Construtor
     
     public DefinirDificuldade() {
@@ -19,6 +23,8 @@ public class DefinirDificuldade extends javax.swing.JFrame {
         
         setSize(640, 598);
         setLocationRelativeTo(null); 
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
     @SuppressWarnings("unchecked")
@@ -310,13 +316,14 @@ public class DefinirDificuldade extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_medioMouseExited
 
     private void botao_dificilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_dificilMouseClicked
-        
+        ControleSons.playSound(clip,0.5);
         LayoutDificil janelaDificil = new LayoutDificil();
         janelaDificil.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_dificilMouseClicked
 
     private void botao_medioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_medioMouseClicked
+        ControleSons.playSound(clip,0.5);
         LayoutMedio janelaMedio = new LayoutMedio();
         janelaMedio.setSize(700,670);
         janelaMedio.setLocationRelativeTo(null);
@@ -325,6 +332,7 @@ public class DefinirDificuldade extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_medioMouseClicked
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new MenuPrincipal().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_voltarMouseClicked
@@ -338,7 +346,7 @@ public class DefinirDificuldade extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_voltarMouseExited
 
     private void botao_facilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_facilMouseClicked
-        
+        ControleSons.playSound(clip,0.5);
         LayoutFacil janelaFacil = null;
         
         try {

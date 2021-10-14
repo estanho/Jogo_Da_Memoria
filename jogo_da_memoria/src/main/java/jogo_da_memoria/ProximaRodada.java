@@ -1,6 +1,8 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
 import java.awt.Color;
 import java.util.Timer;
 import java.util.logging.Level;
@@ -16,6 +18,8 @@ public class ProximaRodada extends javax.swing.JDialog {
     String dificuldade;
     int pontos;
     int rodada;
+    
+    AudioClip clip;
     
     // Construtor
     
@@ -43,6 +47,8 @@ public class ProximaRodada extends javax.swing.JDialog {
         
         texto_pontos.setText("Pontos: "+pontos);
         texto_rodada.setText("Rodada: "+rodada);
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
 
@@ -240,6 +246,8 @@ public class ProximaRodada extends javax.swing.JDialog {
 
     private void botao_continuarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_continuarMouseClicked
         
+        ControleSons.playSound(clip,0.5);
+        
         this.dispose();
         
         if(janelaPaiFacil != null){
@@ -267,6 +275,8 @@ public class ProximaRodada extends javax.swing.JDialog {
     }//GEN-LAST:event_botao_continuarMouseExited
 
     private void botao_finalizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_finalizarMouseClicked
+        
+        ControleSons.playSound(clip,0.5);
         
         this.dispose();
         

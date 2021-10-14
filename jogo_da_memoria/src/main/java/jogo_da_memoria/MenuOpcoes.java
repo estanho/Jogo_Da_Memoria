@@ -1,12 +1,24 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
+import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 public class MenuOpcoes extends javax.swing.JDialog {
-
+    
+    AudioClip clip;
+    
     // Construtor
+    
+    ManipularArquivos arquivos = new ManipularArquivos();
+    
+    int[] sons;
     
     public MenuOpcoes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -17,7 +29,18 @@ public class MenuOpcoes extends javax.swing.JDialog {
         setIconImage(img.getImage());
         
         setSize(640, 640);
-        setLocationRelativeTo(null); 
+        setLocationRelativeTo(null);
+        
+        try {
+            sons = arquivos.getConfigSom();
+        } catch (IOException ex) {
+            Logger.getLogger(MenuOpcoes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        slider_sons.setValue(sons[0]);
+        slider_musica.setValue(sons[1]);
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
     
@@ -39,7 +62,7 @@ public class MenuOpcoes extends javax.swing.JDialog {
         texto_musica = new javax.swing.JLabel();
         slider_musica = new javax.swing.JSlider();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         painel_MenuOpcoes.setBackground(new java.awt.Color(255, 255, 255));
         painel_MenuOpcoes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -63,7 +86,6 @@ public class MenuOpcoes extends javax.swing.JDialog {
         barra_superior.setToolTipText("");
 
         texto_barra_superior.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        texto_barra_superior.setForeground(new java.awt.Color(0, 0, 0));
         texto_barra_superior.setText("Jogo da Memória");
 
         javax.swing.GroupLayout barra_superiorLayout = new javax.swing.GroupLayout(barra_superior);
@@ -96,7 +118,6 @@ public class MenuOpcoes extends javax.swing.JDialog {
 
         texto_botao_voltar.setBackground(new java.awt.Color(0, 0, 0));
         texto_botao_voltar.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        texto_botao_voltar.setForeground(new java.awt.Color(0, 0, 0));
         texto_botao_voltar.setText("Voltar");
 
         javax.swing.GroupLayout botao_voltarLayout = new javax.swing.GroupLayout(botao_voltar);
@@ -117,13 +138,11 @@ public class MenuOpcoes extends javax.swing.JDialog {
         );
 
         titulo_opcoes.setFont(new java.awt.Font("Comic Sans MS", 3, 36)); // NOI18N
-        titulo_opcoes.setForeground(new java.awt.Color(0, 0, 0));
         titulo_opcoes.setText("Opções de Som");
 
         painel_sons.setBackground(new java.awt.Color(255, 255, 255));
 
         texto_sons.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        texto_sons.setForeground(new java.awt.Color(0, 0, 0));
         texto_sons.setText("Sons");
 
         javax.swing.GroupLayout painel_sonsLayout = new javax.swing.GroupLayout(painel_sons);
@@ -152,7 +171,6 @@ public class MenuOpcoes extends javax.swing.JDialog {
         painel_musica.setBackground(new java.awt.Color(255, 255, 255));
 
         texto_musica.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        texto_musica.setForeground(new java.awt.Color(0, 0, 0));
         texto_musica.setText("Música");
 
         javax.swing.GroupLayout painel_musicaLayout = new javax.swing.GroupLayout(painel_musica);
@@ -191,14 +209,14 @@ public class MenuOpcoes extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painel_MenuOpcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuOpcoesLayout.createSequentialGroup()
+                        .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(195, 195, 195))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuOpcoesLayout.createSequentialGroup()
                         .addGroup(painel_MenuOpcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(painel_sons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(titulo_opcoes)
                             .addComponent(painel_musica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(160, 160, 160))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuOpcoesLayout.createSequentialGroup()
-                        .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(188, 188, 188))))
+                        .addGap(160, 160, 160))))
         );
         painel_MenuOpcoesLayout.setVerticalGroup(
             painel_MenuOpcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,9 +228,9 @@ public class MenuOpcoes extends javax.swing.JDialog {
                 .addComponent(painel_sons, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(painel_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(102, 102, 102)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -239,6 +257,16 @@ public class MenuOpcoes extends javax.swing.JDialog {
     }//GEN-LAST:event_botao_voltarMouseExited
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
+        
+        ControleSons.playSound(clip,0.5);
+        
+        int[] volume = {slider_sons.getValue(),slider_musica.getValue()};
+        try {
+            arquivos.setConfigSom(volume);
+        } catch (IOException ex) {
+            Logger.getLogger(MenuOpcoes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         this.dispose();
     }//GEN-LAST:event_botao_voltarMouseClicked
 

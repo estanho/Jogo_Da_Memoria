@@ -1,6 +1,8 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
 import java.awt.Color;
 import java.util.Timer;
 import java.util.logging.Level;
@@ -13,6 +15,8 @@ public class MenuPause extends javax.swing.JDialog {
     LayoutFacil janelaPaiFacil;
     LayoutMedio janelaPaiMedio;
     LayoutDificil janelaPaiDificil;
+    
+    AudioClip clip;
     
     // Construtor
     
@@ -34,7 +38,9 @@ public class MenuPause extends javax.swing.JDialog {
         setIconImage(img.getImage());
         
         setSize(640, 640);
-        setLocationRelativeTo(null); 
+        setLocationRelativeTo(null);
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
     
@@ -301,6 +307,8 @@ public class MenuPause extends javax.swing.JDialog {
 
     private void botao_voltar_menuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_menuMouseClicked
         
+        ControleSons.playSound(clip,0.5);
+        
         this.dispose();
         
         if(janelaPaiFacil != null){
@@ -323,6 +331,7 @@ public class MenuPause extends javax.swing.JDialog {
     }//GEN-LAST:event_botao_voltar_menuMouseExited
 
     private void botao_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_sairMouseClicked
+        ControleSons.playSound(clip,0.5);
         System.exit(0);
     }//GEN-LAST:event_botao_sairMouseClicked
 
@@ -335,6 +344,7 @@ public class MenuPause extends javax.swing.JDialog {
     }//GEN-LAST:event_botao_sairMouseExited
 
     private void botao_opcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseClicked
+        ControleSons.playSound(clip,0.5);
         MenuOpcoes opcoes = new MenuOpcoes(new javax.swing.JFrame(),true);
         opcoes.setVisible(true);
     }//GEN-LAST:event_botao_opcoesMouseClicked
@@ -348,6 +358,8 @@ public class MenuPause extends javax.swing.JDialog {
     }//GEN-LAST:event_botao_opcoesMouseExited
 
     private void botao_voltar_jogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_jogoMouseClicked
+        ControleSons.playSound(clip,0.5);
+        
         this.dispose();
         
         if(janelaPaiFacil != null){

@@ -1,6 +1,8 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
 import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
 import java.io.IOException;
@@ -12,6 +14,8 @@ import javax.swing.ImageIcon;
 public class DefinirAreaAdministrativa extends javax.swing.JFrame {
 
     ManipularArquivos arquivo = new ManipularArquivos();
+    
+    AudioClip clip;
     
     // Construtor
     
@@ -33,6 +37,8 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(DefinirAreaAdministrativa.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
 
@@ -303,12 +309,14 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_curiosidadesMouseExited
 
     private void botao_curiosidadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_curiosidadesMouseClicked
+        ControleSons.playSound(clip,0.5);
         AreaAdministrativaCriarCuriosidade areaCuriosidade = new AreaAdministrativaCriarCuriosidade();
         areaCuriosidade.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_curiosidadesMouseClicked
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new MenuPrincipal().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_voltarMouseClicked
@@ -322,14 +330,14 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_voltarMouseExited
 
     private void botao_cartasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_cartasMouseClicked
-        
+        ControleSons.playSound(clip,0.5);
         AreaAdministrativaCriarCarta areaCarta = new AreaAdministrativaCriarCarta();
         areaCarta.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_cartasMouseClicked
 
     private void campo_ajudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_ajudaActionPerformed
-             
+        ControleSons.playSound(clip,0.5);
         if(campo_ajuda.isSelected()){
             campo_ajuda.setText("Desligar");
             try {

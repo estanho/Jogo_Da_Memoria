@@ -1,6 +1,8 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
 import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
 import java.io.IOException;
@@ -14,6 +16,8 @@ public class InserirNomePlacar extends javax.swing.JFrame {
     static String dificuldade;
     static int pontos;
     static int rodada;
+    
+    AudioClip clip;
     
     // Main
     
@@ -33,6 +37,8 @@ public class InserirNomePlacar extends javax.swing.JFrame {
         
         texto_pontos.setText("Pontos: "+ pontosJogador);
         texto_rodada.setText("Rodada: "+ rodadasJogador);
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
 
@@ -281,11 +287,13 @@ public class InserirNomePlacar extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_salvarNomeMouseEntered
 
     private void botao_cancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_cancelarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new MenuPrincipal().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_cancelarMouseClicked
 
     private void botao_salvarNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_salvarNomeMouseClicked
+        ControleSons.playSound(clip,0.5);
         ManipularArquivos arquivos = new ManipularArquivos();
         try {
             

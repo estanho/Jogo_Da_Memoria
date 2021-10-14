@@ -1,7 +1,9 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
 import codigo_jogo_da_memoria.Baralho;
+import codigo_jogo_da_memoria.ControleSons;
 import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
 import java.io.IOException;
@@ -41,6 +43,12 @@ public class LayoutDificil extends javax.swing.JFrame {
     
     Timer timer = new Timer();
     int tempo = 90;
+    
+    AudioClip clip;
+    AudioClip clipClick;
+    AudioClip clipAcertou;
+    AudioClip clipNovaRodada;
+    AudioClip clipFim;
   
     // Construtor
     
@@ -56,6 +64,12 @@ public class LayoutDificil extends javax.swing.JFrame {
         
         this.DefinirCartas();
         this.tempo_jogo();
+        
+        clip = new AudioClip("sfx/click.wav");
+        clipClick = new AudioClip("sfx/button_hover.wav");
+        clipAcertou = new AudioClip("sfx/acertou.wav");
+        clipNovaRodada = new AudioClip("sfx/rodadaconcluida.wav");
+        clipFim = new AudioClip("sfx/gameover.wav");
     }
 
 
@@ -1224,6 +1238,8 @@ public class LayoutDificil extends javax.swing.JFrame {
    
     private void botao_pauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_pauseMouseClicked
         
+        ControleSons.playSound(clip,0.5);
+        
         timer.cancel();
         
         MenuPause pause = new MenuPause(new javax.swing.JFrame(),true, null, null, this);        
@@ -1239,6 +1255,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_pauseMouseExited
 
     private void carta_1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_1MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_1.setName("carta_1");
         label_carta_1.setIcon(new ImageIcon("icones/"+array_dificil[0]+".png"));
     }//GEN-LAST:event_carta_1MousePressed
@@ -1248,6 +1265,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_1MouseReleased
 
     private void carta_2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_2MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_2.setName("carta_2");
         label_carta_2.setIcon(new ImageIcon("icones/"+array_dificil[1]+".png"));
     }//GEN-LAST:event_carta_2MousePressed
@@ -1257,6 +1275,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_2MouseReleased
 
     private void carta_3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_3MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_3.setName("carta_3");
         label_carta_3.setIcon(new ImageIcon("icones/"+array_dificil[2]+".png"));
     }//GEN-LAST:event_carta_3MousePressed
@@ -1266,6 +1285,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_3MouseReleased
 
     private void carta_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_4MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_4.setName("carta_4");
         label_carta_4.setIcon(new ImageIcon("icones/"+array_dificil[3]+".png"));
     }//GEN-LAST:event_carta_4MousePressed
@@ -1275,6 +1295,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_4MouseReleased
 
     private void carta_5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_5MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_5.setName("carta_5");
         label_carta_5.setIcon(new ImageIcon("icones/"+array_dificil[4]+".png"));
     }//GEN-LAST:event_carta_5MousePressed
@@ -1284,6 +1305,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_5MouseReleased
 
     private void carta_6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_6MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_6.setName("carta_6");
         label_carta_6.setIcon(new ImageIcon("icones/"+array_dificil[5]+".png"));
     }//GEN-LAST:event_carta_6MousePressed
@@ -1293,6 +1315,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_6MouseReleased
 
     private void carta_7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_7MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_7.setName("carta_7");
         label_carta_7.setIcon(new ImageIcon("icones/"+array_dificil[6]+".png"));
     }//GEN-LAST:event_carta_7MousePressed
@@ -1302,6 +1325,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_7MouseReleased
 
     private void carta_8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_8MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_8.setName("carta_8");
         label_carta_8.setIcon(new ImageIcon("icones/"+array_dificil[7]+".png"));
     }//GEN-LAST:event_carta_8MousePressed
@@ -1311,6 +1335,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_8MouseReleased
 
     private void carta_9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_9MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_9.setName("carta_9");
         label_carta_9.setIcon(new ImageIcon("icones/"+array_dificil[8]+".png"));
     }//GEN-LAST:event_carta_9MousePressed
@@ -1320,6 +1345,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_9MouseReleased
 
     private void carta_10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_10MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_10.setName("carta_10");
         label_carta_10.setIcon(new ImageIcon("icones/"+array_dificil[9]+".png"));
     }//GEN-LAST:event_carta_10MousePressed
@@ -1329,6 +1355,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_10MouseReleased
 
     private void carta_11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_11MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_11.setName("carta_11");
         label_carta_11.setIcon(new ImageIcon("icones/"+array_dificil[10]+".png"));
     }//GEN-LAST:event_carta_11MousePressed
@@ -1338,6 +1365,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_11MouseReleased
 
     private void carta_12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_12MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_12.setName("carta_12");
         label_carta_12.setIcon(new ImageIcon("icones/"+array_dificil[11]+".png"));
     }//GEN-LAST:event_carta_12MousePressed
@@ -1347,6 +1375,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_12MouseReleased
 
     private void carta_13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_13MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_13.setName("carta_13");
         label_carta_13.setIcon(new ImageIcon("icones/"+array_dificil[12]+".png"));
     }//GEN-LAST:event_carta_13MousePressed
@@ -1356,6 +1385,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_13MouseReleased
 
     private void carta_14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_14MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_14.setName("carta_14");
         label_carta_14.setIcon(new ImageIcon("icones/"+array_dificil[13]+".png"));
     }//GEN-LAST:event_carta_14MousePressed
@@ -1365,6 +1395,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_14MouseReleased
 
     private void carta_15MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_15MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_15.setName("carta_15");
         label_carta_15.setIcon(new ImageIcon("icones/"+array_dificil[14]+".png"));
     }//GEN-LAST:event_carta_15MousePressed
@@ -1374,6 +1405,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_15MouseReleased
 
     private void carta_16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_16MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_16.setName("carta_16");
         label_carta_16.setIcon(new ImageIcon("icones/"+array_dificil[15]+".png"));
     }//GEN-LAST:event_carta_16MousePressed
@@ -1383,6 +1415,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_16MouseReleased
 
     private void carta_17MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_17MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_17.setName("carta_17");
         label_carta_17.setIcon(new ImageIcon("icones/"+array_dificil[16]+".png"));
     }//GEN-LAST:event_carta_17MousePressed
@@ -1392,6 +1425,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_17MouseReleased
 
     private void carta_18MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_18MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_18.setName("carta_18");
         label_carta_18.setIcon(new ImageIcon("icones/"+array_dificil[17]+".png"));
     }//GEN-LAST:event_carta_18MousePressed
@@ -1401,6 +1435,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_18MouseReleased
 
     private void carta_19MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_19MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_19.setName("carta_19");
         label_carta_19.setIcon(new ImageIcon("icones/"+array_dificil[18]+".png"));
     }//GEN-LAST:event_carta_19MousePressed
@@ -1410,6 +1445,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_19MouseReleased
 
     private void carta_20MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_20MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_20.setName("carta_20");
         label_carta_20.setIcon(new ImageIcon("icones/"+array_dificil[19]+".png"));
     }//GEN-LAST:event_carta_20MousePressed
@@ -1419,6 +1455,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_20MouseReleased
 
     private void carta_21MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_21MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_21.setName("carta_21");
         label_carta_21.setIcon(new ImageIcon("icones/"+array_dificil[20]+".png"));
     }//GEN-LAST:event_carta_21MousePressed
@@ -1428,6 +1465,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_21MouseReleased
 
     private void carta_22MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_22MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_22.setName("carta_22");
         label_carta_22.setIcon(new ImageIcon("icones/"+array_dificil[21]+".png"));
     }//GEN-LAST:event_carta_22MousePressed
@@ -1437,6 +1475,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_22MouseReleased
 
     private void carta_23MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_23MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_23.setName("carta_23");
         label_carta_23.setIcon(new ImageIcon("icones/"+array_dificil[22]+".png"));
     }//GEN-LAST:event_carta_23MousePressed
@@ -1446,6 +1485,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_23MouseReleased
 
     private void carta_24MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_24MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_24.setName("carta_24");
         label_carta_24.setIcon(new ImageIcon("icones/"+array_dificil[23]+".png"));
     }//GEN-LAST:event_carta_24MousePressed
@@ -1455,6 +1495,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_24MouseReleased
 
     private void carta_25MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_25MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_25.setName("carta_25");
         label_carta_25.setIcon(new ImageIcon("icones/"+array_dificil[24]+".png"));
     }//GEN-LAST:event_carta_25MousePressed
@@ -1464,6 +1505,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_25MouseReleased
 
     private void carta_26MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_26MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_26.setName("carta_26");
         label_carta_26.setIcon(new ImageIcon("icones/"+array_dificil[25]+".png"));
     }//GEN-LAST:event_carta_26MousePressed
@@ -1473,6 +1515,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_26MouseReleased
 
     private void carta_27MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_27MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_27.setName("carta_27");
         label_carta_27.setIcon(new ImageIcon("icones/"+array_dificil[26]+".png"));
     }//GEN-LAST:event_carta_27MousePressed
@@ -1482,6 +1525,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_27MouseReleased
 
     private void carta_28MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_28MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_28.setName("carta_28");
         label_carta_28.setIcon(new ImageIcon("icones/"+array_dificil[27]+".png"));
     }//GEN-LAST:event_carta_28MousePressed
@@ -1491,6 +1535,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_28MouseReleased
 
     private void carta_29MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_29MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_29.setName("carta_29");
         label_carta_29.setIcon(new ImageIcon("icones/"+array_dificil[28]+".png"));
     }//GEN-LAST:event_carta_29MousePressed
@@ -1500,6 +1545,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_29MouseReleased
 
     private void carta_30MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_30MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_30.setName("carta_30");
         label_carta_30.setIcon(new ImageIcon("icones/"+array_dificil[29]+".png"));
     }//GEN-LAST:event_carta_30MousePressed
@@ -1509,6 +1555,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_30MouseReleased
 
     private void carta_31MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_31MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_31.setName("carta_31");
         label_carta_31.setIcon(new ImageIcon("icones/"+array_dificil[30]+".png"));
     }//GEN-LAST:event_carta_31MousePressed
@@ -1518,6 +1565,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_31MouseReleased
 
     private void carta_32MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_32MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_32.setName("carta_32");
         label_carta_32.setIcon(new ImageIcon("icones/"+array_dificil[31]+".png"));
     }//GEN-LAST:event_carta_32MousePressed
@@ -1527,6 +1575,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_32MouseReleased
 
     private void carta_33MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_33MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_33.setName("carta_33");
         label_carta_33.setIcon(new ImageIcon("icones/"+array_dificil[32]+".png"));
     }//GEN-LAST:event_carta_33MousePressed
@@ -1536,6 +1585,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_33MouseReleased
 
     private void carta_34MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_34MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_34.setName("carta_34");
         label_carta_34.setIcon(new ImageIcon("icones/"+array_dificil[33]+".png"));
     }//GEN-LAST:event_carta_34MousePressed
@@ -1545,6 +1595,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_34MouseReleased
 
     private void carta_35MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_35MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_35.setName("carta_35");
         label_carta_35.setIcon(new ImageIcon("icones/"+array_dificil[34]+".png"));
     }//GEN-LAST:event_carta_35MousePressed
@@ -1554,6 +1605,7 @@ public class LayoutDificil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_35MouseReleased
 
     private void carta_36MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_36MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_36.setName("carta_36");
         label_carta_36.setIcon(new ImageIcon("icones/"+array_dificil[35]+".png"));
     }//GEN-LAST:event_carta_36MousePressed
@@ -1672,6 +1724,8 @@ public class LayoutDificil extends javax.swing.JFrame {
         contador_pontos.setText(valueOf(pontosTotal));
         contador_pares.setText(valueOf(controlePares));
         
+        ControleSons.playSound(clipNovaRodada,0.5);
+        
         ProximaRodada proxima = new ProximaRodada(new javax.swing.JFrame(), true, null, null, this, pontosTotal, rodada);
         proxima.setVisible(true);        
     }
@@ -1680,8 +1734,10 @@ public class LayoutDificil extends javax.swing.JFrame {
         
         this.pontosTotal = pontosTotal + controlePares*20;
         
+        ControleSons.playSound(clipFim,0.8);
+        
         if(rodada>1){
-            InserirNomePlacar placar = new InserirNomePlacar(pontosTotal,rodada,"facil");
+            InserirNomePlacar placar = new InserirNomePlacar(pontosTotal,rodada,"dificil");
             placar.setVisible(true);
         }else{
             new MenuPrincipal().setVisible(true);
@@ -1759,6 +1815,8 @@ public class LayoutDificil extends javax.swing.JFrame {
         
         timer.cancel();
         
+        ControleSons.playSound(clipAcertou,0.5);
+        
         TelaCuriosidade telaCuriosidade = null;
         try {
             telaCuriosidade = new TelaCuriosidade(new javax.swing.JFrame(), true, null, null, this);
@@ -1822,7 +1880,7 @@ public class LayoutDificil extends javax.swing.JFrame {
                 this.label_carta_36.setIcon(new ImageIcon("icones/"+array_dificil[35]+".png"));
                 
                 this.setEnabled(false);
-                this.tempo = 97;
+                this.tempo = 94;
                 this.controleConfig = true;
                 
             }else{

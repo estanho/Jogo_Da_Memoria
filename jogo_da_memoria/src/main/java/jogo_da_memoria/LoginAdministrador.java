@@ -1,6 +1,8 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
 import java.awt.Color;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -11,6 +13,8 @@ import javax.swing.JOptionPane;
 public class LoginAdministrador extends javax.swing.JDialog {
 
     MenuPrincipal janelaPaiMenu;
+    
+    AudioClip clip;
     
     // Construtor
     
@@ -26,7 +30,9 @@ public class LoginAdministrador extends javax.swing.JDialog {
         setIconImage(img.getImage());
         
         setSize(548, 358);
-        setLocationRelativeTo(null); 
+        setLocationRelativeTo(null);
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
     @SuppressWarnings("unchecked")
@@ -240,6 +246,8 @@ public class LoginAdministrador extends javax.swing.JDialog {
 
     private void botao_acessarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_acessarMouseClicked
         
+        ControleSons.playSound(clip,0.5);
+        
         if ("40bd001563085fc35165329ea1ff5c5ecbdbbeef".equals(gerarHash(campo_senha.getText()))){
                 
                 JOptionPane.showMessageDialog(null,""
@@ -256,6 +264,7 @@ public class LoginAdministrador extends javax.swing.JDialog {
     }//GEN-LAST:event_botao_acessarMouseClicked
 
     private void botao_cancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_cancelarMouseClicked
+        ControleSons.playSound(clip,0.5);
         this.dispose();
     }//GEN-LAST:event_botao_cancelarMouseClicked
 

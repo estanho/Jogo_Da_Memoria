@@ -1,7 +1,9 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
 import codigo_jogo_da_memoria.Baralho;
+import codigo_jogo_da_memoria.ControleSons;
 import java.awt.Color;
 import java.io.IOException;
 import static java.lang.String.valueOf;
@@ -39,6 +41,13 @@ public class LayoutFacil extends javax.swing.JFrame {
     Timer timer = new Timer();
     int tempo = 10;
     
+    
+    AudioClip clip;
+    AudioClip clipClick;
+    AudioClip clipAcertou;
+    AudioClip clipNovaRodada;
+    AudioClip clipFim;
+    
     //  Construtor
     
     public LayoutFacil() throws InterruptedException {
@@ -53,6 +62,12 @@ public class LayoutFacil extends javax.swing.JFrame {
         
         this.DefinirCartas();
         this.tempo_jogo();
+        
+        clip = new AudioClip("sfx/click.wav");
+        clipClick = new AudioClip("sfx/button_hover.wav");
+        clipAcertou = new AudioClip("sfx/acertou.wav");
+        clipNovaRodada = new AudioClip("sfx/rodadaconcluida.wav");
+        clipFim = new AudioClip("sfx/gameover.wav");
     }
 
     
@@ -344,6 +359,8 @@ public class LayoutFacil extends javax.swing.JFrame {
 
     private void botao_pauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_pauseMouseClicked
         
+        ControleSons.playSound(clip,0.5);
+        
         timer.cancel();
         
         MenuPause pause = new MenuPause(new javax.swing.JFrame(),true, this, null, null);
@@ -359,6 +376,7 @@ public class LayoutFacil extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_pauseMouseExited
 
     private void carta_1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_1MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_1.setName("carta_1");
         label_carta_1.setIcon(new ImageIcon("icones/"+array_facil[0]+".png"));
     }//GEN-LAST:event_carta_1MousePressed
@@ -368,6 +386,7 @@ public class LayoutFacil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_1MouseReleased
 
     private void carta_2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_2MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_2.setName("carta_2");
         label_carta_2.setIcon(new ImageIcon("icones/"+array_facil[1]+".png"));
     }//GEN-LAST:event_carta_2MousePressed
@@ -377,6 +396,7 @@ public class LayoutFacil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_2MouseReleased
 
     private void carta_3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_3MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_3.setName("carta_3");
         label_carta_3.setIcon(new ImageIcon("icones/"+array_facil[2]+".png"));
     }//GEN-LAST:event_carta_3MousePressed
@@ -386,6 +406,7 @@ public class LayoutFacil extends javax.swing.JFrame {
     }//GEN-LAST:event_carta_3MouseReleased
 
     private void carta_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_4MousePressed
+        ControleSons.playSound(clipClick,1);
         carta_4.setName("carta_4");
         label_carta_4.setIcon(new ImageIcon("icones/"+array_facil[3]+".png"));
     }//GEN-LAST:event_carta_4MousePressed
@@ -475,15 +496,19 @@ public class LayoutFacil extends javax.swing.JFrame {
         contador_pontos.setText(valueOf(pontosTotal));
         contador_pares.setText(valueOf(controlePares));
         
+        ControleSons.playSound(clipNovaRodada,0.5);
+        
         ProximaRodada proxima = new ProximaRodada(new javax.swing.JFrame(), true, this, null, null,pontosTotal,rodada);
         proxima.setVisible(true);        
     }
     
     void fim(){
-        
+
         this.pontosTotal = pontosTotal + controlePares*5;
         
-        if(rodada>1){
+        ControleSons.playSound(clipFim,0.8);
+        
+        if(rodada>1){           
             InserirNomePlacar placar = new InserirNomePlacar(pontosTotal,rodada,"facil");
             placar.setVisible(true);
         }else{
@@ -561,6 +586,8 @@ public class LayoutFacil extends javax.swing.JFrame {
     public void exibirCuriosidade(){
         
         timer.cancel();
+        
+        ControleSons.playSound(clipAcertou,0.5);
         
         TelaCuriosidade telaCuriosidade = null;
         try {

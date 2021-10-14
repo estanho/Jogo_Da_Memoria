@@ -1,7 +1,9 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
 import codigo_jogo_da_memoria.Carta;
+import codigo_jogo_da_memoria.ControleSons;
 import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
 import java.io.IOException;
@@ -23,6 +25,8 @@ public class AreaAdministrativaCriarCarta extends javax.swing.JFrame {
     ManipularArquivos arquivos = new ManipularArquivos();
     
     DefaultTableModel modeloTabela;
+    
+    AudioClip clip;
     
     // Construtor
     
@@ -71,6 +75,8 @@ public class AreaAdministrativaCriarCarta extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(PlacarLideres.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
     @SuppressWarnings("unchecked")
@@ -427,6 +433,7 @@ public class AreaAdministrativaCriarCarta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botao_excluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_excluirMouseClicked
+        ControleSons.playSound(clip,0.5);
         new AreaAdministrativaExcluirCarta().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_excluirMouseClicked
@@ -440,6 +447,7 @@ public class AreaAdministrativaCriarCarta extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_excluirMouseExited
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new DefinirAreaAdministrativa().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_voltarMouseClicked
@@ -453,6 +461,7 @@ public class AreaAdministrativaCriarCarta extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_voltarMouseExited
 
     private void botao_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_salvarMouseClicked
+
         ManipularArquivos arquivos = new ManipularArquivos();
               
         try {
@@ -469,9 +478,12 @@ public class AreaAdministrativaCriarCarta extends javax.swing.JFrame {
                 
                 campo_curiosidade.setText("");
                 
+                ControleSons.playSound(clip,0.5);
                 JOptionPane.showMessageDialog(null,""
                             + "Carta cadastrada com sucesso!\n","Cadastro", JOptionPane.WARNING_MESSAGE);
             }else{
+                
+                ControleSons.playSound(clip,0.5);
                 JOptionPane.showMessageDialog(null,""
                             + "Caracter Invalido!\n","Atencao", JOptionPane.WARNING_MESSAGE);
             }

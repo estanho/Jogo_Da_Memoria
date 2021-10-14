@@ -317,6 +317,20 @@ public class ManipularArquivos implements Runnable {
             bw.close();
             fw.close();
         }
+        
+        //txt som
+        File txtSom = new File("Dados/Config/Som.txt");
+        boolean existeSom = txtSom.exists();
+
+        if (existeSom == false){   
+            txtSom.createNewFile();          
+            FileWriter fw = new FileWriter(txtSom);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("50"); bw.newLine();
+            bw.write("50");
+            bw.close();
+            fw.close();
+        }
     }
     
         
@@ -544,8 +558,6 @@ public class ManipularArquivos implements Runnable {
         
         fr.close(); br.close();
         
-        System.out.println(linha);
-        
         if(Boolean.valueOf(linha) == true){
             return true;
         }else{
@@ -565,6 +577,41 @@ public class ManipularArquivos implements Runnable {
         }else{
             bw.write("false");
         }
+        bw.close();
+        fw.close();
+    }
+    
+    
+    static public int[] getConfigSom() throws FileNotFoundException, IOException{
+        
+        String somTxt = "Dados/Config/Som.txt";
+        
+        FileReader fr = new FileReader(somTxt);
+        BufferedReader br = new BufferedReader( fr );
+           
+        String linha1 = br.readLine();
+        String linha2 = br.readLine();
+        
+        fr.close(); br.close();
+       
+        int som = Integer.valueOf(linha1);
+        int musica = Integer.valueOf(linha2);
+        
+        int[]sons = {som,musica};
+        return sons;
+    }
+    
+    
+    public void setConfigSom(int[]sons) throws FileNotFoundException, IOException{
+        
+        String configTxt = "Dados/Config/Som.txt";
+        
+        FileWriter fw = new FileWriter(configTxt,false);
+        BufferedWriter bw = new BufferedWriter(fw);
+            
+        bw.write(String.valueOf(sons[0])); bw.newLine();
+        bw.write(String.valueOf(sons[1]));
+        
         bw.close();
         fw.close();
     }

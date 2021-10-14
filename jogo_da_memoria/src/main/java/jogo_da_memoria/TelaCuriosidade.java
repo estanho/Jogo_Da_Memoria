@@ -1,6 +1,8 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
 import codigo_jogo_da_memoria.Curiosidade;
 import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
@@ -22,6 +24,8 @@ public class TelaCuriosidade extends javax.swing.JDialog {
     ArrayList <Curiosidade> curiosidadesSelecionadas = new ArrayList();
     
     ManipularArquivos arquivos = new ManipularArquivos();
+    
+    AudioClip clip;
     
     // Construtor
     
@@ -86,6 +90,7 @@ public class TelaCuriosidade extends javax.swing.JDialog {
             
             janelaPaiDificil = janelaDificil;
         }
+        clip = new AudioClip("sfx/click.wav");
     }
 
     @SuppressWarnings("unchecked")
@@ -248,7 +253,9 @@ public class TelaCuriosidade extends javax.swing.JDialog {
     }//GEN-LAST:event_botao_continuarMouseEntered
 
     private void botao_continuarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_continuarMouseClicked
-
+        
+        ControleSons.playSound(clip,0.5);
+        
         this.dispose();
 
         if(janelaPaiFacil != null){

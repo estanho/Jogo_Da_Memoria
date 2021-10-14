@@ -1,7 +1,9 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
 import codigo_jogo_da_memoria.Carta;
+import codigo_jogo_da_memoria.ControleSons;
 import codigo_jogo_da_memoria.Curiosidade;
 import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
@@ -23,6 +25,8 @@ public class AreaAdministrativaCriarCuriosidade extends javax.swing.JFrame {
     ManipularArquivos arquivos = new ManipularArquivos();
     
     DefaultTableModel modeloTabela;
+    
+    AudioClip clip;
     
     // Construtor
     
@@ -61,6 +65,8 @@ public class AreaAdministrativaCriarCuriosidade extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(PlacarLideres.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
 
@@ -464,11 +470,13 @@ public class AreaAdministrativaCriarCuriosidade extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_editarMouseEntered
 
     private void botao_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_editarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new AreaAdministrativaEditarCuriosidade().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_editarMouseClicked
 
     private void botao_excluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_excluirMouseClicked
+        ControleSons.playSound(clip,0.5);
         new AreaAdministrativaExcluirCuriosidade().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_excluirMouseClicked
@@ -482,6 +490,7 @@ public class AreaAdministrativaCriarCuriosidade extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_excluirMouseExited
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new DefinirAreaAdministrativa().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_voltarMouseClicked
@@ -511,9 +520,14 @@ public class AreaAdministrativaCriarCuriosidade extends javax.swing.JFrame {
                 
                 campo_curiosidade.setText("");
                 
+                ControleSons.playSound(clip,0.5);
+                
                 JOptionPane.showMessageDialog(null,""
                             + "Curiosidade cadastrada com sucesso!\n","Cadastro", JOptionPane.WARNING_MESSAGE);
             }else{
+                
+                ControleSons.playSound(clip,0.5);
+                
                 JOptionPane.showMessageDialog(null,""
                             + "Caracter Invalido!\n","Atencao", JOptionPane.WARNING_MESSAGE);
             }

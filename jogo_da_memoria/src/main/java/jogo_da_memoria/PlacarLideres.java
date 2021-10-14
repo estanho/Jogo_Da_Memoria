@@ -1,6 +1,8 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
 import codigo_jogo_da_memoria.Jogador;
 import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
@@ -21,6 +23,8 @@ public class PlacarLideres extends javax.swing.JFrame {
     ManipularArquivos arquivos = new ManipularArquivos();
     
     DefaultTableModel modeloTabela;
+    
+    AudioClip clip;
     
     // Construtor
     
@@ -54,6 +58,8 @@ public class PlacarLideres extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(PlacarLideres.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
 
@@ -399,6 +405,9 @@ public class PlacarLideres extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_medioMouseEntered
 
     private void botao_facilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_facilMouseClicked
+        
+        ControleSons.playSound(clip,0.5);
+        
         if(botao_facil.getBackground()!=Color.GRAY) {
             
             if(botao_medio.getBackground() == Color.GRAY)   botao_medio.setBackground(Color.WHITE);
@@ -416,6 +425,9 @@ public class PlacarLideres extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_facilMouseClicked
 
     private void botao_medioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_medioMouseClicked
+        
+        ControleSons.playSound(clip,0.5);
+        
         if(botao_medio.getBackground()!=Color.GRAY) {
             
             if(botao_facil.getBackground() == Color.GRAY)   botao_facil.setBackground(Color.WHITE);
@@ -433,6 +445,9 @@ public class PlacarLideres extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_medioMouseClicked
 
     private void botao_dificilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_dificilMouseClicked
+        
+        ControleSons.playSound(clip,0.5);
+        
         if(botao_dificil.getBackground()!=Color.GRAY) {
             
             if(botao_facil.getBackground() == Color.GRAY)   botao_facil.setBackground(Color.WHITE);
@@ -462,6 +477,8 @@ public class PlacarLideres extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_dificilMouseExited
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
+        
+        ControleSons.playSound(clip,0.5);
         new MenuPrincipal().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_voltarMouseClicked

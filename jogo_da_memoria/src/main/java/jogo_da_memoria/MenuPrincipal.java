@@ -1,6 +1,8 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
+import codigo_jogo_da_memoria.ControleSons;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
@@ -8,8 +10,10 @@ import javax.swing.ImageIcon;
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
-    // Construtor
+    AudioClip clip;
     
+    // Construtor
+         
     public MenuPrincipal() {
         initComponents();
         
@@ -18,6 +22,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setIconImage(img.getImage());
         setSize(640, 640);
         setLocationRelativeTo(null); 
+        
+        clip = new AudioClip("sfx/click.wav");
         
         botao_login.setVisible(false);
     }
@@ -367,10 +373,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_placar_lideresMouseExited
 
     private void botao_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_sairMouseClicked
+        ControleSons.playSound(clip,0.5);
         System.exit(0);
     }//GEN-LAST:event_botao_sairMouseClicked
 
     private void botao_opcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseClicked
+        ControleSons.playSound(clip,0.5);
         MenuOpcoes opcoes = new MenuOpcoes(new javax.swing.JFrame(),true);
         opcoes.setVisible(true);
     }//GEN-LAST:event_botao_opcoesMouseClicked
@@ -384,16 +392,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_opcoesMouseExited
 
     private void botao_placar_lideresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_placar_lideresMouseClicked
+        ControleSons.playSound(clip,0.5);
         new PlacarLideres().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_placar_lideresMouseClicked
 
     private void botao_jogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_jogarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new DefinirDificuldade().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_jogarMouseClicked
 
     private void botao_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_loginMouseClicked
+        ControleSons.playSound(clip,0.5);
         LoginAdministrador login = new LoginAdministrador(new javax.swing.JFrame(),true, this);
         login.setVisible(true);
     }//GEN-LAST:event_botao_loginMouseClicked
@@ -408,6 +419,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_F1) {
+            ControleSons.playSound(clip,0.5);
             botao_login.setVisible(true);
         }
     }//GEN-LAST:event_formKeyPressed

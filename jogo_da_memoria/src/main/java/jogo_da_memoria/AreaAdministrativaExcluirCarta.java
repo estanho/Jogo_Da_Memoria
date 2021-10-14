@@ -1,7 +1,9 @@
 
 package jogo_da_memoria;
 
+import codigo_jogo_da_memoria.AudioClip;
 import codigo_jogo_da_memoria.Carta;
+import codigo_jogo_da_memoria.ControleSons;
 import codigo_jogo_da_memoria.ManipularArquivos;
 import java.awt.Color;
 import java.io.IOException;
@@ -20,6 +22,8 @@ public class AreaAdministrativaExcluirCarta extends javax.swing.JFrame {
     ManipularArquivos arquivos = new ManipularArquivos();
     
     DefaultTableModel modeloTabela;
+    
+    AudioClip clip;
     
     // Main
     
@@ -49,7 +53,8 @@ public class AreaAdministrativaExcluirCarta extends javax.swing.JFrame {
             Object[] dados = {cartas.get(i).getNumero(),cartas.get(i).getElemento()};
             modeloTabela.addRow(dados);
         }
-                      
+        
+        clip = new AudioClip("sfx/click.wav");
     }
 
 
@@ -380,11 +385,13 @@ public class AreaAdministrativaExcluirCarta extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_criarMouseEntered
 
     private void botao_criarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_criarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new AreaAdministrativaCriarCarta().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_criarMouseClicked
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
+        ControleSons.playSound(clip,0.5);
         new DefinirAreaAdministrativa().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_botao_voltarMouseClicked
@@ -398,6 +405,8 @@ public class AreaAdministrativaExcluirCarta extends javax.swing.JFrame {
     }//GEN-LAST:event_botao_voltarMouseExited
 
     private void botao_salvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_salvarMouseClicked
+        
+        ControleSons.playSound(clip,0.5);
         
         if(tabela.getSelectedRow() != -1){
             
