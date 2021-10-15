@@ -34,5 +34,3 @@
 *;50;Estanho;Sozinho, o estanho é um metal extremamente macio, por isso que sempre misturam metais com ele.;
 *;79;Ouro;O ouro é tão difícil de ser encontrado que os especialistas calculam que existam apenas cinco quilos do metal para cada 1 milhão de toneladas de terra.;
 *;79;Ouro;O ouro é o único metal que não oxida.;
-*;5;Boro;Testando;
-*;5;Boro;Testando;

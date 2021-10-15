@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class MenuOpcoes extends javax.swing.JDialog {
     
@@ -41,9 +42,11 @@ public class MenuOpcoes extends javax.swing.JDialog {
         slider_musica.setValue(sons[1]);
         
         clip = new AudioClip("sfx/click.wav");
+        
+        JOptionPane.showMessageDialog(null,""
+                            + "Sistema de volume dos sons não foi totalmente finalizado e está desativado!\n","Atencao", JOptionPane.WARNING_MESSAGE);
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -276,6 +279,7 @@ public class MenuOpcoes extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 MenuOpcoes dialog = new MenuOpcoes(new javax.swing.JFrame(), true);
+
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

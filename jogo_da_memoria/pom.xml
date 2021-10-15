@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mycompany</groupId>
     <artifactId>jogo_da_memoria</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>Finalizado</version>
     <packaging>jar</packaging>
     <repositories>
         <repository>
