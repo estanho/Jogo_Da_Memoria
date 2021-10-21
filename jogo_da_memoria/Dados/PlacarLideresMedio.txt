@@ -1,6 +1,1 @@
 - Placar de Lideres Medio:
-*,JogadorMediano,7000,8,medio,
-*,JogadoraMediana,9000,5,medio,
-*,Floco,7000,8,medio,
-*,teste,80,2,medio,
-*,lucianohuck,40,2,medio,
