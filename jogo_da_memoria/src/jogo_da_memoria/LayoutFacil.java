@@ -372,6 +372,7 @@ public class LayoutFacil extends javax.swing.JFrame {
         ControleSons.playSound(clipClick,1);
         carta_1.setName("carta_1");
         label_carta_1.setIcon(new ImageIcon("icones/"+array_facil[0]+".png"));
+        
     }//GEN-LAST:event_carta_1MousePressed
 
     private void carta_1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_1MouseReleased
@@ -382,6 +383,7 @@ public class LayoutFacil extends javax.swing.JFrame {
         ControleSons.playSound(clipClick,1);
         carta_2.setName("carta_2");
         label_carta_2.setIcon(new ImageIcon("icones/"+array_facil[1]+".png"));
+        
     }//GEN-LAST:event_carta_2MousePressed
 
     private void carta_2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_2MouseReleased
@@ -392,6 +394,7 @@ public class LayoutFacil extends javax.swing.JFrame {
         ControleSons.playSound(clipClick,1);
         carta_3.setName("carta_3");
         label_carta_3.setIcon(new ImageIcon("icones/"+array_facil[2]+".png"));
+        
     }//GEN-LAST:event_carta_3MousePressed
 
     private void carta_3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_3MouseReleased
@@ -402,6 +405,7 @@ public class LayoutFacil extends javax.swing.JFrame {
         ControleSons.playSound(clipClick,1);
         carta_4.setName("carta_4");
         label_carta_4.setIcon(new ImageIcon("icones/"+array_facil[3]+".png"));
+        
     }//GEN-LAST:event_carta_4MousePressed
 
     private void carta_4MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carta_4MouseReleased
@@ -538,7 +542,6 @@ public class LayoutFacil extends javax.swing.JFrame {
 
                 System.out.println("Carta 2 Selecionada!");
                 carta.setBackground(Color.YELLOW);
-                
                 CartasSelecionadas = 0;
                 
                 CompararCartas();

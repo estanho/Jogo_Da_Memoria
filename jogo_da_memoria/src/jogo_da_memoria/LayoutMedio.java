@@ -981,7 +981,6 @@ public class LayoutMedio extends javax.swing.JFrame {
     }
         
     void SelecionarCarta(JPanel carta,JLabel label){
-        
         String cor_carta = carta.getBackground().toString();
         
         if(CartasSelecionadas == 0 && cor_carta.equals("java.awt.Color[r=255,g=255,b=255]")){
@@ -996,10 +995,10 @@ public class LayoutMedio extends javax.swing.JFrame {
             PrimeiraSelecionadaObj = carta;
             PrimeiraSelecionadaLabel = label;
             
-        }else if(CartasSelecionadas == 1 && cor_carta.equals("java.awt.Color[r=255,g=255,b=255]")){
-            
+        }else if(CartasSelecionadas == 1 && cor_carta.equals("java.awt.Color[r=255,g=255,b=255]")){            
             SegundaSelecionada = carta.getName();
             SegundaSelecionadaObj = carta;
+            carta.setBackground(Color.YELLOW);
             
             if(!SegundaSelecionada.equals(PrimeiraSelecionada)){
                 
@@ -1008,7 +1007,6 @@ public class LayoutMedio extends javax.swing.JFrame {
                 SegundaSelecionadaLabel = label;
 
                 System.out.println("Carta 2 Selecionada!");
-                carta.setBackground(Color.YELLOW);
                 
                 CartasSelecionadas = 0;
                 
@@ -1039,12 +1037,16 @@ public class LayoutMedio extends javax.swing.JFrame {
             System.out.println("Beeeeeh! Par incorreto, tente novamente!");
             PrimeiraSelecionadaObj.setBackground(Color.WHITE);
             SegundaSelecionadaObj.setBackground(Color.WHITE);
+            
             this.setEnabled(false);
-            wait(500);
+            wait(600);
             this.setEnabled(true);
+            
             PrimeiraSelecionadaLabel.setIcon(new ImageIcon("icones/carta.png"));
             SegundaSelecionadaLabel.setIcon(new ImageIcon("icones/carta.png"));
         }
+        
+        
     }
     
     public void exibirCuriosidade(){
@@ -1065,7 +1067,9 @@ public class LayoutMedio extends javax.swing.JFrame {
     public static void wait(int ms){
         try
         {
-            Thread.sleep(ms);
+            Thread t = new Thread();
+            t.sleep(ms);
+            t.join();
         }
         catch(InterruptedException ex)
         {
