@@ -67,11 +67,15 @@
                                   <Component id="botao_curiosidades" min="-2" max="-2" attributes="0"/>
                                   <Component id="botao_cartas" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="titulo_ajuda" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="campo_ajuda" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                  <Component id="titulo_ajuda1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -111,7 +115,9 @@
                       <Component id="titulo_ajuda" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="campo_ajuda" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="58" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="titulo_ajuda1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
                   <Component id="barra_inferior" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -358,6 +364,14 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_ajudaActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="titulo_ajuda1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="14" style="3"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ajuda para o modo Dificil"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

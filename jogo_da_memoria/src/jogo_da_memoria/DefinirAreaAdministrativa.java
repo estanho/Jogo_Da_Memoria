@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 
 public class DefinirAreaAdministrativa extends javax.swing.JFrame {
@@ -59,6 +60,7 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
         texto_botao_curiosidades = new javax.swing.JLabel();
         titulo_ajuda = new javax.swing.JLabel();
         campo_ajuda = new javax.swing.JToggleButton();
+        titulo_ajuda1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jogo da Memória com elementos químicos");
@@ -88,7 +90,6 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
         barra_superior.setToolTipText("");
 
         texto_barra_superior.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        texto_barra_superior.setForeground(new java.awt.Color(0, 0, 0));
         texto_barra_superior.setText("Jogo da Memória");
 
         javax.swing.GroupLayout barra_superiorLayout = new javax.swing.GroupLayout(barra_superior);
@@ -106,7 +107,6 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
         );
 
         titulo_areaAdministrativa.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        titulo_areaAdministrativa.setForeground(new java.awt.Color(0, 0, 0));
         titulo_areaAdministrativa.setText("Area Administrativa");
 
         botao_voltar.setBackground(new java.awt.Color(255, 255, 255));
@@ -158,7 +158,6 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
 
         texto_botao_cartas.setBackground(new java.awt.Color(0, 0, 0));
         texto_botao_cartas.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        texto_botao_cartas.setForeground(new java.awt.Color(0, 0, 0));
         texto_botao_cartas.setText("Cartas");
 
         javax.swing.GroupLayout botao_cartasLayout = new javax.swing.GroupLayout(botao_cartas);
@@ -194,7 +193,6 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
 
         texto_botao_curiosidades.setBackground(new java.awt.Color(0, 0, 0));
         texto_botao_curiosidades.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        texto_botao_curiosidades.setForeground(new java.awt.Color(0, 0, 0));
         texto_botao_curiosidades.setText("Curiosidades");
 
         javax.swing.GroupLayout botao_curiosidadesLayout = new javax.swing.GroupLayout(botao_curiosidades);
@@ -215,7 +213,6 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
         );
 
         titulo_ajuda.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        titulo_ajuda.setForeground(new java.awt.Color(0, 0, 0));
         titulo_ajuda.setText("Mostrar Cartas (Hard)");
 
         campo_ajuda.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
@@ -225,6 +222,9 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
                 campo_ajudaActionPerformed(evt);
             }
         });
+
+        titulo_ajuda1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        titulo_ajuda1.setText("Ajuda para o modo Dificil");
 
         javax.swing.GroupLayout painel_MenuPrincipalLayout = new javax.swing.GroupLayout(painel_MenuPrincipal);
         painel_MenuPrincipal.setLayout(painel_MenuPrincipalLayout);
@@ -245,7 +245,10 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
                                 .addGap(28, 28, 28)
                                 .addComponent(titulo_ajuda)
                                 .addGap(18, 18, 18)
-                                .addComponent(campo_ajuda)))))
+                                .addComponent(campo_ajuda))
+                            .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(titulo_ajuda1)))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
                 .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,7 +277,9 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
                 .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(titulo_ajuda)
                     .addComponent(campo_ajuda))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(titulo_ajuda1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -313,6 +318,8 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
         AreaAdministrativaCriarCuriosidade areaCuriosidade = new AreaAdministrativaCriarCuriosidade();
         areaCuriosidade.setVisible(true);
         this.dispose();
+        JOptionPane.showMessageDialog(null,""
+            + "Na opção de excluir só é possivel excluir as curiosidades criadas!\n","Informações", JOptionPane.WARNING_MESSAGE);
     }//GEN-LAST:event_botao_curiosidadesMouseClicked
 
     private void botao_voltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltarMouseClicked
@@ -334,6 +341,8 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
         AreaAdministrativaCriarCarta areaCarta = new AreaAdministrativaCriarCarta();
         areaCarta.setVisible(true);
         this.dispose();
+        JOptionPane.showMessageDialog(null,""
+            + "Na opção de excluir só é possivel excluir as cartas criadas!\n","Informações", JOptionPane.WARNING_MESSAGE);
     }//GEN-LAST:event_botao_cartasMouseClicked
 
     private void campo_ajudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_ajudaActionPerformed
@@ -378,6 +387,7 @@ public class DefinirAreaAdministrativa extends javax.swing.JFrame {
     private javax.swing.JLabel texto_botao_cartas;
     private javax.swing.JLabel texto_botao_curiosidades;
     private javax.swing.JLabel titulo_ajuda;
+    private javax.swing.JLabel titulo_ajuda1;
     private javax.swing.JLabel titulo_areaAdministrativa;
     // End of variables declaration//GEN-END:variables
 

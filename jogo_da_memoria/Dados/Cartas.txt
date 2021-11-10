@@ -1,4 +1,3 @@
-- Cartas:
 *;1;Hidrogenio;
 *;2;Helio;
 *;3;Litio;
@@ -15,5 +14,5 @@
 *;26;Ferro;
 *;30;Zinco;
 *;31;Galio;
-*;50;Estanho;
 *;79;Ouro;
+*;4;Berilio;

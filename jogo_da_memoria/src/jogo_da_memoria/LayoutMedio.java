@@ -215,7 +215,7 @@ public class LayoutMedio extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_pause.setIcon(new ImageIcon("icones/opcoes.png"));
+        icone_botao_pause.setIcon(new ImageIcon("icones/pause.png"));
 
         javax.swing.GroupLayout botao_pauseLayout = new javax.swing.GroupLayout(botao_pause);
         botao_pause.setLayout(botao_pauseLayout);
@@ -972,7 +972,7 @@ public class LayoutMedio extends javax.swing.JFrame {
         
         ControleSons.playSound(clipFim,0.8);
         
-        if(rodada>1){
+        if(controlePares>0){
             InserirNomePlacar placar = new InserirNomePlacar(pontosTotal,rodada,"medio");
             placar.setVisible(true);
         }else{

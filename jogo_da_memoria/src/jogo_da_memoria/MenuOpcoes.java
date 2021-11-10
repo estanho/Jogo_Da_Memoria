@@ -19,7 +19,7 @@ public class MenuOpcoes extends javax.swing.JDialog {
     
     ManipularArquivos arquivos = new ManipularArquivos();
     
-    int[] sons;
+    int sons;
     
     public MenuOpcoes(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -38,13 +38,9 @@ public class MenuOpcoes extends javax.swing.JDialog {
             Logger.getLogger(MenuOpcoes.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        slider_sons.setValue(sons[0]);
-        slider_musica.setValue(sons[1]);
+        slider_sons.setValue(sons);
         
         clip = new AudioClip("sfx/click.wav");
-        
-        JOptionPane.showMessageDialog(null,""
-                            + "Sistema de volume dos sons não foi totalmente finalizado e está desativado!\n","Atencao", JOptionPane.WARNING_MESSAGE);
     }
 
     @SuppressWarnings("unchecked")
@@ -61,9 +57,6 @@ public class MenuOpcoes extends javax.swing.JDialog {
         painel_sons = new javax.swing.JPanel();
         texto_sons = new javax.swing.JLabel();
         slider_sons = new javax.swing.JSlider();
-        painel_musica = new javax.swing.JPanel();
-        texto_musica = new javax.swing.JLabel();
-        slider_musica = new javax.swing.JSlider();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -171,34 +164,6 @@ public class MenuOpcoes extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        painel_musica.setBackground(new java.awt.Color(255, 255, 255));
-
-        texto_musica.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        texto_musica.setText("Música");
-
-        javax.swing.GroupLayout painel_musicaLayout = new javax.swing.GroupLayout(painel_musica);
-        painel_musica.setLayout(painel_musicaLayout);
-        painel_musicaLayout.setHorizontalGroup(
-            painel_musicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painel_musicaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(texto_musica)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(slider_musica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        painel_musicaLayout.setVerticalGroup(
-            painel_musicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painel_musicaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(texto_musica)
-                .addGap(20, 20, 20))
-            .addGroup(painel_musicaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(slider_musica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout painel_MenuOpcoesLayout = new javax.swing.GroupLayout(painel_MenuOpcoes);
         painel_MenuOpcoes.setLayout(painel_MenuOpcoesLayout);
         painel_MenuOpcoesLayout.setHorizontalGroup(
@@ -217,8 +182,7 @@ public class MenuOpcoes extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuOpcoesLayout.createSequentialGroup()
                         .addGroup(painel_MenuOpcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(painel_sons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(titulo_opcoes)
-                            .addComponent(painel_musica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(titulo_opcoes))
                         .addGap(160, 160, 160))))
         );
         painel_MenuOpcoesLayout.setVerticalGroup(
@@ -229,9 +193,7 @@ public class MenuOpcoes extends javax.swing.JDialog {
                 .addComponent(titulo_opcoes)
                 .addGap(31, 31, 31)
                 .addComponent(painel_sons, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(painel_musica, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(botao_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(102, 102, 102)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -263,7 +225,8 @@ public class MenuOpcoes extends javax.swing.JDialog {
         
         ControleSons.playSound(clip,0.5);
         
-        int[] volume = {slider_sons.getValue(),slider_musica.getValue()};
+        int volume = slider_sons.getValue();
+        
         try {
             arquivos.setConfigSom(volume);
         } catch (IOException ex) {
@@ -296,13 +259,10 @@ public class MenuOpcoes extends javax.swing.JDialog {
     private javax.swing.JPanel barra_superior;
     private javax.swing.JPanel botao_voltar;
     private javax.swing.JPanel painel_MenuOpcoes;
-    private javax.swing.JPanel painel_musica;
     private javax.swing.JPanel painel_sons;
-    private javax.swing.JSlider slider_musica;
     private javax.swing.JSlider slider_sons;
     private javax.swing.JLabel texto_barra_superior;
     private javax.swing.JLabel texto_botao_voltar;
-    private javax.swing.JLabel texto_musica;
     private javax.swing.JLabel texto_sons;
     private javax.swing.JLabel titulo_opcoes;
     // End of variables declaration//GEN-END:variables

@@ -1,4 +1,3 @@
-- Curiosidade:
 *;1;Hidrogenio;O Hidrogênio é o elemento químico de menor massa atômica e menor número atômico!;
 *;1;Hidrogenio;O hidrogênio molecular é mais leve que o ar e foi utilizado em dirigíveis rígidos pelo conde alemão Ferdinand von Zeppelin, daí o nome dos dirigíveis.;
 *;2;Helio;O Hélio é até sete vezes mais leve que o oxigênio que respiramos!;

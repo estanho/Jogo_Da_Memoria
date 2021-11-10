@@ -57,8 +57,6 @@ public class MenuPause extends javax.swing.JDialog {
         botao_sair = new javax.swing.JPanel();
         texto_botao_sair = new javax.swing.JLabel();
         titulo_pause1 = new javax.swing.JLabel();
-        botao_opcoes = new javax.swing.JPanel();
-        icone_botao_opcoes = new javax.swing.JLabel();
         botao_voltar_jogo = new javax.swing.JPanel();
         texto_voltar_jogo = new javax.swing.JLabel();
 
@@ -86,7 +84,6 @@ public class MenuPause extends javax.swing.JDialog {
         barra_superior.setToolTipText("");
 
         texto_barra_superior.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        texto_barra_superior.setForeground(new java.awt.Color(0, 0, 0));
         texto_barra_superior.setText("Jogo da Memória");
 
         javax.swing.GroupLayout barra_superiorLayout = new javax.swing.GroupLayout(barra_superior);
@@ -119,7 +116,6 @@ public class MenuPause extends javax.swing.JDialog {
 
         texto_botao_jogar.setBackground(new java.awt.Color(0, 0, 0));
         texto_botao_jogar.setFont(new java.awt.Font("Comic Sans MS", 0, 21)); // NOI18N
-        texto_botao_jogar.setForeground(new java.awt.Color(0, 0, 0));
         texto_botao_jogar.setText("Voltar para o menu");
 
         javax.swing.GroupLayout botao_voltar_menuLayout = new javax.swing.GroupLayout(botao_voltar_menu);
@@ -155,7 +151,6 @@ public class MenuPause extends javax.swing.JDialog {
 
         texto_botao_sair.setBackground(new java.awt.Color(0, 0, 0));
         texto_botao_sair.setFont(new java.awt.Font("Comic Sans MS", 0, 21)); // NOI18N
-        texto_botao_sair.setForeground(new java.awt.Color(0, 0, 0));
         texto_botao_sair.setText("Desktop");
 
         javax.swing.GroupLayout botao_sairLayout = new javax.swing.GroupLayout(botao_sair);
@@ -176,41 +171,7 @@ public class MenuPause extends javax.swing.JDialog {
         );
 
         titulo_pause1.setFont(new java.awt.Font("Comic Sans MS", 3, 48)); // NOI18N
-        titulo_pause1.setForeground(new java.awt.Color(0, 0, 0));
         titulo_pause1.setText("Jogo pausado");
-
-        botao_opcoes.setBackground(new java.awt.Color(255, 255, 255));
-        botao_opcoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
-        botao_opcoes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botao_opcoesMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botao_opcoesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botao_opcoesMouseExited(evt);
-            }
-        });
-
-        icone_botao_opcoes.setIcon(new ImageIcon("icones/opcoes.png"));
-
-        javax.swing.GroupLayout botao_opcoesLayout = new javax.swing.GroupLayout(botao_opcoes);
-        botao_opcoes.setLayout(botao_opcoesLayout);
-        botao_opcoesLayout.setHorizontalGroup(
-            botao_opcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botao_opcoesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(icone_botao_opcoes)
-                .addContainerGap())
-        );
-        botao_opcoesLayout.setVerticalGroup(
-            botao_opcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(botao_opcoesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(icone_botao_opcoes)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         botao_voltar_jogo.setBackground(new java.awt.Color(255, 255, 255));
         botao_voltar_jogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -228,7 +189,6 @@ public class MenuPause extends javax.swing.JDialog {
 
         texto_voltar_jogo.setBackground(new java.awt.Color(0, 0, 0));
         texto_voltar_jogo.setFont(new java.awt.Font("Comic Sans MS", 0, 21)); // NOI18N
-        texto_voltar_jogo.setForeground(new java.awt.Color(0, 0, 0));
         texto_voltar_jogo.setText("Voltar ao jogo");
 
         javax.swing.GroupLayout botao_voltar_jogoLayout = new javax.swing.GroupLayout(botao_voltar_jogo);
@@ -261,9 +221,6 @@ public class MenuPause extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(painel_MenuPauseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPauseLayout.createSequentialGroup()
-                        .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPauseLayout.createSequentialGroup()
                         .addComponent(titulo_pause1)
                         .addGap(144, 144, 144))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPauseLayout.createSequentialGroup()
@@ -285,9 +242,7 @@ public class MenuPause extends javax.swing.JDialog {
                 .addComponent(botao_voltar_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botao_sair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -343,20 +298,6 @@ public class MenuPause extends javax.swing.JDialog {
         botao_sair.setBackground(Color.WHITE);
     }//GEN-LAST:event_botao_sairMouseExited
 
-    private void botao_opcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseClicked
-        ControleSons.playSound(clip,0.5);
-        MenuOpcoes opcoes = new MenuOpcoes(new javax.swing.JFrame(),true);
-        opcoes.setVisible(true);
-    }//GEN-LAST:event_botao_opcoesMouseClicked
-
-    private void botao_opcoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseEntered
-        botao_opcoes.setBackground(Color.LIGHT_GRAY);
-    }//GEN-LAST:event_botao_opcoesMouseEntered
-
-    private void botao_opcoesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseExited
-        botao_opcoes.setBackground(Color.WHITE);
-    }//GEN-LAST:event_botao_opcoesMouseExited
-
     private void botao_voltar_jogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_voltar_jogoMouseClicked
         ControleSons.playSound(clip,0.5);
         
@@ -409,11 +350,9 @@ public class MenuPause extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel barra_inferior;
     private javax.swing.JPanel barra_superior;
-    private javax.swing.JPanel botao_opcoes;
     private javax.swing.JPanel botao_sair;
     private javax.swing.JPanel botao_voltar_jogo;
     private javax.swing.JPanel botao_voltar_menu;
-    private javax.swing.JLabel icone_botao_opcoes;
     private javax.swing.JPanel painel_MenuPause;
     private javax.swing.JLabel texto_barra_superior;
     private javax.swing.JLabel texto_botao_jogar;

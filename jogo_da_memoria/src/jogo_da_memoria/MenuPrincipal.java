@@ -44,8 +44,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         texto_botao_sair = new javax.swing.JLabel();
         titulo_jogo1 = new javax.swing.JLabel();
         titulo_jogo2 = new javax.swing.JLabel();
-        botao_opcoes = new javax.swing.JPanel();
-        icone_botao_opcoes = new javax.swing.JLabel();
         botao_login = new javax.swing.JPanel();
         icone_botao_login = new javax.swing.JLabel();
 
@@ -82,7 +80,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         barra_superior.setToolTipText("");
 
         texto_barra_superior.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        texto_barra_superior.setForeground(new java.awt.Color(0, 0, 0));
         texto_barra_superior.setText("Jogo da Memória");
 
         javax.swing.GroupLayout barra_superiorLayout = new javax.swing.GroupLayout(barra_superior);
@@ -115,7 +112,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         texto_botao_jogar.setBackground(new java.awt.Color(0, 0, 0));
         texto_botao_jogar.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        texto_botao_jogar.setForeground(new java.awt.Color(0, 0, 0));
         texto_botao_jogar.setText("Jogar");
 
         javax.swing.GroupLayout botao_jogarLayout = new javax.swing.GroupLayout(botao_jogar);
@@ -151,7 +147,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         texto_botao_placar_lideres.setBackground(new java.awt.Color(0, 0, 0));
         texto_botao_placar_lideres.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        texto_botao_placar_lideres.setForeground(new java.awt.Color(0, 0, 0));
         texto_botao_placar_lideres.setText("Placar de lideres");
 
         javax.swing.GroupLayout botao_placar_lideresLayout = new javax.swing.GroupLayout(botao_placar_lideres);
@@ -187,7 +182,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         texto_botao_sair.setBackground(new java.awt.Color(0, 0, 0));
         texto_botao_sair.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        texto_botao_sair.setForeground(new java.awt.Color(0, 0, 0));
         texto_botao_sair.setText("Sair");
 
         javax.swing.GroupLayout botao_sairLayout = new javax.swing.GroupLayout(botao_sair);
@@ -208,45 +202,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
 
         titulo_jogo1.setFont(new java.awt.Font("Comic Sans MS", 3, 48)); // NOI18N
-        titulo_jogo1.setForeground(new java.awt.Color(0, 0, 0));
         titulo_jogo1.setText("Jogo da Memória");
 
         titulo_jogo2.setFont(new java.awt.Font("Comic Sans MS", 3, 24)); // NOI18N
-        titulo_jogo2.setForeground(new java.awt.Color(0, 0, 0));
         titulo_jogo2.setText("com elementos químicos!");
-
-        botao_opcoes.setBackground(new java.awt.Color(255, 255, 255));
-        botao_opcoes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
-        botao_opcoes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botao_opcoesMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botao_opcoesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botao_opcoesMouseExited(evt);
-            }
-        });
-
-        icone_botao_opcoes.setIcon(new ImageIcon("icones/opcoes.png"));
-
-        javax.swing.GroupLayout botao_opcoesLayout = new javax.swing.GroupLayout(botao_opcoes);
-        botao_opcoes.setLayout(botao_opcoesLayout);
-        botao_opcoesLayout.setHorizontalGroup(
-            botao_opcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, botao_opcoesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(icone_botao_opcoes)
-                .addContainerGap())
-        );
-        botao_opcoesLayout.setVerticalGroup(
-            botao_opcoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(botao_opcoesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(icone_botao_opcoes)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         botao_login.setBackground(new java.awt.Color(255, 255, 255));
         botao_login.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
@@ -285,11 +244,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         painel_MenuPrincipal.setLayout(painel_MenuPrincipalLayout);
         painel_MenuPrincipalLayout.setHorizontalGroup(
             painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addComponent(barra_superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(barra_inferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
+                .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(barra_superior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(barra_inferior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPrincipalLayout.createSequentialGroup()
-                .addContainerGap(111, Short.MAX_VALUE)
+                .addContainerGap(112, Short.MAX_VALUE)
                 .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPrincipalLayout.createSequentialGroup()
                         .addComponent(titulo_jogo1)
@@ -305,8 +266,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGap(195, 195, 195))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painel_MenuPrincipalLayout.createSequentialGroup()
                         .addComponent(botao_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         painel_MenuPrincipalLayout.setVerticalGroup(
@@ -324,12 +283,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(botao_sair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(painel_MenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painel_MenuPrincipalLayout.createSequentialGroup()
-                        .addComponent(botao_opcoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(botao_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(botao_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(barra_inferior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -376,20 +332,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ControleSons.playSound(clip,0.5);
         System.exit(0);
     }//GEN-LAST:event_botao_sairMouseClicked
-
-    private void botao_opcoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseClicked
-        ControleSons.playSound(clip,0.5);
-        MenuOpcoes opcoes = new MenuOpcoes(new javax.swing.JFrame(),true);
-        opcoes.setVisible(true);
-    }//GEN-LAST:event_botao_opcoesMouseClicked
-
-    private void botao_opcoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseEntered
-        botao_opcoes.setBackground(Color.LIGHT_GRAY);
-    }//GEN-LAST:event_botao_opcoesMouseEntered
-
-    private void botao_opcoesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_opcoesMouseExited
-        botao_opcoes.setBackground(Color.WHITE);
-    }//GEN-LAST:event_botao_opcoesMouseExited
 
     private void botao_placar_lideresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botao_placar_lideresMouseClicked
         ControleSons.playSound(clip,0.5);
@@ -439,11 +381,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel barra_superior;
     private javax.swing.JPanel botao_jogar;
     private javax.swing.JPanel botao_login;
-    private javax.swing.JPanel botao_opcoes;
     private javax.swing.JPanel botao_placar_lideres;
     private javax.swing.JPanel botao_sair;
     private javax.swing.JLabel icone_botao_login;
-    private javax.swing.JLabel icone_botao_opcoes;
     private javax.swing.JPanel painel_MenuPrincipal;
     private javax.swing.JLabel texto_barra_superior;
     private javax.swing.JLabel texto_botao_jogar;

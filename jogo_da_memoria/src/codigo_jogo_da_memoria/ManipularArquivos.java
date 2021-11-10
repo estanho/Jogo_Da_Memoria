@@ -582,7 +582,7 @@ public class ManipularArquivos implements Runnable {
     }
     
     
-    static public int[] getConfigSom() throws FileNotFoundException, IOException{
+    public int getConfigSom() throws FileNotFoundException, IOException{
         
         String somTxt = "Dados/Config/Som.txt";
         
@@ -590,27 +590,24 @@ public class ManipularArquivos implements Runnable {
         BufferedReader br = new BufferedReader( fr );
            
         String linha1 = br.readLine();
-        String linha2 = br.readLine();
         
         fr.close(); br.close();
        
         int som = Integer.valueOf(linha1);
-        int musica = Integer.valueOf(linha2);
         
-        int[]sons = {som,musica};
+        int sons = som;
         return sons;
     }
     
     
-    public void setConfigSom(int[]sons) throws FileNotFoundException, IOException{
+    public void setConfigSom(int sons) throws FileNotFoundException, IOException{
         
         String configTxt = "Dados/Config/Som.txt";
         
         FileWriter fw = new FileWriter(configTxt,false);
         BufferedWriter bw = new BufferedWriter(fw);
             
-        bw.write(String.valueOf(sons[0])); bw.newLine();
-        bw.write(String.valueOf(sons[1]));
+        bw.write(String.valueOf(sons));
         
         bw.close();
         fw.close();

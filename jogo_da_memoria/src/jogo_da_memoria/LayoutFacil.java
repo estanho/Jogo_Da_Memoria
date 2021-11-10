@@ -105,27 +105,21 @@ public class LayoutFacil extends javax.swing.JFrame {
         barra_inferior.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         texto_pontos.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        texto_pontos.setForeground(new java.awt.Color(0, 0, 0));
         texto_pontos.setText("Pontos: ");
 
         texto_tempo_restante.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        texto_tempo_restante.setForeground(new java.awt.Color(0, 0, 0));
         texto_tempo_restante.setText("Tempo restante:");
 
         contador_tempo.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        contador_tempo.setForeground(new java.awt.Color(0, 0, 0));
         contador_tempo.setText("10");
 
         contador_pontos.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        contador_pontos.setForeground(new java.awt.Color(0, 0, 0));
         contador_pontos.setText("0");
 
         texto_pares.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        texto_pares.setForeground(new java.awt.Color(0, 0, 0));
         texto_pares.setText("Pares:");
 
         contador_pares.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        contador_pares.setForeground(new java.awt.Color(0, 0, 0));
         contador_pares.setText("0");
 
         javax.swing.GroupLayout barra_inferiorLayout = new javax.swing.GroupLayout(barra_inferior);
@@ -164,7 +158,6 @@ public class LayoutFacil extends javax.swing.JFrame {
         barra_superior.setToolTipText("");
 
         texto_barra_superior.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        texto_barra_superior.setForeground(new java.awt.Color(0, 0, 0));
         texto_barra_superior.setText("Jogo da Memória");
 
         javax.swing.GroupLayout barra_superiorLayout = new javax.swing.GroupLayout(barra_superior);
@@ -195,7 +188,7 @@ public class LayoutFacil extends javax.swing.JFrame {
             }
         });
 
-        icone_botao_pause.setIcon(new ImageIcon("icones/opcoes.png"));
+        icone_botao_pause.setIcon(new ImageIcon("icones/pause.png"));
 
         javax.swing.GroupLayout botao_pauseLayout = new javax.swing.GroupLayout(botao_pause);
         botao_pause.setLayout(botao_pauseLayout);
@@ -508,7 +501,7 @@ public class LayoutFacil extends javax.swing.JFrame {
         
         ControleSons.playSound(clipFim,0.8);
         
-        if(rodada>1){           
+        if(controlePares>1){           
             InserirNomePlacar placar = new InserirNomePlacar(pontosTotal,rodada,"facil");
             placar.setVisible(true);
         }else{
